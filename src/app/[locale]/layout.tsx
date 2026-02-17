@@ -39,59 +39,33 @@ export default async function RootLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) return notFound();
   return (
     <ViewTransitions>
-      <html lang={locale} className="md:overflow-hidden md:h-full">
+      <html lang={locale} className="">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased md:overflow-hidden md:h-full `}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <NextIntlClientProvider>
-            <div className="">
-              {/* MOBILE */}
-              <div className="md:hidden flex flex-col min-h-screen pb-16 pt-20">
-                <Header />
-                <div className="flex-1">
-                  <div className="bg-white dark:bg-black">
-                    {children}
-                  </div>
+            {/* Header siempre visible */}
+            <Header />
+
+            {/* Grid container para Desktop */}
+            <div className="md:grid md:grid-cols-[250px_1fr] md:h-[calc(100vh-80px)]">
+              {/* Sidebar Desktop - Fixed con scroll interno */}
+              <aside className="hidden md:block md:overflow-y-auto md:border-r md:border-gray-200 md:dark:border-gray-700 bg-custom dark:bg-gray-800">
+                <NavBar typeDisplay="desktop" />
+              </aside>
+
+              {/* Main content con scroll */}
+              <main className="md:overflow-y-auto pb-16 md:pb-0">
+                <div className="bg-white dark:bg-black min-h-screen p-2">
+                  {children}
                 </div>
                 <Footer />
-                <NavBar typeDisplay="mobile" />
-              </div>
+              </main>
+            </div>
 
-              {/* DESKTOP */}
-              <div className="hidden md:grid grid-cols-12 h-screen w-full box-border">
-                {/* SIDEBAR */}
-                <aside className="col-span-2 flex flex-col h-full bg-custom dark:bg-custom border-r border-gray-200 dark:border-gray-700">
-                  {/* Logo */}
-                  <div className=" h-20 flex items-center justify-center">
-                    <Logo />
-                  </div>
-                  {/* Navigation */}
-                  <div className="flex-1 overflow-y-auto py-4 px-3 ">
-                    <NavBar typeDisplay="desktop" />
-                  </div>
-                  {/* Promotion Card */}
-                  <PromotionCard />
-                </aside>
-
-                {/* MAIN CONTENT */}
-                <div className="col-span-10 min-h-0 flex flex-col bg-custom dark:bg-custom">
-                  {/* Header */}
-                    <Header />
-                  {/* Page Content */}
-                  <div className="flex-1 overflow-auto min-h-0">
-                    <div className="flex flex-col min-h-full">
-                      <main className="flex-1">
-                        <div className="bg-white dark:bg-black p-6">
-                          {children}
-                        </div>
-                      </main>
-                      <div className="px-1">
-                        <Footer />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Bottom Nav Mobile - Fixed */}
+            <div className="md:hidden">
+              <NavBar typeDisplay="mobile" />
             </div>
           </NextIntlClientProvider>
         </body>

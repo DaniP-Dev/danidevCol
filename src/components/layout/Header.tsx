@@ -1,9 +1,12 @@
 "use client";
 
+import Logo from "./Logo";
+
 export default function Header() {
   return (
-    <header className="h-20 w-full bg-custom dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-end px-6 fixed top-0 left-0 right-0 z-40 md:static md:z-auto">
-      <div className="flex items-center gap-4">
+    <header className="h-20 w-full bg-custom dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-4 md:px-6 sticky top-0 z-50">
+      <Logo />
+      <div className="flex items-center gap-2 md:gap-4">
         {/* Mode Toggle (visual only) */}
         <button
           type="button"
