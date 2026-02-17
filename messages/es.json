@@ -1,0 +1,18 @@
+{
+    "HomePage": {
+        "welcomeMessage": "¡Bienvenido a nuestra aplicación!",
+        "description": "Esta es una aplicación de ejemplo para demostrar la internacionalización."
+    },
+    "Services": {
+        "existingProjects": {
+            "slug": "mejoras-web-apps",
+            "title": "Mejoras en aplicaciones web existentes",
+            "description": "Ofrecemos servicios para mejorar y optimizar tus aplicaciones web actuales, asegurando que funcionen al máximo y cumplan con los estándares modernos."
+        },
+        "newProjects": {
+            "slug": "desarrollo-desde-cero",
+            "title": "Desarrollo de proyectos desde cero",
+            "description": "Nuestro equipo puede ayudarte a construir nuevas aplicaciones web desde cero, adaptadas a tus necesidades y requisitos específicos."
+        }
+    }
+}

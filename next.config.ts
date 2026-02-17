@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
+import createNextIntl from "next-intl/plugin";
+import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    viewTransition: true,
+  },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntl();
+export default withFlowbiteReact(withNextIntl(nextConfig));

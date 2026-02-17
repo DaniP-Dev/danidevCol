@@ -1,0 +1,26 @@
+{
+    "HomePage": {
+        "welcomeMessage": "Welcome to our application!",
+        "description": "This is a sample application to demonstrate internationalization."
+    },
+    "Services": {
+        "servicePage":{
+            "slug": "services",
+            "title": "Our Services",
+            "description": "Explore the range of services we offer to help you achieve your goals."
+        },
+        "existingProjects": {
+            "slug": "existing-projects",
+            "title": "Improvements to existing web applications",
+            "description": "We offer services to enhance and optimize your current web applications, ensuring they perform at their best and meet modern standards.",
+            "existingProjectsPage":{}
+        },
+        "newProjects": {
+            "slug": "new-projects",
+            "title": "Development of projects from scratch",
+            "description": "Our team can help you build new web applications from the ground up, tailored to your specific needs and requirements.",
+            "newProjectsPage":{}
+
+        }
+    }
+}
