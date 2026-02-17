@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
 export default async function RootLayout({ children, params }: Props) {
