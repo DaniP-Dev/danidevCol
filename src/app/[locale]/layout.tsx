@@ -56,7 +56,7 @@ export default async function RootLayout({ children, params }: Props) {
 
               {/* Main content con scroll */}
               <main className="md:overflow-y-auto pb-16 md:pb-0">
-                <div className="bg-white dark:bg-black min-h-screen p-2">
+                <div className="bg-white dark:bg-black min-h-screen ">
                   {children}
                 </div>
                 <Footer />

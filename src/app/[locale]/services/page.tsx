@@ -9,8 +9,8 @@ export default async function page() {
   const t = await getTranslations("Services");
 
   return (
-    <div className="grid grid-rows-[auto_auto_auto_auto_auto] gap-3">
-      <div className="border border-red-500 h-50 w-full">
+    <div className="grid grid-rows-[auto_auto_auto_auto_auto] gap-6">
+      <div className=" h-50 w-full">
         <HeroSection />
       </div>
       <div>
