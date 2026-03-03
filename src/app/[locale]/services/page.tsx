@@ -4,6 +4,7 @@ import { serviceCategories } from "@/src/libs/services";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/src/i18n/navigation";
 import CardService from "@/src/components/servicesPage/CardService";
+import Benefits from "@/src/components/servicesPage/Benefits";
 
 export default async function page() {
   const t = await getTranslations("Services");
@@ -28,7 +29,7 @@ export default async function page() {
           ))}
         </div>
       </div>
-      <div className="border border-red-500">convencer a elegirnos</div>
+      <Benefits />
       <div className="border border-red-500">CTA</div>
     </div>
   );

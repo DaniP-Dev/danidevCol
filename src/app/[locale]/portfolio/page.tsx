@@ -1,3 +1,9 @@
 export default function page() {
-  return <div>Portafolio Page</div>;
+  return (
+    <div className="text-yellow-500">
+      <div>hola</div>
+      <div>hola</div>
+      <div>hola</div>
+    </div>
+  );
 }

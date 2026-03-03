@@ -13,15 +13,13 @@ export default function CardService({
   description,
 }: CardServiceProps) {
   return (
-    <Link href={`/services/${slug}`} className="block">
-      <Card className="max-w-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-        <h5 className="text-xl font-semibold tracking-tight text-inherit">
-          {title}
-        </h5>
-        <p className="text-inherit">
-          {description}
-        </p>
-      </Card>
-    </Link>
+      <Link href={`/services/${slug}`} className="block">
+        <Card className="max-w-sm min-h-55 flex flex-col justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+          <h5 className="text-xl font-semibold tracking-tight text-inherit">
+            {title}
+          </h5>
+          <p className="text-inherit">{description}</p>
+        </Card>
+      </Link>
   );
 }

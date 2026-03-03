@@ -1,4 +1,4 @@
-export default function index() {
+export default function PhraseService() {
   return (
     <section>
       <h1 className="flex justify-center items-center mb-4 text-3xl font-bold text-custom dark:text-custom md:text-5xl lg:text-6xl">

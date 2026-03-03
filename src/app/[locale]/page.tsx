@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function Home() {
   const t = await getTranslations("HomePage");
   return (
-    <div >
+    <div className="text-blue-500">
       {t("welcomeMessage")}
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae exercitationem accusamus nulla eum quam excepturi rem suscipit fugit quo soluta, mollitia quae tempore ab laboriosam, optio provident dignissimos sit autem!
       Architecto distinctio quis corrupti excepturi magnam quidem! Ab repellat iusto, recusandae sequi sed iste asperiores? Amet, asperiores. Soluta quia reprehenderit sunt ipsa officia. Eaque sequi ipsum veritatis, impedit a veniam!
