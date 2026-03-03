@@ -1,6 +1,39 @@
+
 import { Link } from "next-view-transitions";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "danidevcol | Desarrollo y Optimización Web para Empresas y Negocios",
+  description:
+    "¿Eres una empresa o negocio que busca crear, mejorar o editar su página web? En danidevcol encontrarás soluciones profesionales en desarrollo, rediseño y optimización de sitios web para potenciar tu presencia digital.",
+  keywords: [
+    "danidevcol",
+    "Desarrollo web empresas",
+    "Optimización de páginas web",
+    "Rediseño web",
+    "Sitios web para negocios",
+    "Contratar desarrollador web",
+    "Mejorar página web",
+    "Editar sitio web",
+    "Desarrollador freelance",
+    "Colombia"
+  ],
+  openGraph: {
+    title: "danidevcol | Desarrollo y Optimización Web para Empresas y Negocios",
+    description:
+      "Soluciones profesionales para empresas y clientes que buscan crear, mejorar o editar su página web. Desarrollo, rediseño y soporte personalizado.",
+    type: "website",
+    locale: "es_CO",
+    url: "https://danidevcol.com",
+    siteName: "danidevcol"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
 
 export default async function Home() {
   const t = await getTranslations("HomePage");
