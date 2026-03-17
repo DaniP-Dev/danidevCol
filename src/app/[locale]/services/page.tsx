@@ -1,3 +1,8 @@
+export const generateMetadata = () => ({
+  title: "Servicios profesionales de desarrollo web y software | DaniDevCol",
+  description:
+    "Soluciones digitales a medida: diseño, desarrollo, optimización SEO y consultoría para potenciar tu negocio."
+});
 import HeroSection from "@/src/components/servicesPage/HeroSection";
 import PhraseService from "@/src/components/servicesPage/PhraseService";
 import { serviceCategories } from "@/src/libs/services";
