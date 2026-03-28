@@ -1,26 +1,84 @@
 {
     "HomePage": {
-        "welcomeMessage": "Welcome to our application!",
-        "description": "This is a sample application to demonstrate internationalization."
+        "welcomeMessage": "Welcome to my website!",
+        "description": "Professional web development, optimization, and design solutions to amplify your digital presence.",
+        "hero": {
+            "title": "Amplify Your Digital Presence",
+            "subtitle": "World-class web development, optimization, and design for businesses ready to scale online",
+            "cta": "Get Started",
+            "ctaSecondary": "Explore Services"
+        },
+        "features": {
+            "title": "Why Choose Me?",
+            "subtitle": "I specialize in transforming ideas into impactful web solutions",
+            "feature1": {
+                "title": "Custom Solutions",
+                "description": "Every project is unique. I design tailored solutions for your specific needs"
+            },
+            "feature2": {
+                "title": "Modern Technology",
+                "description": "I use cutting-edge tools and frameworks for performance and scalability"
+            },
+            "feature3": {
+                "title": "Continuous Support",
+                "description": "I don't disappear after launch. I support you every step of the way"
+            },
+            "feature4": {
+                "title": "SEO Optimized",
+                "description": "Your customers will find you on Google. SEO is built in from day one"
+            },
+            "feature5": {
+                "title": "Responsive & Fast",
+                "description": "Perfect experience on any device. Optimized loading speeds"
+            },
+            "feature6": {
+                "title": "Enterprise Security",
+                "description": "I protect your data with the highest security standards"
+            }
+        },
+        "services": {
+            "title": "My Services",
+            "subtitle": "Complete solutions for your digital transformation"
+        },
+        "stats": {
+            "title": "Numbers That Speak",
+            "projects": "Projects Completed",
+            "clients": "Happy Clients",
+            "experience": "Years of Experience",
+            "uptime": "Uptime"
+        },
+        "cta": {
+            "title": "Ready to transform your digital presence?",
+            "subtitle": "Let me help you take your business to the next level",
+            "button": "Request Free Consultation"
+        },
+        "footer": {
+            "about": "danidevcol",
+            "description": "I transform ideas into professional web solutions that drive your business growth",
+            "seeMore": "See more"
+        }
     },
     "Services": {
         "servicePage":{
             "slug": "services",
-            "title": "Our Services",
-            "description": "Explore the range of services we offer to help you achieve your goals."
+            "title": "My Services",
+            "description": "Explore the range of services I offer to help you achieve your goals."
         },
         "existingProjects": {
             "slug": "existing-projects",
-            "title": "Improvements to existing web applications",
-            "description": "We offer services to enhance and optimize your current web applications, ensuring they perform at their best and meet modern standards.",
-            "existingProjectsPage":{}
+            "title": "Website Improvement and Optimization",
+            "subtitle": "Give Your Website a New Lease on Life",
+            "description": "I offer services to enhance and optimize your current websites, ensuring they perform at their best and meet modern standards.",
+            "longDescription": "Does your website need a boost? I specialize in transforming existing websites, improving their performance, security, and user experience.",
+            "cta": "Transform My Website"
         },
         "newProjects": {
             "slug": "new-projects",
-            "title": "Development of projects from scratch",
-            "description": "Our team can help you build new web applications from the ground up, tailored to your specific needs and requirements.",
-            "newProjectsPage":{}
-
+            "title": "Custom Website Development from Scratch",
+            "subtitle": "Your Idea, My Expertise",
+            "description": "I can help you build new websites from the ground up, tailored to your specific needs and requirements.",
+            "longDescription": "Do you have a brilliant idea but don't know where to start? I create modern, scalable, and secure websites designed specifically for your business.",
+            "cta": "Start My Project"
         }
     }
 }

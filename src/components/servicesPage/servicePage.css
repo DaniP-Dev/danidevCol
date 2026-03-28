@@ -1,9 +1,6 @@
  .hero-text {
    position: relative;
    z-index: 2;
-   text-align: center;
-   color: #fff;
-   padding-top: 2em;
  }
 @keyframes move {
   100% {
@@ -11,15 +8,11 @@
   }
 }
 
-.background {
+.hero-background {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #68abad;
   overflow: hidden;
-  box-shadow:
-    0 0 0 0 #68abad,
-    0 0 80px 40px #68abad;
 }
 
 .ball {
@@ -30,18 +23,7 @@
   backface-visibility: hidden;
   animation: move linear infinite;
   filter: blur(16px);
-  opacity: 0.5;
-  transition: background 0.5s, box-shadow 0.5s;
-}
-
-.ball:nth-child(odd) {
-  background: rgba(0, 109, 91, 0.6);
-  color: rgba(0, 109, 91, 0.6);
-}
-
-.ball:nth-child(even) {
-  background: rgba(255, 111, 97, 0.5);
-  color: rgba(255, 111, 97, 0.5);
+  transition: background-color 0.5s ease;
 }
 
 /* Using a custom attribute for variability */

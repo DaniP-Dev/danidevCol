@@ -1,18 +1,79 @@
 {
     "HomePage": {
-        "welcomeMessage": "¡Bienvenido a nuestra aplicación!",
-        "description": "Esta es una aplicación de ejemplo para demostrar la internacionalización."
+        "welcomeMessage": "¡Bienvenido a mi sitio web!",
+        "description": "Desarrollo, optimización y diseño de sitios web profesionales para potenciar tu presencia digital.",
+        "hero": {
+            "title": "Potencia Tu Presencia Digital",
+            "subtitle": "Desarrollo, optimización y diseño web de clase mundial para empresas que quieren crecer en línea",
+            "cta": "Comenzar Ahora",
+            "ctaSecondary": "Ver Servicios"
+        },
+        "features": {
+            "title": "¿Por qué elegirme?",
+            "subtitle": "Soy especialista en transformar ideas en soluciones web de impacto",
+            "feature1": {
+                "title": "Soluciones Personalizadas",
+                "description": "Cada proyecto es único. Diseño soluciones a medida para tus necesidades específicas"
+            },
+            "feature2": {
+                "title": "Tecnología Moderna",
+                "description": "Uso las últimas herramientas y frameworks para garantizar rendimiento y escalabilidad"
+            },
+            "feature3": {
+                "title": "Soporte Continuo",
+                "description": "No desaparezco después del lanzamiento. Te acompaño en cada paso"
+            },
+            "feature4": {
+                "title": "SEO Optimizado",
+                "description": "Tus clientes te encontrarán en Google. Diseño con SEO en mente desde el inicio"
+            },
+            "feature5": {
+                "title": "Responsivo & Rápido",
+                "description": "Experiencia perfecta en cualquier dispositivo. Velocidad de carga optimizada"
+            },
+            "feature6": {
+                "title": "Seguridad Enterprise",
+                "description": "Protejo tus datos con los más altos estándares de seguridad"
+            }
+        },
+        "services": {
+            "title": "Mis Servicios",
+            "subtitle": "Soluciones completas para tu transformación digital"
+        },
+        "stats": {
+            "title": "Números que hablan",
+            "projects": "Proyectos Completados",
+            "clients": "Clientes Satisfechos",
+            "experience": "Años de Experiencia",
+            "uptime": "Disponibilidad"
+        },
+        "cta": {
+            "title": "¿Listo para transformar tu presencia digital?",
+            "subtitle": "Déjame ayudarte a llevar tu negocio al siguiente nivel",
+            "button": "Solicitar Consulta Gratis"
+        },
+        "footer": {
+            "about": "danidevcol",
+            "description": "Transformo ideas en soluciones web profesionales que impulsan el crecimiento de tu negocio",
+            "seeMore": "Ver más"
+        }
     },
     "Services": {
         "existingProjects": {
-            "slug": "mejoras-web-apps",
-            "title": "Mejoras en aplicaciones web existentes",
-            "description": "Ofrecemos servicios para mejorar y optimizar tus aplicaciones web actuales, asegurando que funcionen al máximo y cumplan con los estándares modernos."
+            "slug": "mejoras-web-sitios",
+            "title": "Mejora y Optimización de Sitios Web",
+            "subtitle": "Dale Nueva Vida a Tu Sitio Web",
+            "description": "Ofrezco servicios para mejorar y optimizar tus sitios web actuales, asegurando que funcionen al máximo y cumplan con los estándares modernos.",
+            "longDescription": "¿Tu sitio web necesita un impulso? Me especializo en transformar sitios existentes, mejorando su rendimiento, seguridad y experiencia del usuario.",
+            "cta": "Transformar Mi Sitio Web"
         },
         "newProjects": {
             "slug": "desarrollo-desde-cero",
-            "title": "Desarrollo de proyectos desde cero",
-            "description": "Nuestro equipo puede ayudarte a construir nuevas aplicaciones web desde cero, adaptadas a tus necesidades y requisitos específicos."
+            "title": "Desarrollo de Sitios Web desde Cero",
+            "subtitle": "Tu Idea, Mi Expertise",
+            "description": "Puedo ayudarte a construir nuevos sitios web desde cero, adaptados a tus necesidades y requisitos específicos.",
+            "longDescription": "¿Tienes una idea brillante pero no sabes por dónde empezar? Creo sitios web modernos, escalables y seguros diseñados específicamente para tu negocio.",
+            "cta": "Iniciar Mi Proyecto"
         }
     }
 }

@@ -4,7 +4,9 @@
 
 :root {
   --background: #68ABAD;
-  --foreground: #070707;
+  --foreground: #253439;
+  --brand-blue: #68ABAD;
+  --brand-dark: #253439;
 }
 
 @theme inline {
@@ -27,7 +29,24 @@ body {
     --background: #0F1724;
     --foreground: #ededed;
   }
+}
 
+.bg-brand-dynamic {
+  background-color: var(--brand-dark);
+  color: var(--brand-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-brand-dynamic {
+    background-color: var(--brand-blue);
+    color: var(--brand-dark);
+  }
+}
+
+/* Support for .dark class strategy */
+.dark .bg-brand-dynamic {
+  background-color: var(--brand-blue);
+  color: var(--brand-dark);
 }
 
 .bg-custom {
