@@ -1,7 +1,9 @@
 import { Link } from "@/src/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("Footer");
 
   return (
     <footer className="bg-custom dark:bg-custom text-white py-10 mt-8 border-t border-gray-700">
@@ -11,9 +13,9 @@ export default function Footer() {
           
           <div className="flex-1 min-w-[200px]">
             <div className="mb-4">
-              <span className="font-bold text-lg">DaniDevCol</span>
-              <p className="text-xs text-gray-300 mt-2">
-                Desarrollo web y optimización SEO.
+              <span className="font-black text-2xl">{t("brand")}</span>
+              <p className="text-sm text-gray-300 mt-2">
+                {t("description")}
               </p>
             </div>
             <div className="flex space-x-3">
@@ -39,36 +41,36 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Navegación de Servicios" className="flex-1 min-w-[200px]">
-            <h3 className="font-semibold mb-3 uppercase text-xs">Servicios</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/services" className="hover:text-white transition-colors">Diseño Web</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Optimización SEO</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Software a Medida</Link></li>
+            <h3 className="font-black mb-4 uppercase text-lg">{t("services.title")}</h3>
+            <ul className="space-y-3 text-base font-bold text-gray-300">
+              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.webDesign")}</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.seo")}</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.customSoftware")}</Link></li>
             </ul>
           </nav>
 
           <nav aria-label="Navegación de la Empresa" className="flex-1 min-w-[200px]">
-            <h3 className="font-semibold mb-3 uppercase text-xs">Empresa</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link href="/portfolio" className="hover:text-white transition-colors">Portafolio</Link></li>
-              <li><Link href="/curriculum" className="hover:text-white transition-colors">Currículum</Link></li>
+            <h3 className="font-black mb-4 uppercase text-lg">{t("company.title")}</h3>
+            <ul className="space-y-3 text-base font-bold text-gray-300">
+              <li><Link href="/portfolio" className="hover:text-white transition-colors">{t("company.portfolio")}</Link></li>
+              <li><Link href="/curriculum" className="hover:text-white transition-colors">{t("company.curriculum")}</Link></li>
               <li><a href="mailto:contacto@danidevcol.com" className="hover:text-white transition-colors break-all">contacto@danidevcol.com</a></li>
             </ul>
           </nav>
 
           <address className="not-italic flex-1 min-w-[200px]">
-            <h3 className="font-semibold mb-3 uppercase text-xs">Ubicación</h3>
-            <p className="text-sm text-gray-300 flex items-center gap-1">
-              <span aria-hidden="true">📍</span> Colombia (Atención Global)
+            <h3 className="font-black mb-4 uppercase text-lg">{t("location.title")}</h3>
+            <p className="text-base font-bold text-gray-300 flex items-center gap-1">
+              <span aria-hidden="true">📍</span> {t("location.global")}
             </p>
           </address>
           
         </div>
 
-        <div className="pt-6 border-t border-gray-700/50 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
-          <p>&copy; {currentYear} DaniDevCol. Todos los derechos reservados.</p>
+        <div className="pt-8 border-t border-gray-700/50 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-400">
+          <p>&copy; {currentYear} {t("brand")}. {t("rights")}</p>
           <p>
-            Construido con enfoque en <span className="text-gray-300 font-medium whitespace-nowrap">Rendimiento y SEO</span>.
+            {t("builtWith")} <span className="text-gray-300 font-black whitespace-nowrap uppercase tracking-wider">{t("performance")}</span>.
           </p>
         </div>
       </div>

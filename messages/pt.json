@@ -13,7 +13,7 @@
             "subtitle": "Especializo-me em transformar ideias em soluções web impactantes",
             "feature1": {
                 "title": "Soluções Personalizadas",
-                "description": "Cada projeto é único. Desenvolvo soluções sob medida para suas necessidades"
+                "description": "Cada projeto es único. Desenvolvo soluções sob medida para suas necessidades"
             },
             "feature2": {
                 "title": "Tecnologia Moderna",
@@ -33,23 +33,23 @@
             },
             "feature6": {
                 "title": "Segurança Corporativa",
-                "description": "Protejo seus dados com os mais altos padrões de segurança"
+                "description": "Protejo seus dados com los mais altos padrões de segurança"
             }
         },
         "services": {
-            "title": "Meus Serviços",
+            "title": "Meus Servicios",
             "subtitle": "Soluções completas para sua transformação digital"
         },
         "stats": {
             "title": "Números que Falam",
             "projects": "Projetos Concluídos",
-            "clients": "Clientes Satisfechos",
-            "experience": "Anos de Experiencia",
+            "clients": "Clientes Satisfeitos",
+            "experience": "Anos de Experiência",
             "uptime": "Tempo de Atividade"
         },
         "cta": {
             "title": "Pronto para transformar sua presença digital?",
-            "subtitle": "Deixe-me ajudá-lo a levar seu negócio para o próximo nível",
+            "subtitle": "Deixe-me ajudá-lo a llevar seu negócio para o próximo nível",
             "button": "Solicitar Consulta Gratuita"
         },
         "footer": {
@@ -63,7 +63,7 @@
             "slug": "melhorias-web-sites",
             "title": "Melhoria e Otimização de Sites Web",
             "subtitle": "Dê uma Nova Vida ao Seu Site",
-            "description": "Ofereço serviços para melhorar e otimizar seus sites atuais, garantindo que funcionem no seu melhor e atendam aos padrões modernos.",
+            "description": "Ofereço serviços para melhorar e otimizar seus sites atuais, garantindo que funcionem no seu mejor e atendam aos padrões modernos.",
             "longDescription": "Seu site precisa de um impulso? Especializo-me em transformar sites existentes, melhorando seu desempenho, segurança e experiência do usuário.",
             "cta": "Transformar Meu Site"
         },
@@ -72,8 +72,36 @@
             "title": "Desenvolvimento de Sites do Zero",
             "subtitle": "Sua Ideia, Minha Expertise",
             "description": "Posso ajudá-lo a construir novos sites do zero, adaptados às suas necessidades e requisitos específicos.",
-            "longDescription": "Você tem uma ideia brilhante mas não sabe por onde começar? Crio sites modernos, escaláveis e seguros projetados especificamente para seu negócio.",
+            "longDescription": "Você tem uma ideia brilhante mais não sabe por onde começar? Crio sites modernos, escaláveis e seguros projetados especificamente para seu negócio.",
             "cta": "Iniciar Meu Projeto"
         }
+    },
+    "Navigation": {
+        "home": "Início",
+        "curriculum": "Currículo",
+        "portfolio": "Portfólio",
+        "services": "Serviços"
+    },
+    "Footer": {
+        "brand": "DaniDevCol",
+        "description": "Desenvolvimento web e otimização SEO.",
+        "services": {
+            "title": "Serviços",
+            "webDesign": "Design Web",
+            "seo": "Otimização SEO",
+            "customSoftware": "Software sob Medida"
+        },
+        "company": {
+            "title": "Empresa",
+            "portfolio": "Portfólio",
+            "curriculum": "Currículo"
+        },
+        "location": {
+            "title": "Localização",
+            "global": "Colômbia (Atendimento Global)"
+        },
+        "rights": "Todos os direitos reservados.",
+        "builtWith": "Construído com foco em",
+        "performance": "Desempenho e SEO"
     }
 }

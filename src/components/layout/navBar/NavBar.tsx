@@ -1,5 +1,6 @@
 import { navItems } from "./nav";
 import { Link } from "@/src/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 type Props = {
   typeDisplay?: "mobile" | "desktop";
@@ -7,12 +8,24 @@ type Props = {
 
 export default function NavBar({ typeDisplay = "mobile" }: Props) {
   const isMobile = typeDisplay === "mobile";
+  const t = useTranslations("Navigation");
+
+  // Map href to translation keys
+  const getTranslationKey = (href: string) => {
+    switch (href) {
+      case "/": return "home";
+      case "/curriculum": return "curriculum";
+      case "/portfolio": return "portfolio";
+      case "/services": return "services";
+      default: return "home";
+    }
+  };
 
   // Función helper para los estilos de íconos
   const getIconClass = () => 
     isMobile
-      ? "w-5 h-5 mb-2 text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
-      : "w-5 h-5 text-white dark:text-white shrink-0";
+      ? "w-7 h-7 mb-2 text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
+      : "w-7 h-7 text-white dark:text-white shrink-0";
 
   return (
     <nav
@@ -105,11 +118,11 @@ export default function NavBar({ typeDisplay = "mobile" }: Props) {
             <span
               className={
                 isMobile
-                  ? "text-sm text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                  : "text-sm font-medium text-white dark:text-white"
+                  ? "text-sm font-bold text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                  : "text-xl font-black text-white dark:text-white"
               }
             >
-              {item.label}
+              {t(getTranslationKey(item.href as string))}
             </span>
           </Link>
         ))}

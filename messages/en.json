@@ -59,7 +59,7 @@
         }
     },
     "Services": {
-        "servicePage":{
+        "servicePage": {
             "slug": "services",
             "title": "My Services",
             "description": "Explore the range of services I offer to help you achieve your goals."
@@ -80,5 +80,33 @@
             "longDescription": "Do you have a brilliant idea but don't know where to start? I create modern, scalable, and secure websites designed specifically for your business.",
             "cta": "Start My Project"
         }
+    },
+    "Navigation": {
+        "home": "Home",
+        "curriculum": "Curriculum",
+        "portfolio": "Portfolio",
+        "services": "Services"
+    },
+    "Footer": {
+        "brand": "DaniDevCol",
+        "description": "Web development and SEO optimization.",
+        "services": {
+            "title": "Services",
+            "webDesign": "Web Design",
+            "seo": "SEO Optimization",
+            "customSoftware": "Custom Software"
+        },
+        "company": {
+            "title": "Company",
+            "portfolio": "Portfolio",
+            "curriculum": "Curriculum"
+        },
+        "location": {
+            "title": "Location",
+            "global": "Colombia (Global Support)"
+        },
+        "rights": "All rights reserved.",
+        "builtWith": "Built with a focus on",
+        "performance": "Performance and SEO"
     }
 }

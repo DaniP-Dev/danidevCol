@@ -75,5 +75,33 @@
             "longDescription": "¿Tienes una idea brillante pero no sabes por dónde empezar? Creo sitios web modernos, escalables y seguros diseñados específicamente para tu negocio.",
             "cta": "Iniciar Mi Proyecto"
         }
+    },
+    "Navigation": {
+        "home": "Inicio",
+        "curriculum": "Currículum",
+        "portfolio": "Portafolio",
+        "services": "Servicios"
+    },
+    "Footer": {
+        "brand": "DaniDevCol",
+        "description": "Desarrollo web y optimización SEO.",
+        "services": {
+            "title": "Servicios",
+            "webDesign": "Diseño Web",
+            "seo": "Optimización SEO",
+            "customSoftware": "Software a Medida"
+        },
+        "company": {
+            "title": "Empresa",
+            "portfolio": "Portafolio",
+            "curriculum": "Currículum"
+        },
+        "location": {
+            "title": "Ubicación",
+            "global": "Colombia (Atención Global)"
+        },
+        "rights": "Todos los derechos reservados.",
+        "builtWith": "Construido con enfoque en",
+        "performance": "Rendimiento y SEO"
     }
 }
