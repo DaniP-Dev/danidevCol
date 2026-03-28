@@ -10,6 +10,7 @@ import { routing } from "@/src/i18n/routing";
 import PromotionCard from "@/src/components/layout/PromotionCard";
 import Header from "@/src/components/layout/Header";
 import Logo from "@/src/components/layout/Logo";
+import { ThemeProvider } from "@/src/components/providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,11 +67,17 @@ export default async function RootLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) return notFound();
   return (
     <ViewTransitions>
-      <html lang={locale} className="">
+      <html lang={locale} suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <NextIntlClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider>
             {/* Header siempre visible */}
             <Header />
 
@@ -95,7 +102,8 @@ export default async function RootLayout({ children, params }: Props) {
               <NavBar typeDisplay="mobile" />
             </div>
           </NextIntlClientProvider>
-        </body>
+        </ThemeProvider>
+      </body>
       </html>
     </ViewTransitions>
   );

@@ -2,6 +2,8 @@
 @import "flowbite-react/plugin/tailwindcss";
 @source "../../.flowbite-react/class-list.json";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #68ABAD;
   --foreground: #253439;
@@ -25,10 +27,15 @@ body {
 
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0F1724;
     --foreground: #ededed;
   }
+}
+
+.dark {
+  --background: #0F1724;
+  --foreground: #ededed;
 }
 
 .bg-brand-dynamic {
@@ -36,14 +43,6 @@ body {
   color: var(--brand-blue);
 }
 
-@media (prefers-color-scheme: dark) {
-  .bg-brand-dynamic {
-    background-color: var(--brand-blue);
-    color: var(--brand-dark);
-  }
-}
-
-/* Support for .dark class strategy */
 .dark .bg-brand-dynamic {
   background-color: var(--brand-blue);
   color: var(--brand-dark);
