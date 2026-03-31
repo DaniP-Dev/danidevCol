@@ -1,12 +1,18 @@
-export const generateMetadata = () => ({
-  title: "Servicios profesionales de desarrollo web y software | DaniDevCol",
-  description:
-    "Soluciones digitales a medida: diseño, desarrollo, optimización SEO y consultoría para potenciar tu negocio."
-});
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata.services" });
+
+  return {
+    title: t("title"),
+    description: t("description")
+  };
+}
+
 import HeroSection from "@/src/components/servicesPage/HeroSection";
 import PhraseService from "@/src/components/servicesPage/PhraseService";
 import { serviceCategories } from "@/src/libs/services";
-import { getTranslations } from "next-intl/server";
 import { Link } from "@/src/i18n/navigation";
 import CardService from "@/src/components/servicesPage/CardService";
 import Benefits from "@/src/components/servicesPage/Benefits";

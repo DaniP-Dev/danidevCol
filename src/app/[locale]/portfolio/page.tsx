@@ -1,4 +1,15 @@
-// Simulación de proyectos (reemplaza por tu archivo luego)
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata.portfolio" });
+
+  return {
+    title: t("title"),
+    description: t("description")
+  };
+}
+
 const projects = [
   { id: 1, name: "Proyecto 1", description: "Descripción breve del proyecto 1" },
   { id: 2, name: "Proyecto 2", description: "Descripción breve del proyecto 2" },

@@ -11,6 +11,8 @@ import PromotionCard from "@/src/components/layout/PromotionCard";
 import Header from "@/src/components/layout/Header";
 import Logo from "@/src/components/layout/Logo";
 import { ThemeProvider } from "@/src/components/providers/ThemeProvider";
+import { siteConfig, socialLinks } from "@/src/libs/constants";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +25,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Daniel Pérez Guzman | Desarrollador Full Stack",
-    template: "%s | Daniel Pérez Guzman"
+    default: `${siteConfig.author} | Desarrollador Full Stack`,
+    template: `%s | ${siteConfig.author}`
   },
-  description: "Portafolio profesional de Daniel Pérez Guzman, desarrollador Full Stack especializado en Next.js, React y TypeScript. Soluciones web para optimización y crecimiento empresarial.",
+  description: siteConfig.description,
   keywords: [
     "Desarrollador Full Stack",
     "Next.js",
@@ -37,16 +40,26 @@ export const metadata: Metadata = {
     "Optimización",
     "Soluciones web",
     "Daniel Pérez Guzman",
+    "danidevcol",
     "Colombia"
   ],
-  authors: [{ name: "Daniel Pérez Guzman", url: "https://github.com/danidevcol" }],
+  authors: [{ name: siteConfig.author, url: "https://github.com/danidevcol" }],
   openGraph: {
-    title: "Daniel Pérez Guzman | Desarrollador Full Stack",
-    description: "Portafolio profesional y proyectos de desarrollo web, optimización de procesos y soluciones tecnológicas.",
+    title: `${siteConfig.author} | Desarrollador Full Stack`,
+    description: siteConfig.description,
     type: "website",
     locale: "es_CO",
-    url: "https://danidevcol.com",
-    siteName: "Daniel Pérez Guzman"
+    url: siteConfig.url,
+    siteName: siteConfig.name
+  },
+  alternates: {
+    canonical: "./",
+    languages: {
+      "es-CO": "/es",
+      "en-US": "/en",
+      "pt-BR": "/pt",
+      "ar-SA": "/ar"
+    }
   },
   robots: {
     index: true,
@@ -78,6 +91,34 @@ export default async function RootLayout({ children, params }: Props) {
             disableTransitionOnChange
           >
             <NextIntlClientProvider>
+              {/* Structured Data JSON-LD */}
+              <Script
+                id="json-ld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "name": siteConfig.author,
+                    "url": siteConfig.url,
+                    "image": siteConfig.ogImage,
+                    "sameAs": [
+                      socialLinks.github,
+                      socialLinks.linkedin,
+                      socialLinks.instagram,
+                      socialLinks.x,
+                      socialLinks.tiktok,
+                      socialLinks.youtube,
+                      socialLinks.whatsapp
+                    ],
+                    "jobTitle": "Full Stack Developer",
+                    "worksFor": {
+                      "@type": "Organization",
+                      "name": siteConfig.name
+                    }
+                  })
+                }}
+              />
             {/* Header siempre visible */}
             <Header />
 

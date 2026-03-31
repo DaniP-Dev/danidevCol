@@ -110,5 +110,19 @@
         "rights": "All rights reserved.",
         "builtWith": "Built with a focus on",
         "performance": "Performance and SEO"
+    },
+    "Metadata": {
+        "services": {
+            "title": "Professional Web Development Services | DaniDevCol",
+            "description": "Web development, SEO optimization, and consulting for international businesses."
+        },
+        "portfolio": {
+            "title": "Web Project Portfolio | DaniDevCol",
+            "description": "Explore my featured projects in Next.js development, React, and custom digital solutions."
+        },
+        "curriculum": {
+            "title": "Experience and Education | Daniel Pérez Guzman",
+            "description": "Professional profile, technical skills, and academic background of Daniel Pérez Guzman."
+        }
     }
 }
