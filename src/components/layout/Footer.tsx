@@ -1,6 +1,6 @@
 import { Link } from "@/src/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { socialLinks } from "@/src/libs/constants";
+import { socialLinks, siteConfig } from "@/src/libs/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -63,7 +63,7 @@ export default function Footer() {
                 </svg>
               </a>
               {/* Email */}
-              <a href="mailto:contacto@danidevcol.com" aria-label="Enviar email a DaniDevCol" className="text-gray-400 hover:text-white transition-colors">
+              <a href={`mailto:${siteConfig.email}`} aria-label="Enviar email a DaniDevCol" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M1.5 4.5h21a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-21a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1zm10.5 8.25l-9-6.75v12.5h18v-12.5l-9 6.75zm0-2.25l8.25-6.25h-16.5l8.25 6.25z" />
                 </svg>
@@ -85,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-3 text-base font-bold text-gray-300">
               <li><Link href="/portfolio" className="hover:text-white transition-colors">{t("company.portfolio")}</Link></li>
               <li><Link href="/curriculum" className="hover:text-white transition-colors">{t("company.curriculum")}</Link></li>
-              <li><a href="mailto:contacto@danidevcol.com" className="hover:text-white transition-colors break-all">contacto@danidevcol.com</a></li>
+              <li><a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors break-all">{siteConfig.email}</a></li>
             </ul>
           </nav>
 
