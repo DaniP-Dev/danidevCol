@@ -6,25 +6,27 @@ import type { Metadata } from "next";
 import { serviceCategories } from "@/src/libs/services";
 
 export const metadata: Metadata = {
-  title: "danidevcol | Desarrollo y Optimización Web para Empresas y Negocios",
+  title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
   description:
-    "¿Eres una empresa o negocio que busca crear, mejorar o editar su página web? En danidevcol encontrarás soluciones profesionales en desarrollo, rediseño y optimización de sitios web para potenciar tu presencia digital.",
+    "Desarrollador web freelance en Colombia especializado en desarrollo, rediseño y optimización web para empresas globales. SOLUCIONES PROFESIONALES multi-idioma para potenciar tu presencia digital.",
   keywords: [
     "danidevcol",
-    "Desarrollo web empresas",
+    "Desarrollo web Colombia",
+    "Desarrollador web freelance",
+    "Optimización web internacional",
+    "Desarrollo web global",
     "Optimización de páginas web",
     "Rediseño web",
     "Sitios web para negocios",
     "Contratar desarrollador web",
     "Mejorar página web",
     "Editar sitio web",
-    "Desarrollador freelance",
     "Colombia"
   ],
   openGraph: {
-    title: "danidevcol | Desarrollo y Optimización Web para Empresas y Negocios",
+    title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
     description:
-      "Soluciones profesionales para empresas y clientes que buscan crear, mejorar o editar su página web. Desarrollo, rediseño y soporte personalizado.",
+      "Soluciones profesionales de desarrollo y optimización web para empresas. Desarrollador freelance con soporte global y multi-idioma.",
     type: "website",
     locale: "es_CO",
     url: "https://danidevcol.com",
@@ -54,6 +56,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
           <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-xl mx-auto text-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0">
+              <div className="inline-flex items-center px-3 py-1 mb-6 text-sm font-medium text-teal-400 bg-teal-400/10 border border-teal-400/20 rounded-full">
+                <span className="flex h-2 w-2 rounded-full bg-teal-400 mr-2 animate-pulse"></span>
+                {t("hero.location")}
+              </div>
               <h1 className="text-3xl font-bold text-white sm:text-4xl xl:text-5xl xl:leading-tight">{t("hero.title")}</h1>
               <p className="mt-8 text-base font-normal leading-7 text-gray-400 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
 
@@ -122,6 +128,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="w-full py-20 md:py-32 px-4 md:px-8 bg-teal-50/50 dark:bg-[#0b111a]/50 border-y border-teal-100/50 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
+            <div className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-teal-600 dark:text-teal-400 uppercase bg-teal-100 dark:bg-teal-900/30 rounded-full mb-2">
+              {t("features.location")}
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
               {t("features.title")}
             </h2>

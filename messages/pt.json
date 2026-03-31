@@ -3,14 +3,16 @@
         "welcomeMessage": "Bem-vindo ao meu site!",
         "description": "Desenvolvimento, otimização e design de sites profissionais para elevar sua presença digital.",
         "hero": {
+            "location": "Colômbia (Atendimento Global)",
             "title": "Potencialize Sua Presença Digital",
-            "subtitle": "Desenvolvimento, otimização e design web de classe mundial para empresas prontas para crescer online",
+            "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
             "cta": "Comece Agora",
             "ctaSecondary": "Explorar Serviços"
         },
         "features": {
+            "location": "Localizado na Colômbia, Suporte Global Multi-idioma",
             "title": "Por que me escolher?",
-            "subtitle": "Especializo-me em transformar ideias em soluções web impactantes",
+            "subtitle": "Sou especialista em desenvolvimento web e otimização internacional para empresas globais",
             "feature1": {
                 "title": "Soluções Personalizadas",
                 "description": "Cada projeto es único. Desenvolvo soluções sob medida para suas necessidades"
@@ -54,7 +56,7 @@
         },
         "footer": {
             "about": "danidevcol",
-            "description": "Transformo ideias em soluções web profissionais que impulsionam o crescimento do seu negócio",
+            "description": "Desenvolvimento e otimização web com alcance global. Transformo ideias em soluções profissionais que impulsionam o seu crescimento em qualquer mercado.",
             "seeMore": "Ver mais"
         }
     },

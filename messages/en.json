@@ -3,14 +3,16 @@
         "welcomeMessage": "Welcome to my website!",
         "description": "Professional web development, optimization, and design solutions to amplify your digital presence.",
         "hero": {
+            "location": "Colombia (Global Support)",
             "title": "Amplify Your Digital Presence",
-            "subtitle": "World-class web development, optimization, and design for businesses ready to scale online",
+            "subtitle": "As a freelance web developer in Colombia, I provide world-class solutions for businesses ready to scale online with specialized web development and optimization.",
             "cta": "Get Started",
             "ctaSecondary": "Explore Services"
         },
         "features": {
+            "location": "Based in Colombia, Multi-language Global Support",
             "title": "Why Choose Me?",
-            "subtitle": "I specialize in transforming ideas into impactful web solutions",
+            "subtitle": "I'm a specialist in web development and international optimization for global businesses",
             "feature1": {
                 "title": "Custom Solutions",
                 "description": "Every project is unique. I design tailored solutions for your specific needs"
@@ -54,7 +56,7 @@
         },
         "footer": {
             "about": "danidevcol",
-            "description": "I transform ideas into professional web solutions that drive your business growth",
+            "description": "Web development and optimization with global reach. I transform ideas into professional solutions that drive your growth in any market.",
             "seeMore": "See more"
         }
     },
