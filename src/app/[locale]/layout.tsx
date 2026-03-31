@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "danidevcol",
     "Colombia"
   ],
-  authors: [{ name: siteConfig.author, url: "https://github.com/danidevcol" }],
+  authors: [{ name: siteConfig.author, url: "https://github.com/DaniP-Dev" }],
   openGraph: {
     title: `${siteConfig.author} | Desarrollador Full Stack`,
     description: siteConfig.description,
@@ -119,32 +119,32 @@ export default async function RootLayout({ children, params }: Props) {
                   })
                 }}
               />
-            {/* Header siempre visible */}
-            <Header />
+              {/* Header siempre visible */}
+              <Header />
 
-            {/* Grid container para Desktop */}
-            <div className="md:grid md:grid-cols-[250px_1fr] md:h-[calc(100vh-80px)]">
-              {/* Sidebar Desktop - Fixed con scroll interno */}
-              <aside className="hidden md:block md:overflow-y-auto md:border-r md:border-gray-200 md:dark:border-gray-700 bg-custom dark:bg-gray-800">
-                <NavBar typeDisplay="desktop" />
-              </aside>
+              {/* Grid container para Desktop */}
+              <div className="md:grid md:grid-cols-[250px_1fr] md:h-[calc(100vh-80px)]">
+                {/* Sidebar Desktop - Fixed con scroll interno */}
+                <aside className="hidden md:block md:overflow-y-auto md:border-r md:border-gray-200 md:dark:border-gray-700 bg-custom dark:bg-gray-800">
+                  <NavBar typeDisplay="desktop" />
+                </aside>
 
-              {/* Main content con scroll */}
-              <main className="md:overflow-y-auto pb-16 md:pb-0">
-                <div className="bg-white dark:bg-black min-h-screen ">
-                  {children}
-                </div>
-                <Footer />
-              </main>
-            </div>
+                {/* Main content con scroll */}
+                <main className="md:overflow-y-auto pb-16 md:pb-0">
+                  <div className="bg-white dark:bg-black min-h-screen ">
+                    {children}
+                  </div>
+                  <Footer />
+                </main>
+              </div>
 
-            {/* Bottom Nav Mobile - Fixed */}
-            <div className="md:hidden">
-              <NavBar typeDisplay="mobile" />
-            </div>
-          </NextIntlClientProvider>
-        </ThemeProvider>
-      </body>
+              {/* Bottom Nav Mobile - Fixed */}
+              <div className="md:hidden">
+                <NavBar typeDisplay="mobile" />
+              </div>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </body>
       </html>
     </ViewTransitions>
   );

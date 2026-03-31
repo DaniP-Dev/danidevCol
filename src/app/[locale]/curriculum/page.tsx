@@ -23,7 +23,7 @@ export default function CurriculumPage() {
             <a href="mailto:danidevcol@gmail.com" className="hover:underline" target="_blank" rel="noopener noreferrer">📧 danidevcol@gmail.com</a>
             <a href="https://wa.me/573001234567" className="hover:underline" target="_blank" rel="noopener noreferrer">📞 WhatsApp</a>
             <a href="https://linkedin.com/in/danielperez" className="hover:underline" target="_blank" rel="noopener noreferrer">🌐 linkedin.com/in/danielperez</a>
-            <a href="https://github.com/danidevcol" className="hover:underline" target="_blank" rel="noopener noreferrer">📍 github.com/danidevcol</a>
+            <a href="https://github.com/DaniP-Dev" className="hover:underline" target="_blank" rel="noopener noreferrer">📍 github.com/DaniP-Dev</a>
           </div>
         </header>
 

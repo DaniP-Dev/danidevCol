@@ -4,7 +4,7 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/danidevcol",
   youtube: "https://www.youtube.com/@danidevcol",
   x: "https://x.com/danidevcol",
-  github: "https://github.com/danidevcol",
+  github: "https://github.com/DaniP-Dev",
   whatsapp: "https://wa.me/573016328564"
 };
 
