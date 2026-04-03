@@ -39,7 +39,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           <div className="relative">
             <img
               src={project.image}
-              alt={project.name}
+              alt={`Trabajo de danidevcol: ${project.name}`}
               className="w-full h-64 object-cover rounded-t-lg"
             />
             <button

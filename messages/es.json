@@ -134,9 +134,118 @@
             "title": "Ubicación",
             "global": "Colombia (Atención Global)"
         },
-        "rights": "Todos los derechos reservados.",
-        "builtWith": "Construido con enfoque en",
-        "performance": "Rendimiento y SEO"
+        "rights": "Todos los derechos reservados."
+    },
+    "CurriculumPage": {
+        "header": {
+            "name": "Daniel Pérez Guzman",
+            "role": "Desarrollador Full Stack | Next.js · React · TypeScript",
+            "contacts": {
+                "whatsapp": "WhatsApp",
+                "linkedin": "linkedin.com/in/danielperez",
+                "github": "github.com/DaniP-Dev"
+            }
+        },
+        "sections": {
+            "profile": "Perfil Profesional",
+            "experience": "Experiencia Laboral",
+            "education": "Formación Académica",
+            "skills": "Habilidades Técnicas",
+            "languages": "Idiomas",
+            "projects": "Proyectos Destacados"
+        },
+        "profile": {
+            "text": "Desarrollador Full Stack con más de 3 años impulsando la eficiencia y la optimización de procesos mediante aplicaciones web robustas en Next.js, React y TypeScript. Experto en sistemas de gestión documental y automatización con Google Sheets, facilitando la toma de decisiones y el control operativo. Destaco por diseñar interfaces intuitivas con Tailwind CSS que mejoran la experiencia de usuario y la productividad del equipo. Capacidad para liderar proyectos desde la arquitectura hasta el despliegue, generando soluciones que potencian el crecimiento y la competitividad empresarial."
+        },
+        "experience": {
+            "servicrep": {
+                "company": "Servicrep",
+                "role": "Fundador y Desarrollador Full Stack",
+                "date": "Ene 2023 – Presente",
+                "location": "Soledad, Atlántico",
+                "bullets": {
+                    "b1": "Desarrollé sistema de gestión de inspecciones y certificaciones para estaciones de servicio EDS, optimizando el flujo de trabajo y la trazabilidad de procesos.",
+                    "b2": "Implementé validación de certificados mediante códigos QR, agilizando la verificación y fortaleciendo la confianza en los servicios ofrecidos.",
+                    "b3": "Integré Google Sheets como base de datos intermedia, facilitando el análisis y seguimiento de reportes para una toma de decisiones más efectiva.",
+                    "b4": "Diseñé sistema de plantillas PDF para certificados, asegurando consistencia institucional y mejorando la presentación ante clientes y entes reguladores."
+                }
+            },
+            "oasix": {
+                "company": "Oasix",
+                "role": "Desarrollador Web Freelance",
+                "date": "Mar 2022 – Dic 2022",
+                "location": "Remoto",
+                "bullets": {
+                    "b1": "Construí interfaces responsivas con React y Tailwind CSS, mejorando la interacción y satisfacción de los usuarios finales.",
+                    "b2": "Desarrollé integraciones con APIs REST y optimicé el rendimiento de aplicaciones, contribuyendo a la continuidad operativa y la escalabilidad de los proyectos de clientes."
+                }
+            },
+            "freelance": {
+                "company": "Freelance Web Developer",
+                "role": "Desarrollador Web Independiente",
+                "date": "2021 – Presente",
+                "location": "Remoto",
+                "bullets": {
+                    "b1": "Desarrollo y mantenimiento de sitios web y pequeñas web apps para clientes diversos.",
+                    "b2": "Despliegue en producción utilizando cPanel y Vercel, asegurando disponibilidad y estabilidad de los proyectos.",
+                    "b3": "Configuración de dominios personalizados para mejorar la presencia digital de los clientes.",
+                    "b4": "Implementación de SEO básico y optimización de rendimiento para aumentar la visibilidad y eficiencia de los sitios.",
+                    "b5": "Elaboración de documentación técnica y soporte a clientes en entornos web, facilitando la gestión y el uso de las soluciones entregadas."
+                }
+            }
+        },
+        "education": {
+            "degree1": {
+                "title": "Tecnólogo en Sistemas / Ingeniería de Sistemas",
+                "institution": "Universidad del Atlántico",
+                "date": "2018 – 2022"
+            },
+            "degree2": {
+                "title": "Desarrollo Web Full Stack",
+                "institution": "Platzi",
+                "date": "2021 – Presente"
+            }
+        },
+        "skills": {
+            "frontend": {
+                "label": "Frontend",
+                "items": "Next.js, React, TypeScript, Tailwind CSS"
+            },
+            "backend": {
+                "label": "Backend",
+                "items": "FastAPI, Laravel, Node.js, REST APIs"
+            },
+            "databases": {
+                "label": "Bases de datos",
+                "items": "PostgreSQL, MySQL, Google Sheets"
+            },
+            "tools": {
+                "label": "Herramientas",
+                "items": "Git, VS Code, Figma, Vercel"
+            }
+        },
+        "languages": {
+            "spanish": {
+                "label": "Español",
+                "level": "Nativo"
+            },
+            "english": {
+                "label": "Inglés",
+                "level": "Intermedio (B1)"
+            }
+        },
+        "projects": {
+            "certificates": {
+                "name": "Sistema de Certificados EDS",
+                "tech": "Next.js · Google Sheets · QR Code",
+                "description": "Plataforma web para emisión, gestión y validación de certificados de inspección, que optimiza procesos internos y fortalece la reputación de la empresa ante clientes y entes reguladores. Incluye panel administrativo y portal público de verificación, facilitando el acceso y la transparencia."
+            },
+            "iso": {
+                "name": "Portal de Gestión ISO 17020",
+                "tech": "React · TypeScript · Tailwind CSS",
+                "description": "Sistema de documentación y control de calidad para organismos de inspección, diseñado para mejorar la eficiencia operativa y el cumplimiento normativo, contribuyendo a la excelencia y diferenciación en el sector."
+            }
+        }
     },
     "Metadata": {
         "services": {
@@ -168,7 +277,7 @@
                 "description": "Consultorías políticas con enfoque estratégico y presencia digital.",
                 "fullDescription": "Sitio corporativo para Somos Criteria, una firma de consultorías políticas. El proyecto se enfocó en comunicar servicios, autoridad profesional y propuesta de valor con una estructura clara y una experiencia moderna.",
                 "technologies": "Next.js, React, Tailwind CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/criteria.gif",
                 "link": "https://www.somoscriteria.com/",
                 "isTrending": "true"
             },
@@ -177,7 +286,7 @@
                 "description": "Página de perfil freelancer para marca personal de cliente.",
                 "fullDescription": "Desarrollo de página de perfil freelancer para clienta, orientada a fortalecer su marca personal, mostrar servicios y facilitar el contacto comercial con una experiencia visual limpia y profesional.",
                 "technologies": "Next.js, React, CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/oasix.gif",
                 "link": "https://www.womenoasix.com/",
                 "isTrending": "true"
             },
@@ -186,7 +295,7 @@
                 "description": "Emprendimiento universitario con enfoque en identidad y producto.",
                 "fullDescription": "Landing para emprendimiento universitario enfocada en comunicar la historia del proyecto, su propuesta diferencial y sus productos. Se priorizó una narrativa visual clara y una navegación sencilla para mejorar conversión.",
                 "technologies": "Next.js, React, Tailwind CSS, Vercel",
-                "image": "/herosection.png",
+                "image": "/OroRaices.gif",
                 "link": "https://raicesdeoro.vercel.app/",
                 "isTrending": "false"
             },
@@ -204,7 +313,7 @@
                 "description": "Sitio corporativo para servicios del sector construcción.",
                 "fullDescription": "Proyecto web para Constructora 0312 orientado a presentar su experiencia, líneas de servicio y canales de contacto. Se diseñó una arquitectura de contenido pensada para claridad comercial y captación de clientes.",
                 "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
-                "image": "/herosection.png",
+                "image": "/0315.gif",
                 "link": "https://constructora0312.com/",
                 "isTrending": "false"
             },
@@ -213,7 +322,7 @@
                 "description": "Organización de inspección con presencia digital institucional.",
                 "fullDescription": "Sitio para Servicrep, organización de inspección, enfocado en presentar su alcance de servicios, credibilidad técnica y canales de atención. Se priorizó una experiencia informativa, confiable y orientada a conversión.",
                 "technologies": "Next.js, React, TypeScript, UI/UX",
-                "image": "/herosection.png",
+                "image": "/servicrep.gif",
                 "link": "https://www.servicrep.com.co/",
                 "isTrending": "false"
             }

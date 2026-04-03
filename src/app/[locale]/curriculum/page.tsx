@@ -10,114 +10,114 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default function CurriculumPage() {
+export default async function CurriculumPage() {
+  const t = await getTranslations("CurriculumPage");
+
   return (
     <main className="min-h-screen  py-10 print:bg-white print:py-0">
       <div className="mx-auto w-full max-w-204 bg-white shadow-lg print:shadow-none font-sans text-gray-900 text-[13px] leading-relaxed px-14 py-12">
 
         {/* ── ENCABEZADO ── */}
         <header className="mb-5 border-b-2 border-gray-900 pb-3">
-          <h1 className="text-3xl font-bold tracking-tight uppercase">Daniel Pérez Guzman</h1>
-          <p className="text-sm font-semibold text-gray-600 mt-0.5">Desarrollador Full Stack | Next.js · React · TypeScript</p>
+          <h1 className="text-3xl font-bold tracking-tight uppercase">{t("header.name")}</h1>
+          <p className="text-sm font-semibold text-gray-600 mt-0.5">{t("header.role")}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-2 text-xs text-gray-700">
             <a href="mailto:danidevcol@gmail.com" className="hover:underline" target="_blank" rel="noopener noreferrer">📧 danidevcol@gmail.com</a>
-            <a href="https://wa.me/573001234567" className="hover:underline" target="_blank" rel="noopener noreferrer">📞 WhatsApp</a>
-            <a href="https://linkedin.com/in/danielperez" className="hover:underline" target="_blank" rel="noopener noreferrer">🌐 linkedin.com/in/danielperez</a>
-            <a href="https://github.com/DaniP-Dev" className="hover:underline" target="_blank" rel="noopener noreferrer">📍 github.com/DaniP-Dev</a>
+            <a href="https://wa.me/573001234567" className="hover:underline" target="_blank" rel="noopener noreferrer">📞 {t("header.contacts.whatsapp")}</a>
+            <a href="https://linkedin.com/in/danielperez" className="hover:underline" target="_blank" rel="noopener noreferrer">🌐 {t("header.contacts.linkedin")}</a>
+            <a href="https://github.com/DaniP-Dev" className="hover:underline" target="_blank" rel="noopener noreferrer">📍 {t("header.contacts.github")}</a>
           </div>
         </header>
 
         {/* ── PERFIL PROFESIONAL ── */}
-        <Section title="Perfil Profesional">
+        <Section title={t("sections.profile") }>
           <p className="text-justify">
-            Desarrollador Full Stack con más de 3 años impulsando la eficiencia y la optimización de procesos mediante aplicaciones web robustas en Next.js, React y TypeScript.
-            Experto en sistemas de gestión documental y automatización con Google Sheets, facilitando la toma de decisiones y el control operativo. Destaco por diseñar interfaces intuitivas con Tailwind CSS que mejoran la experiencia de usuario y la productividad del equipo.
-            Capacidad para liderar proyectos desde la arquitectura hasta el despliegue, generando soluciones que potencian el crecimiento y la competitividad empresarial.
+            {t("profile.text")}
           </p>
         </Section>
 
         {/* ── EXPERIENCIA LABORAL ── */}
-        <Section title="Experiencia Laboral">
+        <Section title={t("sections.experience") }>
           <ExperienceItem
-            company="Servicrep"
-            role="Fundador y Desarrollador Full Stack"
-            date="Ene 2023 – Presente"
-            location="Soledad, Atlántico"
+            company={t("experience.servicrep.company")}
+            role={t("experience.servicrep.role")}
+            date={t("experience.servicrep.date")}
+            location={t("experience.servicrep.location")}
             bullets={[
-              "Desarrollé sistema de gestión de inspecciones y certificaciones para estaciones de servicio EDS, optimizando el flujo de trabajo y la trazabilidad de procesos.",
-              "Implementé validación de certificados mediante códigos QR, agilizando la verificación y fortaleciendo la confianza en los servicios ofrecidos.",
-              "Integré Google Sheets como base de datos intermedia, facilitando el análisis y seguimiento de reportes para una toma de decisiones más efectiva.",
-              "Diseñé sistema de plantillas PDF para certificados, asegurando consistencia institucional y mejorando la presentación ante clientes y entes reguladores.",
+              t("experience.servicrep.bullets.b1"),
+              t("experience.servicrep.bullets.b2"),
+              t("experience.servicrep.bullets.b3"),
+              t("experience.servicrep.bullets.b4"),
             ]}
           />
           <ExperienceItem
-            company="Oasix"
-            role="Desarrollador Web Freelance"
-            date="Mar 2022 – Dic 2022"
-            location="Remoto"
+            company={t("experience.oasix.company")}
+            role={t("experience.oasix.role")}
+            date={t("experience.oasix.date")}
+            location={t("experience.oasix.location")}
             bullets={[
-              "Construí interfaces responsivas con React y Tailwind CSS, mejorando la interacción y satisfacción de los usuarios finales.",
-              "Desarrollé integraciones con APIs REST y optimicé el rendimiento de aplicaciones, contribuyendo a la continuidad operativa y la escalabilidad de los proyectos de clientes.",
+              t("experience.oasix.bullets.b1"),
+              t("experience.oasix.bullets.b2"),
             ]}
           />
           <ExperienceItem
-            company="Freelance Web Developer"
-            role="Desarrollador Web Independiente"
-            date="2021 – Presente"
-            location="Remoto"
+            company={t("experience.freelance.company")}
+            role={t("experience.freelance.role")}
+            date={t("experience.freelance.date")}
+            location={t("experience.freelance.location")}
             bullets={[
-              "Desarrollo y mantenimiento de sitios web y pequeñas web apps para clientes diversos.",
-              "Despliegue en producción utilizando cPanel y Vercel, asegurando disponibilidad y estabilidad de los proyectos.",
-              "Configuración de dominios personalizados para mejorar la presencia digital de los clientes.",
-              "Implementación de SEO básico y optimización de rendimiento para aumentar la visibilidad y eficiencia de los sitios.",
-              "Elaboración de documentación técnica y soporte a clientes en entornos web, facilitando la gestión y el uso de las soluciones entregadas."
+              t("experience.freelance.bullets.b1"),
+              t("experience.freelance.bullets.b2"),
+              t("experience.freelance.bullets.b3"),
+              t("experience.freelance.bullets.b4"),
+              t("experience.freelance.bullets.b5")
             ]}
           />
         </Section>
 
         {/* ── EDUCACIÓN ── */}
-        <Section title="Formación Académica">
+        <Section title={t("sections.education") }>
           <EducationItem
-            title="Tecnólogo en Sistemas / Ingeniería de Sistemas"
-            institution="Universidad del Atlántico"
-            date="2018 – 2022"
+            title={t("education.degree1.title")}
+            institution={t("education.degree1.institution")}
+            date={t("education.degree1.date")}
           />
           <EducationItem
-            title="Desarrollo Web Full Stack"
-            institution="Platzi"
-            date="2021 – Presente"
+            title={t("education.degree2.title")}
+            institution={t("education.degree2.institution")}
+            date={t("education.degree2.date")}
           />
         </Section>
 
         {/* ── HABILIDADES ── */}
-        <Section title="Habilidades Técnicas">
+        <Section title={t("sections.skills") }>
           <div className="grid grid-cols-2 gap-x-8 gap-y-1">
-            <SkillGroup label="Frontend" skills="Next.js, React, TypeScript, Tailwind CSS" />
-            <SkillGroup label="Backend" skills="FastAPI, Laravel, Node.js, REST APIs" />
-            <SkillGroup label="Bases de datos" skills="PostgreSQL, MySQL, Google Sheets" />
-            <SkillGroup label="Herramientas" skills="Git, VS Code, Figma, Vercel" />
+            <SkillGroup label={t("skills.frontend.label")} skills={t("skills.frontend.items")} />
+            <SkillGroup label={t("skills.backend.label")} skills={t("skills.backend.items")} />
+            <SkillGroup label={t("skills.databases.label")} skills={t("skills.databases.items")} />
+            <SkillGroup label={t("skills.tools.label")} skills={t("skills.tools.items")} />
           </div>
         </Section>
 
         {/* ── IDIOMAS ── */}
-        <Section title="Idiomas">
+        <Section title={t("sections.languages") }>
           <div className="flex gap-10">
-            <span><strong>Español:</strong> Nativo</span>
-            <span><strong>Inglés:</strong> Intermedio (B1)</span>
+            <span><strong>{t("languages.spanish.label")}:</strong> {t("languages.spanish.level")}</span>
+            <span><strong>{t("languages.english.label")}:</strong> {t("languages.english.level")}</span>
           </div>
         </Section>
 
         {/* ── PROYECTOS ── */}
-        <Section title="Proyectos Destacados">
+        <Section title={t("sections.projects") }>
           <ProjectItem
-            name="Sistema de Certificados EDS"
-            tech="Next.js · Google Sheets · QR Code"
-            description="Plataforma web para emisión, gestión y validación de certificados de inspección, que optimiza procesos internos y fortalece la reputación de la empresa ante clientes y entes reguladores. Incluye panel administrativo y portal público de verificación, facilitando el acceso y la transparencia."
+            name={t("projects.certificates.name")}
+            tech={t("projects.certificates.tech")}
+            description={t("projects.certificates.description")}
           />
           <ProjectItem
-            name="Portal de Gestión ISO 17020"
-            tech="React · TypeScript · Tailwind CSS"
-            description="Sistema de documentación y control de calidad para organismos de inspección, diseñado para mejorar la eficiencia operativa y el cumplimiento normativo, contribuyendo a la excelencia y diferenciación en el sector."
+            name={t("projects.iso.name")}
+            tech={t("projects.iso.tech")}
+            description={t("projects.iso.description")}
           />
         </Section>
 

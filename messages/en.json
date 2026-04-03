@@ -139,9 +139,118 @@
             "title": "Location",
             "global": "Colombia (Global Support)"
         },
-        "rights": "All rights reserved.",
-        "builtWith": "Built with a focus on",
-        "performance": "Performance and SEO"
+        "rights": "All rights reserved."
+    },
+    "CurriculumPage": {
+        "header": {
+            "name": "Daniel Perez Guzman",
+            "role": "Full Stack Developer | Next.js · React · TypeScript",
+            "contacts": {
+                "whatsapp": "WhatsApp",
+                "linkedin": "linkedin.com/in/danielperez",
+                "github": "github.com/DaniP-Dev"
+            }
+        },
+        "sections": {
+            "profile": "Professional Profile",
+            "experience": "Work Experience",
+            "education": "Education",
+            "skills": "Technical Skills",
+            "languages": "Languages",
+            "projects": "Featured Projects"
+        },
+        "profile": {
+            "text": "Full Stack Developer with over 3 years of experience driving efficiency and process optimization through robust web applications built with Next.js, React, and TypeScript. Skilled in document management systems and automation with Google Sheets, enabling better decision-making and operational control. I stand out for designing intuitive interfaces with Tailwind CSS that improve user experience and team productivity. Able to lead projects from architecture to deployment, delivering solutions that strengthen business growth and competitiveness."
+        },
+        "experience": {
+            "servicrep": {
+                "company": "Servicrep",
+                "role": "Founder and Full Stack Developer",
+                "date": "Jan 2023 – Present",
+                "location": "Soledad, Atlantico",
+                "bullets": {
+                    "b1": "Developed an inspection and certification management system for fuel stations (EDS), optimizing workflows and process traceability.",
+                    "b2": "Implemented certificate validation through QR codes, speeding up verification and increasing trust in provided services.",
+                    "b3": "Integrated Google Sheets as an intermediate database, enabling analysis and report tracking for more effective decision-making.",
+                    "b4": "Designed a PDF template system for certificates, ensuring institutional consistency and improving presentation to clients and regulators."
+                }
+            },
+            "oasix": {
+                "company": "Oasix",
+                "role": "Freelance Web Developer",
+                "date": "Mar 2022 – Dec 2022",
+                "location": "Remote",
+                "bullets": {
+                    "b1": "Built responsive interfaces with React and Tailwind CSS, improving interaction and satisfaction for end users.",
+                    "b2": "Developed REST API integrations and optimized application performance, contributing to operational continuity and project scalability for clients."
+                }
+            },
+            "freelance": {
+                "company": "Freelance Web Developer",
+                "role": "Independent Web Developer",
+                "date": "2021 – Present",
+                "location": "Remote",
+                "bullets": {
+                    "b1": "Develop and maintain websites and small web apps for diverse clients.",
+                    "b2": "Deploy projects to production using cPanel and Vercel, ensuring availability and stability.",
+                    "b3": "Configure custom domains to improve clients' digital presence.",
+                    "b4": "Apply basic SEO and performance optimization to improve visibility and efficiency.",
+                    "b5": "Prepare technical documentation and provide client support in web environments, making delivered solutions easier to manage and use."
+                }
+            }
+        },
+        "education": {
+            "degree1": {
+                "title": "Systems Technology / Systems Engineering",
+                "institution": "University of Atlantico",
+                "date": "2018 – 2022"
+            },
+            "degree2": {
+                "title": "Full Stack Web Development",
+                "institution": "Platzi",
+                "date": "2021 – Present"
+            }
+        },
+        "skills": {
+            "frontend": {
+                "label": "Frontend",
+                "items": "Next.js, React, TypeScript, Tailwind CSS"
+            },
+            "backend": {
+                "label": "Backend",
+                "items": "FastAPI, Laravel, Node.js, REST APIs"
+            },
+            "databases": {
+                "label": "Databases",
+                "items": "PostgreSQL, MySQL, Google Sheets"
+            },
+            "tools": {
+                "label": "Tools",
+                "items": "Git, VS Code, Figma, Vercel"
+            }
+        },
+        "languages": {
+            "spanish": {
+                "label": "Spanish",
+                "level": "Native"
+            },
+            "english": {
+                "label": "English",
+                "level": "Intermediate (B1)"
+            }
+        },
+        "projects": {
+            "certificates": {
+                "name": "EDS Certificate System",
+                "tech": "Next.js · Google Sheets · QR Code",
+                "description": "Web platform for issuing, managing, and validating inspection certificates, optimizing internal processes and strengthening the company's reputation with clients and regulators. Includes an admin panel and a public verification portal for transparent access."
+            },
+            "iso": {
+                "name": "ISO 17020 Management Portal",
+                "tech": "React · TypeScript · Tailwind CSS",
+                "description": "Documentation and quality control system for inspection bodies, designed to improve operational efficiency and regulatory compliance while supporting excellence and differentiation in the sector."
+            }
+        }
     },
     "Metadata": {
         "services": {
@@ -173,7 +282,7 @@
                 "description": "Political consulting focused on strategy and digital presence.",
                 "fullDescription": "Corporate website for Somos Criteria, a political consulting firm. The project focused on presenting services, professional authority, and value proposition with a clear structure and modern experience.",
                 "technologies": "Next.js, React, Tailwind CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/criteria.gif",
                 "link": "https://www.somoscriteria.com/",
                 "isTrending": "true"
             },
@@ -182,7 +291,7 @@
                 "description": "Freelancer profile website for a personal client brand.",
                 "fullDescription": "Freelancer profile website developed for a client, focused on strengthening her personal brand, showcasing services, and enabling business contact with a clean and professional visual experience.",
                 "technologies": "Next.js, React, CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/oasix.gif",
                 "link": "https://www.womenoasix.com/",
                 "isTrending": "true"
             },
@@ -191,7 +300,7 @@
                 "description": "University entrepreneurship project with product and identity focus.",
                 "fullDescription": "Landing page for a university entrepreneurship initiative focused on communicating project story, product value, and brand identity. The site was built with a clear visual narrative and simple navigation.",
                 "technologies": "Next.js, React, Tailwind CSS, Vercel",
-                "image": "/herosection.png",
+                "image": "/OroRaices.gif",
                 "link": "https://raicesdeoro.vercel.app/",
                 "isTrending": "false"
             },
@@ -209,7 +318,7 @@
                 "description": "Corporate website for construction sector services.",
                 "fullDescription": "Website project for Constructora 0312 focused on presenting company experience, service lines, and contact channels. The content architecture was designed for commercial clarity and lead capture.",
                 "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
-                "image": "/herosection.png",
+                "image": "/0315.gif",
                 "link": "https://constructora0312.com/",
                 "isTrending": "false"
             },
@@ -218,7 +327,7 @@
                 "description": "Inspection organization with institutional digital presence.",
                 "fullDescription": "Website for Servicrep, an inspection organization, focused on presenting service scope, technical trust, and support channels. The experience prioritizes clear information and conversion.",
                 "technologies": "Next.js, React, TypeScript, UI/UX",
-                "image": "/herosection.png",
+                "image": "/servicrep.gif",
                 "link": "https://www.servicrep.com.co/",
                 "isTrending": "false"
             }

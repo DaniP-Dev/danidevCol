@@ -1,3 +1,5 @@
+"use client";
+
 import { navItems } from "./nav";
 import { Link } from "@/src/i18n/navigation";
 import { useTranslations } from "next-intl";

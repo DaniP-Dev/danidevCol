@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Columnas del Footer */}
         <div className="flex flex-col md:flex-row flex-wrap justify-between gap-8 pb-8">
           
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex-1 min-w-50">
             <div className="mb-4">
               <span className="font-black text-2xl">{t("brand")}</span>
               <p className="text-sm text-gray-300 mt-2">
@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Navegación de Servicios" className="flex-1 min-w-[200px]">
+          <nav aria-label="Navegación de Servicios" className="flex-1 min-w-50">
             <h3 className="font-black mb-4 uppercase text-lg">{t("services.title")}</h3>
             <ul className="space-y-3 text-base font-bold text-gray-300">
               <li><Link href="/services" className="hover:text-white transition-colors">{t("services.webDesign")}</Link></li>
@@ -80,7 +80,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Navegación de la Empresa" className="flex-1 min-w-[200px]">
+          <nav aria-label="Navegación de la Empresa" className="flex-1 min-w-50">
             <h3 className="font-black mb-4 uppercase text-lg">{t("company.title")}</h3>
             <ul className="space-y-3 text-base font-bold text-gray-300">
               <li><Link href="/portfolio" className="hover:text-white transition-colors">{t("company.portfolio")}</Link></li>
@@ -89,7 +89,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <address className="not-italic flex-1 min-w-[200px]">
+          <address className="not-italic flex-1 min-w-50">
             <h3 className="font-black mb-4 uppercase text-lg">{t("location.title")}</h3>
             <p className="text-base font-bold text-gray-300 flex items-center gap-1">
               <span aria-hidden="true">📍</span> {t("location.global")}
@@ -100,9 +100,6 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-gray-700/50 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-gray-400">
           <p>&copy; {currentYear} {t("brand")}. {t("rights")}</p>
-          <p>
-            {t("builtWith")} <span className="text-gray-300 font-black whitespace-nowrap uppercase tracking-wider">{t("performance")}</span>.
-          </p>
         </div>
       </div>
     </footer>

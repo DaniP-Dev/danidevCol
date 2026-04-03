@@ -31,7 +31,7 @@ const CardPortfolio = ({
         <img
           className="rounded-t-base"
           src={image}
-          alt={name}
+          alt={`Portafolio de danidevcol: ${name}`}
         />
       </a>
       <div className="p-6 text-center">

@@ -134,9 +134,118 @@
             "title": "الموقع",
             "global": "كولومبيا (دعم عالمي)"
         },
-        "rights": "جميع الحقوق محفوظة.",
-        "builtWith": "مبني مع التركيز على",
-        "performance": "الأداء وتحسين محركات البحث"
+        "rights": "جميع الحقوق محفوظة."
+    },
+    "CurriculumPage": {
+        "header": {
+            "name": "Daniel Perez Guzman",
+            "role": "مطور Full Stack | Next.js · React · TypeScript",
+            "contacts": {
+                "whatsapp": "واتساب",
+                "linkedin": "linkedin.com/in/danielperez",
+                "github": "github.com/DaniP-Dev"
+            }
+        },
+        "sections": {
+            "profile": "الملف المهني",
+            "experience": "الخبرة العملية",
+            "education": "المؤهلات التعليمية",
+            "skills": "المهارات التقنية",
+            "languages": "اللغات",
+            "projects": "المشاريع البارزة"
+        },
+        "profile": {
+            "text": "مطور Full Stack بخبرة تزيد عن 3 سنوات في تحسين الكفاءة والعمليات عبر تطبيقات ويب قوية باستخدام Next.js وReact وTypeScript. متخصص في أنظمة إدارة الوثائق والأتمتة عبر Google Sheets بما يدعم اتخاذ القرار والتحكم التشغيلي. أتميز بتصميم واجهات بديهية باستخدام Tailwind CSS لتحسين تجربة المستخدم وإنتاجية الفريق. لدي القدرة على قيادة المشاريع من المعمارية حتى النشر وتقديم حلول تدعم نمو الأعمال وتنافسيتها."
+        },
+        "experience": {
+            "servicrep": {
+                "company": "Servicrep",
+                "role": "المؤسس ومطور Full Stack",
+                "date": "يناير 2023 – حتى الآن",
+                "location": "سوليداد، أتلانتيكو",
+                "bullets": {
+                    "b1": "طورت نظامًا لإدارة عمليات التفتيش وإصدار الشهادات لمحطات الوقود EDS، مما حسّن سير العمل وإمكانية تتبع العمليات.",
+                    "b2": "نفذت التحقق من الشهادات عبر رموز QR لتسريع عملية المطابقة وتعزيز الثقة في الخدمات.",
+                    "b3": "دمجت Google Sheets كقاعدة بيانات وسيطة لتسهيل التحليل ومتابعة التقارير ودعم قرارات أكثر فعالية.",
+                    "b4": "صممت نظام قوالب PDF للشهادات لضمان الاتساق المؤسسي وتحسين العرض أمام العملاء والجهات التنظيمية."
+                }
+            },
+            "oasix": {
+                "company": "Oasix",
+                "role": "مطور ويب مستقل",
+                "date": "مارس 2022 – ديسمبر 2022",
+                "location": "عن بعد",
+                "bullets": {
+                    "b1": "بنيت واجهات متجاوبة باستخدام React وTailwind CSS مما حسن التفاعل ورضا المستخدمين النهائيين.",
+                    "b2": "طورت تكاملات REST API وحسنت أداء التطبيقات، مما ساهم في الاستمرارية التشغيلية وقابلية التوسع لمشاريع العملاء."
+                }
+            },
+            "freelance": {
+                "company": "Freelance Web Developer",
+                "role": "مطور ويب مستقل",
+                "date": "2021 – حتى الآن",
+                "location": "عن بعد",
+                "bullets": {
+                    "b1": "تطوير وصيانة مواقع ويب وتطبيقات ويب صغيرة لعملاء متنوعين.",
+                    "b2": "نشر المشاريع على الإنتاج باستخدام cPanel وVercel مع ضمان التوفر والاستقرار.",
+                    "b3": "إعداد نطاقات مخصصة لتحسين الحضور الرقمي للعملاء.",
+                    "b4": "تطبيق تحسين SEO الأساسي وتحسين الأداء لزيادة الظهور والكفاءة.",
+                    "b5": "إعداد توثيق تقني وتقديم الدعم للعملاء في بيئات الويب لتسهيل إدارة الحلول واستخدامها."
+                }
+            }
+        },
+        "education": {
+            "degree1": {
+                "title": "تقني نظم / هندسة نظم",
+                "institution": "جامعة الأطلنطي",
+                "date": "2018 – 2022"
+            },
+            "degree2": {
+                "title": "تطوير ويب Full Stack",
+                "institution": "Platzi",
+                "date": "2021 – حتى الآن"
+            }
+        },
+        "skills": {
+            "frontend": {
+                "label": "Frontend",
+                "items": "Next.js, React, TypeScript, Tailwind CSS"
+            },
+            "backend": {
+                "label": "Backend",
+                "items": "FastAPI, Laravel, Node.js, REST APIs"
+            },
+            "databases": {
+                "label": "قواعد البيانات",
+                "items": "PostgreSQL, MySQL, Google Sheets"
+            },
+            "tools": {
+                "label": "الأدوات",
+                "items": "Git, VS Code, Figma, Vercel"
+            }
+        },
+        "languages": {
+            "spanish": {
+                "label": "الإسبانية",
+                "level": "لغة أم"
+            },
+            "english": {
+                "label": "الإنجليزية",
+                "level": "متوسط (B1)"
+            }
+        },
+        "projects": {
+            "certificates": {
+                "name": "نظام شهادات EDS",
+                "tech": "Next.js · Google Sheets · QR Code",
+                "description": "منصة ويب لإصدار وإدارة والتحقق من شهادات التفتيش، ما يحسن العمليات الداخلية ويعزز سمعة الشركة أمام العملاء والجهات التنظيمية. تتضمن لوحة إدارة وبوابة تحقق عامة لتسهيل الوصول والشفافية."
+            },
+            "iso": {
+                "name": "بوابة إدارة ISO 17020",
+                "tech": "React · TypeScript · Tailwind CSS",
+                "description": "نظام توثيق وضبط جودة لجهات التفتيش، مصمم لتحسين الكفاءة التشغيلية والامتثال التنظيمي بما يدعم التميز والتميّز في القطاع."
+            }
+        }
     },
     "Metadata": {
         "services": {
@@ -168,7 +277,7 @@
                 "description": "استشارات سياسية تركز على الاستراتيجية والحضور الرقمي.",
                 "fullDescription": "موقع مؤسسي لشركة Somos Criteria المتخصصة في الاستشارات السياسية. ركز المشروع على عرض الخدمات وإبراز الموثوقية المهنية وتوضيح القيمة المقدمة بتجربة حديثة وواضحة.",
                 "technologies": "Next.js, React, Tailwind CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/criteria.gif",
                 "link": "https://www.somoscriteria.com/",
                 "isTrending": "true"
             },
@@ -177,7 +286,7 @@
                 "description": "صفحة ملف مستقل لعلامة شخصية لعميلة.",
                 "fullDescription": "تطوير صفحة ملف مستقل لعميلة بهدف تقوية علامتها الشخصية وعرض خدماتها وتسهيل التواصل التجاري من خلال تجربة بصرية نظيفة واحترافية.",
                 "technologies": "Next.js, React, CSS, TypeScript",
-                "image": "/herosection.png",
+                "image": "/oasix.gif",
                 "link": "https://www.womenoasix.com/",
                 "isTrending": "true"
             },
@@ -186,7 +295,7 @@
                 "description": "ريادة أعمال جامعية مع تركيز على الهوية والمنتج.",
                 "fullDescription": "صفحة هبوط لمشروع ريادي جامعي تعرض قصة المشروع وقيمته وهويته. تم التركيز على تسلسل بصري واضح وتجربة تصفح بسيطة لدعم التحويل.",
                 "technologies": "Next.js, React, Tailwind CSS, Vercel",
-                "image": "/herosection.png",
+                "image": "/OroRaices.gif",
                 "link": "https://raicesdeoro.vercel.app/",
                 "isTrending": "false"
             },
@@ -204,7 +313,7 @@
                 "description": "موقع مؤسسي لخدمات قطاع البناء.",
                 "fullDescription": "مشروع موقع لشركة Constructora 0312 لعرض الخبرة والخدمات وقنوات التواصل. تم تصميم هيكل المحتوى ليوفر وضوحًا تجاريًا ويساعد في جذب العملاء المحتملين.",
                 "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
-                "image": "/herosection.png",
+                "image": "/0315.gif",
                 "link": "https://constructora0312.com/",
                 "isTrending": "false"
             },
@@ -213,7 +322,7 @@
                 "description": "منظمة تفتيش ذات حضور رقمي مؤسسي.",
                 "fullDescription": "موقع لمنظمة Servicrep المتخصصة في التفتيش، يركز على عرض نطاق الخدمات والمصداقية الفنية وقنوات الدعم. تم تحسين التجربة لتقديم معلومات واضحة وتحقيق تحويل أفضل.",
                 "technologies": "Next.js, React, TypeScript, UI/UX",
-                "image": "/herosection.png",
+                "image": "/servicrep.gif",
                 "link": "https://www.servicrep.com.co/",
                 "isTrending": "false"
             }
