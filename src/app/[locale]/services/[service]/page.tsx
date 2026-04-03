@@ -4,6 +4,7 @@ import { serviceCategories } from "@/src/libs/services";
 import { getServiceBenefits, getServiceProcess } from "@/src/libs/serviceContent";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { routing } from "@/src/i18n/routing";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -12,12 +13,10 @@ interface PageProps {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { service } = await params;
-  const t = await getTranslations("Services");
+  const { service, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Services" });
 
-  const category = serviceCategories.find(
-    (c) => t(`${c.key}.slug`) === service,
-  );
+  const category = await findCategoryBySlug(service);
 
   if (!category) {
     return { title: "Service Not Found" };
@@ -32,11 +31,9 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageProps) {
   const { service, locale } = await params;
-  const t = await getTranslations("Services");
+  const t = await getTranslations({ locale, namespace: "Services" });
 
-  const category = serviceCategories.find(
-    (c) => t(`${c.key}.slug`) === service,
-  );
+  const category = await findCategoryBySlug(service);
 
   if (!category) {
     notFound();
@@ -221,4 +218,39 @@ export default async function Page({ params }: PageProps) {
       </section>
     </div>
   );
+}
+
+function normalizeSlug(value: string): string {
+  return decodeURIComponent(value)
+    .trim()
+    .toLowerCase()
+    .replace(/^\/+|\/+$/g, "");
+}
+
+async function findCategoryBySlug(rawSlug: string) {
+  const target = normalizeSlug(rawSlug);
+
+  const byCanonical = serviceCategories.find((category) => {
+    const canonicalSlug = category.url.split("/").filter(Boolean).pop() || "";
+    return normalizeSlug(canonicalSlug) === target;
+  });
+
+  if (byCanonical) {
+    return byCanonical;
+  }
+
+  for (const locale of routing.locales) {
+    const t = await getTranslations({ locale, namespace: "Services" });
+
+    const byLocaleSlug = serviceCategories.find((category) => {
+      const translatedSlug = t(`${category.key}.slug`);
+      return normalizeSlug(translatedSlug) === target;
+    });
+
+    if (byLocaleSlug) {
+      return byLocaleSlug;
+    }
+  }
+
+  return undefined;
 }

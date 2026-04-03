@@ -1,25 +1,30 @@
+"use client";
+
 import "./servicePage.css";
 import { Link } from "@/src/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("Services");
+
   return (
     <header className="hero-background bg-brand-dynamic transition-colors duration-300 py-20 lg:py-32 rounded-3xl overflow-hidden shadow-2xl relative border border-white/10 dark:border-white/5" role="banner">
       <div className="hero-text flex flex-col items-center justify-center h-full gap-6 px-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight drop-shadow-sm max-w-4xl">
-          Servicios profesionales de <br className="hidden md:block" />
+          {t("hero.titlePrefix")} <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-300">
-            desarrollo web y software
+            {t("hero.titleHighlight")}
           </span>
         </h1>
         <p className="text-lg md:text-xl font-medium max-w-2xl opacity-80">
-          Soluciones digitales a medida para potenciar tu negocio. Experiencia en diseño, desarrollo y escalabilidad.
+          {t("hero.description")}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link href="#cta-section" className="px-8 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-teal-500/30 transform hover:-translate-y-1">
-            Empieza tu proyecto
+            {t("hero.primaryButton")}
           </Link>
           <Link href="#beneficios" className="px-8 py-3.5 bg-white/20 hover:bg-white/30 dark:bg-gray-800/40 dark:hover:bg-gray-800/60 font-semibold rounded-full transition-all backdrop-blur-md border border-white/20 dark:border-white/10">
-            Conoce más
+            {t("hero.secondaryButton")}
           </Link>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -9,25 +10,34 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t("description")
   };
 }
+export default async function page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "PortfolioPage" });
 
-const projects = [
-  { id: 1, name: "Proyecto 1", description: "Descripción breve del proyecto 1" },
-  { id: 2, name: "Proyecto 2", description: "Descripción breve del proyecto 2" },
-  { id: 3, name: "Proyecto 3", description: "Descripción breve del proyecto 3" },
-];
+  const projectKeys = [
+    "somosCriteria",
+    "womenOasix",
+    "raicesDeOro",
+    "certixion",
+    "constructora0312",
+    "servicrep"
+  ] as const;
 
-export default function page() {
+  const projects = projectKeys.map((key, index) => ({
+    id: index + 1,
+    name: t(`projects.${key}.name`),
+    description: t(`projects.${key}.description`),
+    fullDescription: t(`projects.${key}.fullDescription`),
+    technologies: t(`projects.${key}.technologies`).split(", "),
+    image: t(`projects.${key}.image`),
+    link: t(`projects.${key}.link`),
+    isTrending: t(`projects.${key}.isTrending`) === "true"
+  }));
+
   return (
     <section className="py-10 px-4 flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-6 text-teal-700">Portafolio de Proyectos</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
-        {projects.map((project) => (
-          <div key={project.id} className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold mb-2 text-teal-700 dark:text-teal-300">{project.name}</h2>
-            <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
-          </div>
-        ))}
-      </div>
+      <h1 className="text-2xl font-bold mb-6 text-teal-700">{t("title")}</h1>
+      <PortfolioGrid projects={projects} />
     </section>
   );
 }

@@ -61,6 +61,38 @@
         }
     },
     "Services": {
+        "benefits": {
+            "title": "Por que nos escolher?",
+            "items": {
+                "custom": {
+                    "title": "Soluções sob medida",
+                    "description": "Desenvolvemos projetos personalizados de acordo com suas necessidades e objetivos de negócio."
+                },
+                "innovation": {
+                    "title": "Inovação e tecnologia",
+                    "description": "Utilizamos as tecnologias mais recentes para garantir resultados modernos, rápidos e eficientes."
+                },
+                "support": {
+                    "title": "Suporte profissional",
+                    "description": "Apoiamos você em cada etapa do projeto e oferecemos suporte contínuo para garantir seu sucesso."
+                }
+            }
+        },
+        "hero": {
+            "titlePrefix": "Serviços profissionais de",
+            "titleHighlight": "desenvolvimento web e software",
+            "description": "Soluções digitais sob medida para impulsionar seu negócio. Experiência em design, desenvolvimento e escalabilidade.",
+            "primaryButton": "Comece seu projeto",
+            "secondaryButton": "Saiba mais"
+        },
+        "page": {
+            "cardsTitle": "Nossos Serviços",
+            "cta": {
+                "title": "Pronto para escalar seu projeto?",
+                "description": "Entre em contato hoje e descubra como nossas soluções podem transformar sua presença digital.",
+                "button": "Solicitar uma consultoria"
+            }
+        },
         "existingProjects": {
             "slug": "melhorias-web-sites",
             "title": "Melhoria e Otimização de Sites Web",
@@ -118,6 +150,73 @@
         "curriculum": {
             "title": "Experiência e Formação | Daniel Pérez Guzman",
             "description": "Perfil profissional, competências técnicas e trajetória acadêmica de Daniel Pérez Guzman."
+        }
+    },
+    "PortfolioPage": {
+        "title": "Portfólio de Projetos",
+        "labels": {
+            "trending": "Destaque",
+            "viewMore": "Ver mais",
+            "closeModal": "Fechar modal",
+            "technologies": "Tecnologias utilizadas",
+            "viewProject": "Ver projeto",
+            "close": "Fechar"
+        },
+        "projects": {
+            "somosCriteria": {
+                "name": "Somos Criteria",
+                "description": "Consultoria política com foco estratégico e presença digital.",
+                "fullDescription": "Site corporativo para a Somos Criteria, uma empresa de consultoria política. O projeto foi focado em comunicar serviços, autoridade profissional e proposta de valor com estrutura clara e experiência moderna.",
+                "technologies": "Next.js, React, Tailwind CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.somoscriteria.com/",
+                "isTrending": "true"
+            },
+            "womenOasix": {
+                "name": "Women Oasix",
+                "description": "Página de perfil freelancer para marca pessoal de cliente.",
+                "fullDescription": "Desenvolvimento de página de perfil freelancer para cliente, com foco em fortalecer a marca pessoal, apresentar serviços e facilitar o contato comercial com experiência visual limpa e profissional.",
+                "technologies": "Next.js, React, CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.womenoasix.com/",
+                "isTrending": "true"
+            },
+            "raicesDeOro": {
+                "name": "Raices de Oro",
+                "description": "Empreendimento universitário com foco em identidade e produto.",
+                "fullDescription": "Landing page para um empreendimento universitário focada em comunicar história do projeto, proposta de valor e identidade da marca. O site prioriza narrativa visual clara e navegação simples.",
+                "technologies": "Next.js, React, Tailwind CSS, Vercel",
+                "image": "/herosection.png",
+                "link": "https://raicesdeoro.vercel.app/",
+                "isTrending": "false"
+            },
+            "certixion": {
+                "name": "CertiXion",
+                "description": "Aplicativo para gestão da ISO 17020 com integrações em nuvem.",
+                "fullDescription": "Aplicativo desenvolvido com Next.js e Firebase para gerenciar processos da norma ISO 17020. Inclui integração com Google Drive para centralização de documentos, rastreabilidade e eficiência operacional.",
+                "technologies": "Next.js, Firebase, Google Drive, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://certixion.com/",
+                "isTrending": "true"
+            },
+            "constructora0312": {
+                "name": "Constructora 0312",
+                "description": "Site corporativo para serviços do setor de construção.",
+                "fullDescription": "Projeto web para Constructora 0312 voltado a apresentar experiência, serviços e canais de contato. A arquitetura de conteúdo foi pensada para clareza comercial e geração de leads.",
+                "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
+                "image": "/herosection.png",
+                "link": "https://constructora0312.com/",
+                "isTrending": "false"
+            },
+            "servicrep": {
+                "name": "Servicrep",
+                "description": "Organização de inspeção com presença digital institucional.",
+                "fullDescription": "Site para a Servicrep, organização de inspeção, focado em apresentar escopo de serviços, credibilidade técnica e canais de atendimento. A experiência prioriza informação clara e conversão.",
+                "technologies": "Next.js, React, TypeScript, UI/UX",
+                "image": "/herosection.png",
+                "link": "https://www.servicrep.com.co/",
+                "isTrending": "false"
+            }
         }
     }
 }

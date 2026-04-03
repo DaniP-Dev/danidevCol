@@ -36,7 +36,7 @@ export default async function page() {
       <div className="py-12 bg-teal-50/30 dark:bg-[#0b111a]/50 border-y border-teal-100/50 dark:border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-extrabold mb-8 text-center text-teal-800 dark:text-teal-400 tracking-tight">
-            Nuestros Servicios
+            {t("page.cardsTitle")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-stretch">
             {serviceCategories.map((category) => (
@@ -60,12 +60,12 @@ export default async function page() {
       <div id="cta-section" className="w-full max-w-5xl mx-auto px-4 py-12">
         <div className="bg-linear-to-r from-teal-600 to-emerald-500 dark:from-teal-800 dark:to-[#0d211e] rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
            <div className="relative z-10">
-             <h2 className="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight">¿Listo para escalar tu proyecto?</h2>
+             <h2 className="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight">{t("page.cta.title")}</h2>
              <p className="text-base md:text-lg font-medium mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
-               Contáctanos hoy mismo y descubre cómo nuestras soluciones pueden transformar tu presencia digital.
+               {t("page.cta.description")}
              </p>
              <Link href="/contacto" className="inline-block px-6 py-3 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-full hover:bg-teal-50 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
-               Solicitar una consulta
+               {t("page.cta.button")}
              </Link>
            </div>
            {/* Decoraciones de fondo */}

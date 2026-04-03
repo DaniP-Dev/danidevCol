@@ -61,6 +61,38 @@
         }
     },
     "Services": {
+        "benefits": {
+            "title": "¿Por qué elegirnos?",
+            "items": {
+                "custom": {
+                    "title": "Soluciones a medida",
+                    "description": "Desarrollamos proyectos personalizados según tus necesidades y objetivos comerciales."
+                },
+                "innovation": {
+                    "title": "Innovación y tecnología",
+                    "description": "Utilizamos las últimas tecnologías para garantizar resultados modernos, rápidos y eficientes."
+                },
+                "support": {
+                    "title": "Soporte profesional",
+                    "description": "Te asesoramos en cada etapa del proyecto y brindamos soporte continuo para asegurar tu éxito."
+                }
+            }
+        },
+        "hero": {
+            "titlePrefix": "Servicios profesionales de",
+            "titleHighlight": "desarrollo web y software",
+            "description": "Soluciones digitales a medida para potenciar tu negocio. Experiencia en diseño, desarrollo y escalabilidad.",
+            "primaryButton": "Empieza tu proyecto",
+            "secondaryButton": "Conoce más"
+        },
+        "page": {
+            "cardsTitle": "Nuestros Servicios",
+            "cta": {
+                "title": "¿Listo para escalar tu proyecto?",
+                "description": "Contáctanos hoy mismo y descubre cómo nuestras soluciones pueden transformar tu presencia digital.",
+                "button": "Solicitar una consulta"
+            }
+        },
         "existingProjects": {
             "slug": "mejoras-web-sitios",
             "title": "Mejora y Optimización de Sitios Web",
@@ -118,6 +150,73 @@
         "curriculum": {
             "title": "Experiencia y Formación | Daniel Pérez Guzman",
             "description": "Perfil profesional, habilidades técnicas y trayectoria académica de Daniel Pérez Guzman."
+        }
+    },
+    "PortfolioPage": {
+        "title": "Portafolio de Proyectos",
+        "labels": {
+            "trending": "Destacado",
+            "viewMore": "Ver más",
+            "closeModal": "Cerrar modal",
+            "technologies": "Tecnologías utilizadas",
+            "viewProject": "Ver proyecto",
+            "close": "Cerrar"
+        },
+        "projects": {
+            "somosCriteria": {
+                "name": "Somos Criteria",
+                "description": "Consultorías políticas con enfoque estratégico y presencia digital.",
+                "fullDescription": "Sitio corporativo para Somos Criteria, una firma de consultorías políticas. El proyecto se enfocó en comunicar servicios, autoridad profesional y propuesta de valor con una estructura clara y una experiencia moderna.",
+                "technologies": "Next.js, React, Tailwind CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.somoscriteria.com/",
+                "isTrending": "true"
+            },
+            "womenOasix": {
+                "name": "Women Oasix",
+                "description": "Página de perfil freelancer para marca personal de cliente.",
+                "fullDescription": "Desarrollo de página de perfil freelancer para clienta, orientada a fortalecer su marca personal, mostrar servicios y facilitar el contacto comercial con una experiencia visual limpia y profesional.",
+                "technologies": "Next.js, React, CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.womenoasix.com/",
+                "isTrending": "true"
+            },
+            "raicesDeOro": {
+                "name": "Raíces de Oro",
+                "description": "Emprendimiento universitario con enfoque en identidad y producto.",
+                "fullDescription": "Landing para emprendimiento universitario enfocada en comunicar la historia del proyecto, su propuesta diferencial y sus productos. Se priorizó una narrativa visual clara y una navegación sencilla para mejorar conversión.",
+                "technologies": "Next.js, React, Tailwind CSS, Vercel",
+                "image": "/herosection.png",
+                "link": "https://raicesdeoro.vercel.app/",
+                "isTrending": "false"
+            },
+            "certixion": {
+                "name": "CertiXion",
+                "description": "Aplicativo para gestión de ISO 17020 con integraciones en la nube.",
+                "fullDescription": "Aplicativo desarrollado con Next.js y Firebase para gestionar procesos asociados a la norma ISO 17020. Incluye integración con Google Drive para centralizar documentos, trazabilidad de información y operación digital eficiente.",
+                "technologies": "Next.js, Firebase, Google Drive, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://certixion.com/",
+                "isTrending": "true"
+            },
+            "constructora0312": {
+                "name": "Constructora 0312",
+                "description": "Sitio corporativo para servicios del sector construcción.",
+                "fullDescription": "Proyecto web para Constructora 0312 orientado a presentar su experiencia, líneas de servicio y canales de contacto. Se diseñó una arquitectura de contenido pensada para claridad comercial y captación de clientes.",
+                "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
+                "image": "/herosection.png",
+                "link": "https://constructora0312.com/",
+                "isTrending": "false"
+            },
+            "servicrep": {
+                "name": "Servicrep",
+                "description": "Organización de inspección con presencia digital institucional.",
+                "fullDescription": "Sitio para Servicrep, organización de inspección, enfocado en presentar su alcance de servicios, credibilidad técnica y canales de atención. Se priorizó una experiencia informativa, confiable y orientada a conversión.",
+                "technologies": "Next.js, React, TypeScript, UI/UX",
+                "image": "/herosection.png",
+                "link": "https://www.servicrep.com.co/",
+                "isTrending": "false"
+            }
         }
     }
 }

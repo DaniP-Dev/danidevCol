@@ -61,6 +61,38 @@
         }
     },
     "Services": {
+        "benefits": {
+            "title": "لماذا تختارنا؟",
+            "items": {
+                "custom": {
+                    "title": "حلول مخصصة",
+                    "description": "نطوّر مشاريع مخصصة وفقًا لاحتياجاتك وأهدافك التجارية."
+                },
+                "innovation": {
+                    "title": "الابتكار والتقنية",
+                    "description": "نستخدم أحدث التقنيات لضمان نتائج حديثة وسريعة وفعالة."
+                },
+                "support": {
+                    "title": "دعم احترافي",
+                    "description": "نرافقك في كل مرحلة من المشروع ونقدم دعمًا مستمرًا لضمان نجاحك."
+                }
+            }
+        },
+        "hero": {
+            "titlePrefix": "خدمات احترافية في",
+            "titleHighlight": "تطوير الويب والبرمجيات",
+            "description": "حلول رقمية مخصصة لتعزيز عملك. خبرة في التصميم والتطوير وقابلية التوسع.",
+            "primaryButton": "ابدأ مشروعك",
+            "secondaryButton": "اعرف المزيد"
+        },
+        "page": {
+            "cardsTitle": "خدماتنا",
+            "cta": {
+                "title": "هل أنت مستعد لتوسيع مشروعك؟",
+                "description": "تواصل معنا اليوم واكتشف كيف يمكن لحلولنا أن تحول حضورك الرقمي.",
+                "button": "اطلب استشارة"
+            }
+        },
         "existingProjects": {
             "slug": "تحسين-المواقع-الحالية",
             "title": "تحسين وتطوير المواقع الإلكترونية",
@@ -118,6 +150,73 @@
         "curriculum": {
             "title": "الخبرة والتعليم | Daniel Pérez Guzman",
             "description": "الملف الشخصي والمهارات والمسار الأكاديمي لدانيال بيريز غوزمان."
+        }
+    },
+    "PortfolioPage": {
+        "title": "معرض المشاريع",
+        "labels": {
+            "trending": "مميز",
+            "viewMore": "عرض المزيد",
+            "closeModal": "إغلاق النافذة",
+            "technologies": "التقنيات المستخدمة",
+            "viewProject": "عرض المشروع",
+            "close": "إغلاق"
+        },
+        "projects": {
+            "somosCriteria": {
+                "name": "Somos Criteria",
+                "description": "استشارات سياسية تركز على الاستراتيجية والحضور الرقمي.",
+                "fullDescription": "موقع مؤسسي لشركة Somos Criteria المتخصصة في الاستشارات السياسية. ركز المشروع على عرض الخدمات وإبراز الموثوقية المهنية وتوضيح القيمة المقدمة بتجربة حديثة وواضحة.",
+                "technologies": "Next.js, React, Tailwind CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.somoscriteria.com/",
+                "isTrending": "true"
+            },
+            "womenOasix": {
+                "name": "Women Oasix",
+                "description": "صفحة ملف مستقل لعلامة شخصية لعميلة.",
+                "fullDescription": "تطوير صفحة ملف مستقل لعميلة بهدف تقوية علامتها الشخصية وعرض خدماتها وتسهيل التواصل التجاري من خلال تجربة بصرية نظيفة واحترافية.",
+                "technologies": "Next.js, React, CSS, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://www.womenoasix.com/",
+                "isTrending": "true"
+            },
+            "raicesDeOro": {
+                "name": "Raices de Oro",
+                "description": "ريادة أعمال جامعية مع تركيز على الهوية والمنتج.",
+                "fullDescription": "صفحة هبوط لمشروع ريادي جامعي تعرض قصة المشروع وقيمته وهويته. تم التركيز على تسلسل بصري واضح وتجربة تصفح بسيطة لدعم التحويل.",
+                "technologies": "Next.js, React, Tailwind CSS, Vercel",
+                "image": "/herosection.png",
+                "link": "https://raicesdeoro.vercel.app/",
+                "isTrending": "false"
+            },
+            "certixion": {
+                "name": "CertiXion",
+                "description": "تطبيق لإدارة ISO 17020 مع تكاملات سحابية.",
+                "fullDescription": "تطبيق مبني باستخدام Next.js وFirebase لإدارة عمليات معيار ISO 17020، مع تكامل Google Drive لمركزية الوثائق وتتبع البيانات وتحسين الكفاءة التشغيلية.",
+                "technologies": "Next.js, Firebase, Google Drive, TypeScript",
+                "image": "/herosection.png",
+                "link": "https://certixion.com/",
+                "isTrending": "true"
+            },
+            "constructora0312": {
+                "name": "Constructora 0312",
+                "description": "موقع مؤسسي لخدمات قطاع البناء.",
+                "fullDescription": "مشروع موقع لشركة Constructora 0312 لعرض الخبرة والخدمات وقنوات التواصل. تم تصميم هيكل المحتوى ليوفر وضوحًا تجاريًا ويساعد في جذب العملاء المحتملين.",
+                "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
+                "image": "/herosection.png",
+                "link": "https://constructora0312.com/",
+                "isTrending": "false"
+            },
+            "servicrep": {
+                "name": "Servicrep",
+                "description": "منظمة تفتيش ذات حضور رقمي مؤسسي.",
+                "fullDescription": "موقع لمنظمة Servicrep المتخصصة في التفتيش، يركز على عرض نطاق الخدمات والمصداقية الفنية وقنوات الدعم. تم تحسين التجربة لتقديم معلومات واضحة وتحقيق تحويل أفضل.",
+                "technologies": "Next.js, React, TypeScript, UI/UX",
+                "image": "/herosection.png",
+                "link": "https://www.servicrep.com.co/",
+                "isTrending": "false"
+            }
         }
     }
 }
