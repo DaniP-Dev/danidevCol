@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -6,7 +7,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: t("title"),
-    description: t("description")
+    description: t("description"),
+    keywords: [
+      "curriculum vitae",
+      "CV developerr",
+      "Full Stack Developer",
+      "Next.js developer",
+      "React developer",
+      "TypeScript expert",
+      "web developer resume"
+    ]
   };
 }
 
@@ -14,7 +24,51 @@ export default async function CurriculumPage() {
   const t = await getTranslations("CurriculumPage");
 
   return (
-    <main className="min-h-screen  py-10 print:bg-white print:py-0">
+    <>
+      <Script
+        id="json-ld-resume"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Resume",
+            "applicant": {
+              "@type": "Person",
+              "name": t("header.name"),
+              "jobTitle": "Full Stack Developer",
+              "url": "https://danidevcol.com"
+            },
+            "skills": [
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Firebase",
+              "Node.js",
+              "HTML",
+              "CSS",
+              "Git"
+            ],
+            "workExperience": [
+              {
+                "@type": "WorkPosition",
+                "title": t("experience.servicrep.role"),
+                "companyName": t("experience.servicrep.company"),
+                "startDate": "2023-01-01",
+                "currentlyEmployed": true
+              },
+              {
+                "@type": "WorkPosition",
+                "title": t("experience.oasix.role"),
+                "companyName": t("experience.oasix.company"),
+                "startDate": "2022-03-01",
+                "endDate": "2022-12-31"
+              }
+            ]
+          })
+        }}
+      />
+      <main className="min-h-screen  py-10 print:bg-white print:py-0">
       <div className="mx-auto w-full max-w-204 bg-white shadow-lg print:shadow-none font-sans text-gray-900 text-[13px] leading-relaxed px-14 py-12">
 
         {/* ── ENCABEZADO ── */}
@@ -123,6 +177,7 @@ export default async function CurriculumPage() {
 
       </div>
     </main>
+    </>
   );
 }
 

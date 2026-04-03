@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -6,7 +7,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: t("title"),
-    description: t("description")
+    description: t("description"),
+    keywords: [
+      "desarrollo web",
+      "Next.js",
+      "React",
+      "SEO optimization",
+      "web design",
+      "diseño web",
+      "servicio web"
+    ]
   };
 }
 
@@ -21,7 +31,28 @@ export default async function page() {
   const t = await getTranslations("Services");
 
   return (
-    <div className="flex flex-col w-full bg-background min-h-[calc(100vh-80px)]">
+    <>
+      <Script
+        id="json-ld-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "danidevcol Web Services",
+            "description": "Web development, SEO optimization, and digital consulting services",
+            "url": "https://danidevcol.com/services",
+            "areaServed": "Worldwide",
+            "serviceType": [
+              "Web Design",
+              "Web Development",
+              "SEO Optimization",
+              "Custom Software"
+            ]
+          })
+        }}
+      />
+      <div className="flex flex-col w-full bg-background min-h-[calc(100vh-80px)]">
       {/* Hero Section Container */}
       <div className="w-full max-w-350 mx-auto px-4 md:px-8 mt-4 md:mt-6">
         <HeroSection />
@@ -74,5 +105,6 @@ export default async function page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

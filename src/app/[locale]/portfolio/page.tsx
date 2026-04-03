@@ -1,5 +1,6 @@
 import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
+import Script from "next/script";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -7,7 +8,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   return {
     title: t("title"),
-    description: t("description")
+    description: t("description"),
+    keywords: [
+      "portafolio web",
+      "proyectos Next.js",
+      "React projects",
+      "web development portfolio",
+      "casos de éxito",
+      "web design examples"
+    ]
   };
 }
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
@@ -35,9 +44,29 @@ export default async function page({ params }: { params: Promise<{ locale: strin
   }));
 
   return (
-    <section className="py-10 px-4 flex flex-col items-center">
+    <>
+      <Script
+        id="json-ld-portfolio"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Web Development Portfolio",
+            "description": "Portfolio with 6+ web development projects showcasing Next.js, React, and digital solutions",
+            "url": "https://danidevcol.com/portfolio",
+            "creator": {
+              "@type": "Person",
+              "name": "Daniel Pérez Guzman",
+              "url": "https://danidevcol.com"
+            }
+          })
+        }}
+      />
+      <section className="py-10 px-4 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-6 text-teal-700">{t("title")}</h1>
       <PortfolioGrid projects={projects} />
     </section>
+    </>
   );
 }

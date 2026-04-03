@@ -249,16 +249,16 @@
     },
     "Metadata": {
         "services": {
-            "title": "خدمات تطوير الويب الاحترافية | DaniDevCol",
-            "description": "تطوير الويب وتحسين محركات البحث والاستشارات للشركات العالمية."
+            "title": "خدمات الويب - التطوير وتحسين محركات البحث والأداء | DaniDevCol",
+            "description": "تصميم ويب متجاوب، تطوير Next.js، تحسين SEO واستشارات رقمية. حلول احترافية للشركات العالمية من كولومبيا. عزز حضورك الرقمي."
         },
         "portfolio": {
-            "title": "معرض مشاريع الويب | DaniDevCol",
-            "description": "استكشف مشاريعي المتميزة في تطوير Next.js وReact والحلول الرقمية المخصصة."
+            "title": "معرض الويب - مشاريع Next.js و React | DaniDevCol",
+            "description": "حالات نجاح في تطوير الويب: Somos Criteria و Oasix و CertiXion. معرض يحتوي على 6+ مشاريع. نتائج قابلة للقياس في التصميم والأداء والتحويل."
         },
         "curriculum": {
-            "title": "الخبرة والتعليم | Daniel Pérez Guzman",
-            "description": "الملف الشخصي والمهارات والمسار الأكاديمي لدانيال بيريز غوزمان."
+            "title": "Daniel Pérez Guzman - مطور Full Stack | danidevcol",
+            "description": "سيرة ذاتية لدانيال بيريز: مطور Full Stack بخبرة 3+ سنوات في Next.js و React و TypeScript. خبير في تحسين الويب وإدارة المشاريع والأتمتة. كولومبيا."
         }
     },
     "PortfolioPage": {

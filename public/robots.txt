@@ -1,0 +1,47 @@
+# robots.txt for danidevcol.com
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /es
+Allow: /en
+Allow: /pt
+Allow: /ar
+Allow: /es/servicios
+Allow: /es/portafolio
+Allow: /es/curriculum
+Allow: /en/services
+Allow: /en/portfolio
+Allow: /en/curriculum
+Allow: /pt/servicos
+Allow: /pt/portfolio
+Allow: /pt/curriculum
+Allow: /ar/services
+Allow: /ar/portfolio
+Allow: /ar/curriculum
+
+# Disallow private sections (if any)
+Disallow: /admin
+Disallow: /private
+Disallow: /.next
+Disallow: /node_modules
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://danidevcol.com/sitemap.xml
+
+# Specific rules for major search engines
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

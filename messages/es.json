@@ -249,16 +249,16 @@
     },
     "Metadata": {
         "services": {
-            "title": "Servicios Profesionales de Desarrollo Web | DaniDevCol",
-            "description": "Desarrollo, optimización SEO y consultoría web para empresas con alcance internacional."
+            "title": "Servicios Web - Desarrollo, SEO y Optimización | DaniDevCol",
+            "description": "Diseño web responsive, desarrollo Next.js, optimización SEO y consultoría digital. Soluciones profesionales para empresas globales desde Colombia. Incrementa tu presencia online."
         },
         "portfolio": {
-            "title": "Portafolio de Proyectos Web | DaniDevCol",
-            "description": "Explora mis proyectos destacados en desarrollo Next.js, React y soluciones digitales personalizadas."
+            "title": "Portafolio Web - Proyectos Next.js y React | DaniDevCol",
+            "description": "Casos de éxito en desarrollo web: Somos Criteria, Oasix, CertiXion. Portafolio con 6+ proyectos. Resultados medibles en UX, rendimiento y conversión."
         },
         "curriculum": {
-            "title": "Experiencia y Formación | Daniel Pérez Guzman",
-            "description": "Perfil profesional, habilidades técnicas y trayectoria académica de Daniel Pérez Guzman."
+            "title": "Daniel Pérez Guzman - Desarrollador Full Stack | danidevcol",
+            "description": "CV de Daniel Pérez: Desarrollador Full Stack con 3+ años en Next.js, React, TypeScript. Especialista en optimización web, gestión de proyectos y automatización. Colombia."
         }
     },
     "PortfolioPage": {

@@ -93,29 +93,75 @@ export default async function RootLayout({ children, params }: Props) {
             <NextIntlClientProvider>
               {/* Structured Data JSON-LD */}
               <Script
-                id="json-ld"
+                id="json-ld-person"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                   __html: JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "Person",
+                    "@id": siteConfig.url,
                     "name": siteConfig.author,
                     "url": siteConfig.url,
                     "image": siteConfig.ogImage,
+                    "description": "Desarrollador Full Stack especializado en Next.js, React y TypeScript. Ubicado en Colombia, atendiendo clientes a nivel global.",
+                    "givenName": "Daniel",
+                    "familyName": "Pérez Guzman",
+                    "email": "danidevcol@gmail.com",
+                    "jobTitle": "Full Stack Developer",
+                    "worksFor": {
+                      "@type": "Organization",
+                      "name": siteConfig.name,
+                      "url": siteConfig.url
+                    },
+                    "knowsAbout": [
+                      "Next.js",
+                      "React",
+                      "TypeScript",
+                      "Web Development",
+                      "SEO Optimization",
+                      "UI/UX Design",
+                      "API Development",
+                      "Firebase",
+                      "Tailwind CSS"
+                    ],
                     "sameAs": [
                       socialLinks.github,
                       socialLinks.linkedin,
                       socialLinks.instagram,
                       socialLinks.x,
                       socialLinks.tiktok,
-                      socialLinks.youtube,
-                      socialLinks.whatsapp
+                      socialLinks.youtube
                     ],
-                    "jobTitle": "Full Stack Developer",
-                    "worksFor": {
-                      "@type": "Organization",
-                      "name": siteConfig.name
-                    }
+                    "nationality": "Colombian",
+                    "areaServed": "Worldwide"
+                  })
+                }}
+              />
+              <Script
+                id="json-ld-organization"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "LocalBusiness",
+                    "name": siteConfig.name,
+                    "url": siteConfig.url,
+                    "image": siteConfig.ogImage,
+                    "description": "Agencia de desarrollo web especializada en soluciones digitales personalizadas con Next.js, React y optimización SEO.",
+                    "contactPoint": {
+                      "@type": "ContactPoint",
+                      "contactType": "customer service",
+                      "email": "danidevcol@gmail.com",
+                      "availableLanguage": ["es", "en", "pt", "ar"]
+                    },
+                    "areaServed": "Worldwide",
+                    "serviceType": [
+                      "Web Design",
+                      "Web Development",
+                      "SEO Optimization",
+                      "Custom Software",
+                      "Digital Consulting"
+                    ]
                   })
                 }}
               />
