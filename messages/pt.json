@@ -1,331 +1,359 @@
 {
-    "HomePage": {
-        "welcomeMessage": "Bem-vindo ao meu site!",
-        "description": "Desenvolvimento, otimização e design de sites profissionais para elevar sua presença digital.",
-        "hero": {
-            "location": "Colômbia (Atendimento Global)",
-            "title": "Potencialize Sua Presença Digital",
-            "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
-            "cta": "Comece Agora",
-            "ctaSecondary": "Explorar Serviços"
-        },
-        "features": {
-            "location": "Localizado na Colômbia, Suporte Global Multi-idioma",
-            "title": "Por que me escolher?",
-            "subtitle": "Sou especialista em desenvolvimento web e otimização internacional para empresas globais",
-            "feature1": {
-                "title": "Soluções Personalizadas",
-                "description": "Cada projeto es único. Desenvolvo soluções sob medida para suas necessidades"
-            },
-            "feature2": {
-                "title": "Tecnologia Moderna",
-                "description": "Uso ferramentas e frameworks de ponta para desempenho e escalabilidade"
-            },
-            "feature3": {
-                "title": "Suporte Contínuo",
-                "description": "Não desapareço após o lançamento. Apoio você em cada etapa"
-            },
-            "feature4": {
-                "title": "Otimizado para SEO",
-                "description": "Seus clientes te encontrarão no Google. SEO incorporado desde o início"
-            },
-            "feature5": {
-                "title": "Responsivo & Rápido",
-                "description": "Experiência perfeita em qualquer dispositivo. Velocidades de carregamento otimizadas"
-            },
-            "feature6": {
-                "title": "Segurança Corporativa",
-                "description": "Protejo seus dados com los mais altos padrões de segurança"
-            }
-        },
-        "services": {
-            "title": "Meus Servicios",
-            "subtitle": "Soluções completas para sua transformação digital"
-        },
-        "stats": {
-            "title": "Números que Falam",
-            "projects": "Projetos Concluídos",
-            "clients": "Clientes Satisfeitos",
-            "experience": "Anos de Experiência",
-            "uptime": "Tempo de Atividade"
-        },
-        "cta": {
-            "title": "Pronto para transformar sua presença digital?",
-            "subtitle": "Deixe-me ajudá-lo a llevar seu negócio para o próximo nível",
-            "button": "Solicitar Consulta Gratuita"
-        },
-        "footer": {
-            "about": "danidevcol",
-            "description": "Desenvolvimento e otimização web com alcance global. Transformo ideias em soluções profissionais que impulsionam o seu crescimento em qualquer mercado.",
-            "seeMore": "Ver mais"
-        }
+  "HomePage": {
+    "welcomeMessage": "Bem-vindo ao meu site!",
+    "description": "Desenvolvimento, otimização e design de sites profissionais para elevar sua presença digital.",
+    "hero": {
+      "location": "Colômbia (Atendimento Global)",
+      "title": "Potencialize Sua Presença Digital",
+      "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
+      "cta": "Comece Agora",
+      "ctaSecondary": "Explorar Serviços"
     },
-    "Services": {
-        "benefits": {
-            "title": "Por que nos escolher?",
-            "items": {
-                "custom": {
-                    "title": "Soluções sob medida",
-                    "description": "Desenvolvemos projetos personalizados de acordo com suas necessidades e objetivos de negócio."
-                },
-                "innovation": {
-                    "title": "Inovação e tecnologia",
-                    "description": "Utilizamos as tecnologias mais recentes para garantir resultados modernos, rápidos e eficientes."
-                },
-                "support": {
-                    "title": "Suporte profissional",
-                    "description": "Apoiamos você em cada etapa do projeto e oferecemos suporte contínuo para garantir seu sucesso."
-                }
-            }
-        },
-        "hero": {
-            "titlePrefix": "Serviços profissionais de",
-            "titleHighlight": "desenvolvimento web e software",
-            "description": "Soluções digitais sob medida para impulsionar seu negócio. Experiência em design, desenvolvimento e escalabilidade.",
-            "primaryButton": "Comece seu projeto",
-            "secondaryButton": "Saiba mais"
-        },
-        "page": {
-            "cardsTitle": "Nossos Serviços",
-            "cta": {
-                "title": "Pronto para escalar seu projeto?",
-                "description": "Entre em contato hoje e descubra como nossas soluções podem transformar sua presença digital.",
-                "button": "Solicitar uma consultoria"
-            }
-        },
-        "existingProjects": {
-            "slug": "melhorias-web-sites",
-            "title": "Melhoria e Otimização de Sites Web",
-            "subtitle": "Dê uma Nova Vida ao Seu Site",
-            "description": "Ofereço serviços para melhorar e otimizar seus sites atuais, garantindo que funcionem no seu mejor e atendam aos padrões modernos.",
-            "longDescription": "Seu site precisa de um impulso? Especializo-me em transformar sites existentes, melhorando seu desempenho, segurança e experiência do usuário.",
-            "cta": "Transformar Meu Site"
-        },
-        "newProjects": {
-            "slug": "desenvolvimento-do-zero",
-            "title": "Desenvolvimento de Sites do Zero",
-            "subtitle": "Sua Ideia, Minha Expertise",
-            "description": "Posso ajudá-lo a construir novos sites do zero, adaptados às suas necessidades e requisitos específicos.",
-            "longDescription": "Você tem uma ideia brilhante mais não sabe por onde começar? Crio sites modernos, escaláveis e seguros projetados especificamente para seu negócio.",
-            "cta": "Iniciar Meu Projeto"
-        }
+    "features": {
+      "location": "Localizado na Colômbia, Suporte Global Multi-idioma",
+      "title": "Por que me escolher?",
+      "subtitle": "Sou especialista em desenvolvimento web e otimização internacional para empresas globais",
+      "feature1": {
+        "title": "Soluções Personalizadas",
+        "description": "Cada projeto es único. Desenvolvo soluções sob medida para suas necessidades"
+      },
+      "feature2": {
+        "title": "Tecnologia Moderna",
+        "description": "Uso ferramentas e frameworks de ponta para desempenho e escalabilidade"
+      },
+      "feature3": {
+        "title": "Suporte Contínuo",
+        "description": "Não desapareço após o lançamento. Apoio você em cada etapa"
+      },
+      "feature4": {
+        "title": "Otimizado para SEO",
+        "description": "Seus clientes te encontrarão no Google. SEO incorporado desde o início"
+      },
+      "feature5": {
+        "title": "Responsivo & Rápido",
+        "description": "Experiência perfeita em qualquer dispositivo. Velocidades de carregamento otimizadas"
+      },
+      "feature6": {
+        "title": "Segurança Corporativa",
+        "description": "Protejo seus dados com los mais altos padrões de segurança"
+      }
     },
-    "Navigation": {
-        "home": "Início",
-        "curriculum": "Currículo",
-        "portfolio": "Portfólio",
-        "services": "Serviços"
+    "services": {
+      "title": "Meus Servicios",
+      "subtitle": "Soluções completas para sua transformação digital"
     },
-    "Footer": {
-        "brand": "DaniDevCol",
-        "description": "Desenvolvimento web e otimização SEO.",
-        "services": {
-            "title": "Serviços",
-            "webDesign": "Design Web",
-            "seo": "Otimização SEO",
-            "customSoftware": "Software sob Medida"
-        },
-        "company": {
-            "title": "Empresa",
-            "portfolio": "Portfólio",
-            "curriculum": "Currículo"
-        },
-        "location": {
-            "title": "Localização",
-            "global": "Colômbia (Atendimento Global)"
-        },
-        "rights": "Todos os direitos reservados."
+    "stats": {
+      "title": "Números que Falam",
+      "projects": "Projetos Concluídos",
+      "clients": "Clientes Satisfeitos",
+      "experience": "Anos de Experiência",
+      "uptime": "Tempo de Atividade"
     },
-    "CurriculumPage": {
-        "header": {
-            "name": "Daniel Perez Guzman",
-            "role": "Desenvolvedor Full Stack | Next.js · React · TypeScript",
-            "contacts": {
-                "whatsapp": "WhatsApp",
-                "linkedin": "linkedin.com/in/danielperez",
-                "github": "github.com/DaniP-Dev"
-            }
-        },
-        "sections": {
-            "profile": "Perfil Profissional",
-            "experience": "Experiência Profissional",
-            "education": "Formação Acadêmica",
-            "skills": "Habilidades Técnicas",
-            "languages": "Idiomas",
-            "projects": "Projetos em Destaque"
-        },
-        "profile": {
-            "text": "Desenvolvedor Full Stack com mais de 3 anos impulsionando eficiência e otimização de processos por meio de aplicações web robustas em Next.js, React e TypeScript. Especialista em sistemas de gestão documental e automação com Google Sheets, facilitando a tomada de decisões e o controle operacional. Destaco-me por projetar interfaces intuitivas com Tailwind CSS que melhoram a experiência do usuário e a produtividade da equipe. Capacidade de liderar projetos desde a arquitetura até o deploy, entregando soluções que fortalecem o crescimento e a competitividade empresarial."
-        },
-        "experience": {
-            "servicrep": {
-                "company": "Servicrep",
-                "role": "Fundador e Desenvolvedor Full Stack",
-                "date": "Jan 2023 – Presente",
-                "location": "Soledad, Atlântico",
-                "bullets": {
-                    "b1": "Desenvolvi sistema de gestão de inspeções e certificações para postos de combustível EDS, otimizando o fluxo de trabalho e a rastreabilidade dos processos.",
-                    "b2": "Implementei validação de certificados por códigos QR, agilizando a verificação e fortalecendo a confiança nos serviços oferecidos.",
-                    "b3": "Integrei Google Sheets como banco de dados intermediário, facilitando a análise e o acompanhamento de relatórios para decisões mais efetivas.",
-                    "b4": "Desenhei um sistema de templates PDF para certificados, garantindo consistência institucional e melhorando a apresentação para clientes e órgãos reguladores."
-                }
-            },
-            "oasix": {
-                "company": "Oasix",
-                "role": "Desenvolvedor Web Freelancer",
-                "date": "Mar 2022 – Dez 2022",
-                "location": "Remoto",
-                "bullets": {
-                    "b1": "Construí interfaces responsivas com React e Tailwind CSS, melhorando a interação e a satisfação dos usuários finais.",
-                    "b2": "Desenvolvi integrações com APIs REST e otimizei o desempenho de aplicações, contribuindo para a continuidade operacional e escalabilidade dos projetos dos clientes."
-                }
-            },
-            "freelance": {
-                "company": "Freelance Web Developer",
-                "role": "Desenvolvedor Web Independente",
-                "date": "2021 – Presente",
-                "location": "Remoto",
-                "bullets": {
-                    "b1": "Desenvolvimento e manutenção de sites e pequenas web apps para clientes diversos.",
-                    "b2": "Deploy em produção usando cPanel e Vercel, garantindo disponibilidade e estabilidade dos projetos.",
-                    "b3": "Configuração de domínios personalizados para melhorar a presença digital dos clientes.",
-                    "b4": "Implementação de SEO básico e otimização de desempenho para aumentar visibilidade e eficiência dos sites.",
-                    "b5": "Elaboração de documentação técnica e suporte a clientes em ambientes web, facilitando a gestão e o uso das soluções entregues."
-                }
-            }
-        },
-        "education": {
-            "degree1": {
-                "title": "Tecnólogo em Sistemas / Engenharia de Sistemas",
-                "institution": "Universidade do Atlântico",
-                "date": "2018 – 2022"
-            },
-            "degree2": {
-                "title": "Desenvolvimento Web Full Stack",
-                "institution": "Platzi",
-                "date": "2021 – Presente"
-            }
-        },
-        "skills": {
-            "frontend": {
-                "label": "Frontend",
-                "items": "Next.js, React, TypeScript, Tailwind CSS"
-            },
-            "backend": {
-                "label": "Backend",
-                "items": "FastAPI, Laravel, Node.js, REST APIs"
-            },
-            "databases": {
-                "label": "Bancos de dados",
-                "items": "PostgreSQL, MySQL, Google Sheets"
-            },
-            "tools": {
-                "label": "Ferramentas",
-                "items": "Git, VS Code, Figma, Vercel"
-            }
-        },
-        "languages": {
-            "spanish": {
-                "label": "Espanhol",
-                "level": "Nativo"
-            },
-            "english": {
-                "label": "Inglês",
-                "level": "Intermediário (B1)"
-            }
-        },
-        "projects": {
-            "certificates": {
-                "name": "Sistema de Certificados EDS",
-                "tech": "Next.js · Google Sheets · QR Code",
-                "description": "Plataforma web para emissão, gestão e validação de certificados de inspeção, otimizando processos internos e fortalecendo a reputação da empresa perante clientes e órgãos reguladores. Inclui painel administrativo e portal público de verificação, facilitando acesso e transparência."
-            },
-            "iso": {
-                "name": "Portal de Gestão ISO 17020",
-                "tech": "React · TypeScript · Tailwind CSS",
-                "description": "Sistema de documentação e controle de qualidade para organismos de inspeção, desenhado para melhorar eficiência operacional e conformidade normativa, contribuindo para excelência e diferenciação no setor."
-            }
-        }
+    "cta": {
+      "title": "Pronto para transformar sua presença digital?",
+      "subtitle": "Deixe-me ajudá-lo a llevar seu negócio para o próximo nível",
+      "button": "Solicitar Consulta Gratuita"
     },
-    "Metadata": {
-        "services": {
-            "title": "Serviços Web - Desenvolvimento, SEO e Otimização | DaniDevCol",
-            "description": "Design web responsivo, desenvolvimento Next.js, otimização SEO e consultoria digital. Soluções profissionais para empresas globais da Colômbia. Potencialize sua presença online."
-        },
-        "portfolio": {
-            "title": "Portfólio Web - Projetos Next.js e React | DaniDevCol",
-            "description": "Casos de sucesso em desenvolvimento web: Somos Criteria, Oasix, CertiXion. Portfólio com 6+ projetos. Resultados mensuráveis em UX, desempenho e conversão."
-        },
-        "curriculum": {
-            "title": "Daniel Pérez Guzman - Desenvolvedor Full Stack | danidevcol",
-            "description": "CV de Daniel Pérez: Desenvolvedor Full Stack com 3+ anos em Next.js, React, TypeScript. Especialista em otimização web, gestão de projetos e automação. Colômbia."
-        }
-    },
-    "PortfolioPage": {
-        "title": "Portfólio de Projetos",
-        "labels": {
-            "trending": "Destaque",
-            "viewMore": "Ver mais",
-            "closeModal": "Fechar modal",
-            "technologies": "Tecnologias utilizadas",
-            "viewProject": "Ver projeto",
-            "close": "Fechar"
-        },
-        "projects": {
-            "somosCriteria": {
-                "name": "Somos Criteria",
-                "description": "Consultoria política com foco estratégico e presença digital.",
-                "fullDescription": "Site corporativo para a Somos Criteria, uma empresa de consultoria política. O projeto foi focado em comunicar serviços, autoridade profissional e proposta de valor com estrutura clara e experiência moderna.",
-                "technologies": "Next.js, React, Tailwind CSS, TypeScript",
-                "image": "/criteria.gif",
-                "link": "https://www.somoscriteria.com/",
-                "isTrending": "true"
-            },
-            "womenOasix": {
-                "name": "Women Oasix",
-                "description": "Página de perfil freelancer para marca pessoal de cliente.",
-                "fullDescription": "Desenvolvimento de página de perfil freelancer para cliente, com foco em fortalecer a marca pessoal, apresentar serviços e facilitar o contato comercial com experiência visual limpa e profissional.",
-                "technologies": "Next.js, React, CSS, TypeScript",
-                "image": "/oasix.gif",
-                "link": "https://www.womenoasix.com/",
-                "isTrending": "true"
-            },
-            "raicesDeOro": {
-                "name": "Raices de Oro",
-                "description": "Empreendimento universitário com foco em identidade e produto.",
-                "fullDescription": "Landing page para um empreendimento universitário focada em comunicar história do projeto, proposta de valor e identidade da marca. O site prioriza narrativa visual clara e navegação simples.",
-                "technologies": "Next.js, React, Tailwind CSS, Vercel",
-                "image": "/OroRaices.gif",
-                "link": "https://raicesdeoro.vercel.app/",
-                "isTrending": "false"
-            },
-            "certixion": {
-                "name": "CertiXion",
-                "description": "Aplicativo para gestão da ISO 17020 com integrações em nuvem.",
-                "fullDescription": "Aplicativo desenvolvido com Next.js e Firebase para gerenciar processos da norma ISO 17020. Inclui integração com Google Drive para centralização de documentos, rastreabilidade e eficiência operacional.",
-                "technologies": "Next.js, Firebase, Google Drive, TypeScript",
-                "image": "/herosection.png",
-                "link": "https://certixion.com/",
-                "isTrending": "true"
-            },
-            "constructora0312": {
-                "name": "Constructora 0312",
-                "description": "Site corporativo para serviços do setor de construção.",
-                "fullDescription": "Projeto web para Constructora 0312 voltado a apresentar experiência, serviços e canais de contato. A arquitetura de conteúdo foi pensada para clareza comercial e geração de leads.",
-                "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
-                "image": "/0315.gif",
-                "link": "https://constructora0312.com/",
-                "isTrending": "false"
-            },
-            "servicrep": {
-                "name": "Servicrep",
-                "description": "Organização de inspeção com presença digital institucional.",
-                "fullDescription": "Site para a Servicrep, organização de inspeção, focado em apresentar escopo de serviços, credibilidade técnica e canais de atendimento. A experiência prioriza informação clara e conversão.",
-                "technologies": "Next.js, React, TypeScript, UI/UX",
-                "image": "/servicrep.gif",
-                "link": "https://www.servicrep.com.co/",
-                "isTrending": "false"
-            }
-        }
+    "footer": {
+      "about": "danidevcol",
+      "description": "Desenvolvimento e otimização web com alcance global. Transformo ideias em soluções profissionais que impulsionam o seu crescimento em qualquer mercado.",
+      "seeMore": "Ver mais"
     }
+  },
+  "Services": {
+    "benefits": {
+      "title": "Por que nos escolher?",
+      "items": {
+        "custom": {
+          "title": "Soluções sob medida",
+          "description": "Desenvolvemos projetos personalizados de acordo com suas necessidades e objetivos de negócio."
+        },
+        "innovation": {
+          "title": "Inovação e tecnologia",
+          "description": "Utilizamos as tecnologias mais recentes para garantir resultados modernos, rápidos e eficientes."
+        },
+        "support": {
+          "title": "Suporte profissional",
+          "description": "Apoiamos você em cada etapa do projeto e oferecemos suporte contínuo para garantir seu sucesso."
+        }
+      }
+    },
+    "hero": {
+      "titlePrefix": "Serviços profissionais de",
+      "titleHighlight": "desenvolvimento web e software",
+      "description": "Soluções digitais sob medida para impulsionar seu negócio. Experiência em design, desenvolvimento e escalabilidade.",
+      "primaryButton": "Comece seu projeto",
+      "secondaryButton": "Saiba mais"
+    },
+    "page": {
+      "cardsTitle": "Nossos Serviços",
+      "cta": {
+        "title": "Pronto para escalar seu projeto?",
+        "description": "Entre em contato hoje e descubra como nossas soluções podem transformar sua presença digital.",
+        "button": "Solicitar uma consultoria"
+      }
+    },
+    "existingProjects": {
+      "slug": "melhorias-web-sites",
+      "title": "Melhoria e Otimização de Sites Web",
+      "subtitle": "Dê uma Nova Vida ao Seu Site",
+      "description": "Ofereço serviços para melhorar e otimizar seus sites atuais, garantindo que funcionem no seu mejor e atendam aos padrões modernos.",
+      "longDescription": "Seu site precisa de um impulso? Especializo-me em transformar sites existentes, melhorando seu desempenho, segurança e experiência do usuário.",
+      "cta": "Transformar Meu Site"
+    },
+    "newProjects": {
+      "slug": "desenvolvimento-do-zero",
+      "title": "Desenvolvimento de Sites do Zero",
+      "subtitle": "Sua Ideia, Minha Expertise",
+      "description": "Posso ajudá-lo a construir novos sites do zero, adaptados às suas necessidades e requisitos específicos.",
+      "longDescription": "Você tem uma ideia brilhante mais não sabe por onde começar? Crio sites modernos, escaláveis e seguros projetados especificamente para seu negócio.",
+      "cta": "Iniciar Meu Projeto"
+    }
+  },
+  "Navigation": {
+    "home": "Início",
+    "curriculum": "Currículo",
+    "portfolio": "Portfólio",
+    "services": "Serviços"
+  },
+  "Footer": {
+    "brand": "DaniDevCol",
+    "description": "Desenvolvimento web e otimização SEO.",
+    "services": {
+      "title": "Serviços",
+      "webDesign": "Design Web",
+      "seo": "Otimização SEO",
+      "customSoftware": "Software sob Medida"
+    },
+    "company": {
+      "title": "Empresa",
+      "portfolio": "Portfólio",
+      "curriculum": "Currículo"
+    },
+    "location": {
+      "title": "Localização",
+      "global": "Colômbia (Atendimento Global)"
+    },
+    "rights": "Todos os direitos reservados."
+  },
+  "CurriculumPage": {
+    "header": {
+      "name": "Daniel Perez Guzman",
+      "role": "Desenvolvedor Frontend / Integrador Web",
+      "contacts": {
+        "whatsapp": "WhatsApp",
+        "linkedin": "linkedin.com/in/danielperez",
+        "github": "github.com/DaniP-Dev"
+      },
+      "degree": "Manutenção de Sistemas Informáticos"
+    },
+    "sections": {
+      "profile": "Perfil Profissional",
+      "experience": "Experience",
+      "education": "Formação Acadêmica",
+      "skills": "Habilidades Técnicas",
+      "languages": "Idiomas",
+      "projects": "Projetos em Destaque",
+      "training": "Training",
+      "hobbies": "Hobbies"
+    },
+    "profile": {
+      "text": "Profissional voltado ao desenvolvimento de interfaces web funcionais, responsivas e alinhadas aos requisitos do usuário. Experiência na implementação de soluções front-end aplicando boas práticas de desenvolvimento, manutenção de código e otimização de componentes. Foco na construção de produtos digitais claros, eficientes e fáceis de usar."
+    },
+    "experience": {
+      "servicrep": {
+        "company": "Servicrep",
+        "role": "Fundador e Desenvolvedor Full Stack",
+        "date": "Jan 2023 – Presente",
+        "location": "Soledad, Atlântico",
+        "bullets": {
+          "b1": "Desenvolvi sistema de gestão de inspeções e certificações para postos de combustível EDS, otimizando o fluxo de trabalho e a rastreabilidade dos processos.",
+          "b2": "Implementei validação de certificados por códigos QR, agilizando a verificação e fortalecendo a confiança nos serviços oferecidos.",
+          "b3": "Integrei Google Sheets como banco de dados intermediário, facilitando a análise e o acompanhamento de relatórios para decisões mais efetivas.",
+          "b4": "Desenhei um sistema de templates PDF para certificados, garantindo consistência institucional e melhorando a apresentação para clientes e órgãos reguladores."
+        }
+      },
+      "oasix": {
+        "company": "Oasix",
+        "role": "Desenvolvedor Web Freelancer",
+        "date": "Mar 2022 – Dez 2022",
+        "location": "Remoto",
+        "bullets": {
+          "b1": "Construí interfaces responsivas com React e Tailwind CSS, melhorando a interação e a satisfação dos usuários finais.",
+          "b2": "Desenvolvi integrações com APIs REST e otimizei o desempenho de aplicações, contribuindo para a continuidade operacional e escalabilidade dos projetos dos clientes.",
+          "b3": "Diseños para distintos dispositivos",
+          "b4": "Colaboración con el equipo backend",
+          "b5": "Despliegue"
+        }
+      },
+      "freelance": {
+        "company": "Freelance Web Developer",
+        "role": "Desenvolvedor Web Independente",
+        "date": "2021 – Presente",
+        "location": "Remoto",
+        "bullets": {
+          "b1": "Desenvolvimento e manutenção de sites e pequenas web apps para clientes diversos.",
+          "b2": "Deploy em produção usando cPanel e Vercel, garantindo disponibilidade e estabilidade dos projetos.",
+          "b3": "Configuração de domínios personalizados para melhorar a presença digital dos clientes.",
+          "b4": "Implementação de SEO básico e otimização de desempenho para aumentar visibilidade e eficiência dos sites.",
+          "b5": "Elaboração de documentação técnica e suporte a clientes em ambientes web, facilitando a gestão e o uso das soluções entregues."
+        }
+      }
+    },
+    "education": {
+      "degree1": {
+        "title": "Manutenção de Sistemas Informáticos",
+        "institution": "Universidade do Atlântico",
+        "date": "2018 – 2022"
+      },
+      "degree2": {
+        "title": "Desenvolvimento Web Full Stack",
+        "institution": "Platzi",
+        "date": "2021 – Presente"
+      }
+    },
+    "skills": {
+      "frontend": {
+        "label": "Frontend",
+        "items": "Next.js, React, TypeScript, Tailwind CSS"
+      },
+      "backend": {
+        "label": "Backend",
+        "items": "FastAPI, Laravel, Node.js, REST APIs"
+      },
+      "databases": {
+        "label": "Bancos de dados",
+        "items": "PostgreSQL, MySQL, Google Sheets"
+      },
+      "tools": {
+        "label": "Ferramentas",
+        "items": "Git, VS Code, Figma, Vercel"
+      },
+      "flatItems": {
+        "i1": "ReactJs",
+        "i2": "SQL - NoSql",
+        "i3": "TailWind",
+        "i4": "BootStrap",
+        "i5": "PHP",
+        "i6": "Wordpress",
+        "i7": "Laravel",
+        "i8": "Shopify",
+        "i9": "Servidores Cpanel y Vercel",
+        "i10": "ISO 9001",
+        "i11": "CodeIgniter"
+      }
+    },
+    "languages": {
+      "spanish": {
+        "label": "Espanhol",
+        "level": "Nativo"
+      },
+      "english": {
+        "label": "Inglês",
+        "level": "Intermediário (B1)"
+      }
+    },
+    "projects": {
+      "certificates": {
+        "name": "Sistema de Certificados EDS",
+        "tech": "Next.js · Google Sheets · QR Code",
+        "description": "Plataforma web para emissão, gestão e validação de certificados de inspeção, otimizando processos internos e fortalecendo a reputação da empresa perante clientes e órgãos reguladores. Inclui painel administrativo e portal público de verificação, facilitando acesso e transparência."
+      },
+      "iso": {
+        "name": "Portal de Gestão ISO 17020",
+        "tech": "React · TypeScript · Tailwind CSS",
+        "description": "Sistema de documentação e controle de qualidade para organismos de inspeção, desenhado para melhorar eficiência operacional e conformidade normativa, contribuindo para excelência e diferenciação no setor."
+      }
+    },
+    "training": {
+      "items": {
+        "i1": "Desarrollo web con NextJs",
+        "i2": "Terminal y Línea de Comandos",
+        "i3": "Fundamentos Python",
+        "i4": "Expresiones Regulares",
+        "i5": "Manejo de Datos, Estructuras y Funciones"
+      }
+    }
+  },
+  "Metadata": {
+    "services": {
+      "title": "Serviços Web - Desenvolvimento, SEO e Otimização | DaniDevCol",
+      "description": "Design web responsivo, desenvolvimento Next.js, otimização SEO e consultoria digital. Soluções profissionais para empresas globais da Colômbia. Potencialize sua presença online."
+    },
+    "portfolio": {
+      "title": "Portfólio Web - Projetos Next.js e React | DaniDevCol",
+      "description": "Casos de sucesso em desenvolvimento web: Somos Criteria, Oasix, CertiXion. Portfólio com 6+ projetos. Resultados mensuráveis em UX, desempenho e conversão."
+    },
+    "curriculum": {
+      "title": "Daniel Pérez Guzman - Desenvolvedor Full Stack | danidevcol",
+      "description": "CV de Daniel Pérez: Desenvolvedor Full Stack com 3+ anos em Next.js, React, TypeScript. Especialista em otimização web, gestão de projetos e automação. Colômbia."
+    }
+  },
+  "PortfolioPage": {
+    "title": "Portfólio de Projetos",
+    "labels": {
+      "trending": "Destaque",
+      "viewMore": "Ver mais",
+      "closeModal": "Fechar modal",
+      "technologies": "Tecnologias utilizadas",
+      "viewProject": "Ver projeto",
+      "close": "Fechar"
+    },
+    "projects": {
+      "somosCriteria": {
+        "name": "Somos Criteria",
+        "description": "Consultoria política com foco estratégico e presença digital.",
+        "fullDescription": "Site corporativo para a Somos Criteria, uma empresa de consultoria política. O projeto foi focado em comunicar serviços, autoridade profissional e proposta de valor com estrutura clara e experiência moderna.",
+        "technologies": "Next.js, React, Tailwind CSS, TypeScript",
+        "image": "/criteria.gif",
+        "link": "https://www.somoscriteria.com/",
+        "isTrending": "true"
+      },
+      "womenOasix": {
+        "name": "Women Oasix",
+        "description": "Página de perfil freelancer para marca pessoal de cliente.",
+        "fullDescription": "Desenvolvimento de página de perfil freelancer para cliente, com foco em fortalecer a marca pessoal, apresentar serviços e facilitar o contato comercial com experiência visual limpa e profissional.",
+        "technologies": "Next.js, React, CSS, TypeScript",
+        "image": "/oasix.gif",
+        "link": "https://www.womenoasix.com/",
+        "isTrending": "true"
+      },
+      "raicesDeOro": {
+        "name": "Raices de Oro",
+        "description": "Empreendimento universitário com foco em identidade e produto.",
+        "fullDescription": "Landing page para um empreendimento universitário focada em comunicar história do projeto, proposta de valor e identidade da marca. O site prioriza narrativa visual clara e navegação simples.",
+        "technologies": "Next.js, React, Tailwind CSS, Vercel",
+        "image": "/OroRaices.gif",
+        "link": "https://raicesdeoro.vercel.app/",
+        "isTrending": "false"
+      },
+      "certixion": {
+        "name": "CertiXion",
+        "description": "Aplicativo para gestão da ISO 17020 com integrações em nuvem.",
+        "fullDescription": "Aplicativo desenvolvido com Next.js e Firebase para gerenciar processos da norma ISO 17020. Inclui integração com Google Drive para centralização de documentos, rastreabilidade e eficiência operacional.",
+        "technologies": "Next.js, Firebase, Google Drive, TypeScript",
+        "image": "/herosection.png",
+        "link": "https://certixion.com/",
+        "isTrending": "true"
+      },
+      "constructora0312": {
+        "name": "Constructora 0312",
+        "description": "Site corporativo para serviços do setor de construção.",
+        "fullDescription": "Projeto web para Constructora 0312 voltado a apresentar experiência, serviços e canais de contato. A arquitetura de conteúdo foi pensada para clareza comercial e geração de leads.",
+        "technologies": "Next.js, React, Tailwind CSS, Responsive Design",
+        "image": "/0315.gif",
+        "link": "https://constructora0312.com/",
+        "isTrending": "false"
+      },
+      "servicrep": {
+        "name": "Servicrep",
+        "description": "Organização de inspeção com presença digital institucional.",
+        "fullDescription": "Site para a Servicrep, organização de inspeção, focado em apresentar escopo de serviços, credibilidade técnica e canais de atendimento. A experiência prioriza informação clara e conversão.",
+        "technologies": "Next.js, React, TypeScript, UI/UX",
+        "image": "/servicrep.gif",
+        "link": "https://www.servicrep.com.co/",
+        "isTrending": "false"
+      }
+    }
+  }
 }
