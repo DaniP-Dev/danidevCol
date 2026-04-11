@@ -69,16 +69,16 @@ export default async function CurriculumPage() {
           })
         }}
       />
-      <main className="min-h-screen bg-gray-50 py-10 print:bg-white print:py-0">
-        <div className="mx-auto w-[850px] bg-white shadow-xl print:shadow-none font-sans text-gray-800 text-[13.5px] leading-snug px-16 py-14">
+      <main className="min-h-screen bg-gray-50 py-4 sm:py-10 print:bg-white print:py-0">
+        <div className="mx-auto w-full max-w-[850px] bg-white shadow-xl print:shadow-none font-sans text-gray-800 text-[13.5px] leading-snug px-6 sm:px-16 py-8 sm:py-14">
           
           {/* ── ENCABEZADO ── */}
           <header className="mb-8 flex flex-col items-center">
-            <h2 className="text-[13px] font-bold text-gray-700 uppercase tracking-wide">{t("header.role")}</h2>
-            <h1 className="text-[42px] font-bold uppercase tracking-widest text-[#78A4B2] mt-0.5 leading-none">{t("header.name")}</h1>
-            <p className="text-[14px] text-gray-800 mt-2 font-medium">{t("header.degree")}</p>
+            <h2 className="text-[13px] font-bold text-gray-700 uppercase tracking-wide text-center">{t("header.role")}</h2>
+            <h1 className="text-[32px] sm:text-[42px] font-bold uppercase tracking-widest text-[#78A4B2] mt-0.5 leading-none text-center">{t("header.name")}</h1>
+            <p className="text-[14px] text-gray-800 mt-2 font-medium text-center">{t("header.degree")}</p>
             
-            <div className="flex w-full justify-between items-center mt-7 text-[13px] font-medium px-4">
+            <div className="flex flex-col sm:flex-row w-full justify-between items-center mt-7 text-[13px] font-medium px-0 sm:px-4 gap-4 sm:gap-0">
               <a href={socialLinks.whatsapp} className="flex items-center gap-2 hover:opacity-80 text-[#78A4B2]" target="_blank" rel="noopener noreferrer">
                 <WhatsappIcon />
                 <span className="underline">+57 3016328564</span>
@@ -98,7 +98,7 @@ export default async function CurriculumPage() {
           </Section>
 
           {/* ── COLUMNAS ── */}
-          <div className="grid grid-cols-[40%_52%] justify-between gap-x-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-[40%_52%] justify-between gap-y-8 md:gap-y-0 md:gap-x-6 mt-8">
             
             {/* ── COLUMNA IZQUIERDA ── */}
             <div>
