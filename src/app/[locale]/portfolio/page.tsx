@@ -1,6 +1,7 @@
 import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { buildPageAlternates } from "@/src/libs/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -15,8 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "React projects",
       "web development portfolio",
       "casos de éxito",
-      "web design examples"
-    ]
+      "web design examples",
+    ],
+    alternates: buildPageAlternates(locale, "/portfolio"),
   };
 }
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {

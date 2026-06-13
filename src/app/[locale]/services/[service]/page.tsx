@@ -5,6 +5,7 @@ import { getServiceBenefits, getServiceProcess } from "@/src/libs/serviceContent
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { routing } from "@/src/i18n/routing";
+import { buildServiceAlternates } from "@/src/libs/seo";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -26,6 +27,10 @@ export async function generateMetadata({
     title: t(`${category.key}.title`),
     description: t(`${category.key}.description`),
     keywords: [t(`${category.key}.title`), "web development", "digital solutions"],
+    alternates: await buildServiceAlternates(
+      locale,
+      category.key as "existingProjects" | "newProjects",
+    ),
   };
 }
 

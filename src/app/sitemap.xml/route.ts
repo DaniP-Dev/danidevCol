@@ -1,39 +1,13 @@
-import es from "@/messages/es.json";
-import en from "@/messages/en.json";
-import pt from "@/messages/pt.json";
-import ar from "@/messages/ar.json";
+import { routing } from "@/src/i18n/routing";
+import {
+  absoluteUrl,
+  buildLanguageAlternates,
+  buildServiceLanguageAlternates,
+} from "@/src/libs/seo";
 
-const siteUrl = "https://danidevcol.com";
 const lastMod = "2026-04-02";
 
-const locales = ["es", "en", "pt", "ar"] as const;
-type Locale = (typeof locales)[number];
-
-type Messages = {
-  Services: {
-    existingProjects: { slug: string };
-    newProjects: { slug: string };
-  };
-};
-
-const messagesByLocale: Record<Locale, Messages> = {
-  es: es as Messages,
-  en: en as Messages,
-  pt: pt as Messages,
-  ar: ar as Messages,
-};
-
-function absoluteUrl(pathname: string): string {
-  return new URL(pathname, siteUrl).toString();
-}
-
-function encodedPath(pathname: string): string {
-  return pathname
-    .split("/")
-    .map((segment) => encodeURIComponent(segment))
-    .join("/")
-    .replace(/%2F/g, "/");
-}
+type Locale = (typeof routing.locales)[number];
 
 function escapeXml(value: string): string {
   return value
@@ -44,14 +18,21 @@ function escapeXml(value: string): string {
     .replace(/'/g, "&apos;");
 }
 
+function buildHreflangLinks(languages: Record<string, string>): string[] {
+  return Object.entries(languages).map(
+    ([hreflang, href]) =>
+      `    <xhtml:link rel="alternate" hreflang="${hreflang}" href="${escapeXml(href)}" />`,
+  );
+}
+
 function buildUrlEntry(options: {
   url: string;
   changefreq: string;
   priority: string;
-  alternates?: string[];
+  languages?: Record<string, string>;
 }): string {
-  const alternateLinks = options.alternates
-    ? options.alternates.join("\n")
+  const alternateLinks = options.languages
+    ? buildHreflangLinks(options.languages).join("\n")
     : "";
 
   return [
@@ -67,20 +48,15 @@ function buildUrlEntry(options: {
     .join("\n");
 }
 
-function buildAlternates(pathByLocale: Record<Locale, string>): string[] {
-  return locales.map(
-    (locale) =>
-      `    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(absoluteUrl(pathByLocale[locale]))}" />`,
-  );
-}
-
 export async function GET() {
-  const rootPaths: Record<Locale, string> = {
-    es: "/es",
-    en: "/en",
-    pt: "/pt",
-    ar: "/ar",
-  };
+  const homeAlternates = buildLanguageAlternates("/");
+  const servicesAlternates = buildLanguageAlternates("/services");
+  const portfolioAlternates = buildLanguageAlternates("/portfolio");
+  const curriculumAlternates = buildLanguageAlternates("/curriculum");
+  const existingProjectsAlternates =
+    await buildServiceLanguageAlternates("existingProjects");
+  const newProjectsAlternates =
+    await buildServiceLanguageAlternates("newProjects");
 
   const sitemapParts: string[] = [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -88,82 +64,55 @@ export async function GET() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
   ];
 
-  for (const locale of locales) {
+  for (const locale of routing.locales) {
     sitemapParts.push(
       buildUrlEntry({
-        url: absoluteUrl(rootPaths[locale]),
+        url: homeAlternates[locale],
         changefreq: "weekly",
         priority: "1.0",
-        alternates: buildAlternates(rootPaths),
+        languages: homeAlternates,
       }),
     );
   }
 
-  const sectionPaths: Array<{ priority: string; paths: Record<Locale, string> }> = [
-    {
-      priority: "0.8",
-      paths: {
-        es: "/es/servicios",
-        en: "/en/services",
-        pt: "/pt/servicos",
-        ar: "/ar/services",
-      },
-    },
-    {
-      priority: "0.9",
-      paths: {
-        es: "/es/portafolio",
-        en: "/en/portfolio",
-        pt: "/pt/portfolio",
-        ar: "/ar/portfolio",
-      },
-    },
-    {
-      priority: "0.8",
-      paths: {
-        es: "/es/curriculum",
-        en: "/en/curriculum",
-        pt: "/pt/curriculum",
-        ar: "/ar/curriculum",
-      },
-    },
+  const sectionEntries: Array<{
+    priority: string;
+    languages: Record<string, string>;
+  }> = [
+    { priority: "0.8", languages: servicesAlternates },
+    { priority: "0.9", languages: portfolioAlternates },
+    { priority: "0.8", languages: curriculumAlternates },
   ];
 
-  for (const section of sectionPaths) {
-    for (const locale of locales) {
+  for (const section of sectionEntries) {
+    for (const locale of routing.locales) {
       sitemapParts.push(
         buildUrlEntry({
-          url: absoluteUrl(section.paths[locale]),
+          url: section.languages[locale],
           changefreq: "monthly",
           priority: section.priority,
+          languages: section.languages,
         }),
       );
     }
   }
 
-  for (const locale of locales) {
-    const messages = messagesByLocale[locale];
-    const serviceBasePath =
-      locale === "es"
-        ? "/es/servicios"
-        : locale === "en"
-          ? "/en/services"
-          : locale === "pt"
-            ? "/pt/servicos"
-            : "/ar/services";
+  const serviceEntries = [
+    { key: "existingProjects" as const, alternates: existingProjectsAlternates },
+    { key: "newProjects" as const, alternates: newProjectsAlternates },
+  ];
 
-    sitemapParts.push(
-      buildUrlEntry({
-        url: absoluteUrl(encodedPath(`${serviceBasePath}/${messages.Services.existingProjects.slug}`)),
-        changefreq: "monthly",
-        priority: "0.7",
-      }),
-      buildUrlEntry({
-        url: absoluteUrl(encodedPath(`${serviceBasePath}/${messages.Services.newProjects.slug}`)),
-        changefreq: "monthly",
-        priority: "0.7",
-      }),
-    );
+  for (const service of serviceEntries) {
+    for (const locale of routing.locales) {
+      sitemapParts.push(
+        buildUrlEntry({
+          url: service.alternates[locale],
+          changefreq: "monthly",
+          priority: "0.7",
+          languages: service.alternates,
+        }),
+      );
+    }
   }
 
   sitemapParts.push("</urlset>");

@@ -52,15 +52,6 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name
   },
-  alternates: {
-    canonical: "./",
-    languages: {
-      "es-CO": "/es",
-      "en-US": "/en",
-      "pt-BR": "/pt",
-      "ar-SA": "/ar"
-    }
-  },
   robots: {
     index: true,
     follow: true

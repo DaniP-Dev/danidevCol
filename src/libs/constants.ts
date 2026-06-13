@@ -12,7 +12,7 @@ export const siteConfig = {
   name: "DaniDevCol",
   author: "Daniel Pérez Guzman",
   description: "Desarrollo y optimización web profesional con alcance global.",
-  url: "https://danidevcol.com",
-  ogImage: "https://danidevcol.com/og-image.png",
+  url: "https://www.danidevcol.com",
+  ogImage: "https://www.danidevcol.com/og-image.png",
   email: "danidevcol@gmail.com"
 };

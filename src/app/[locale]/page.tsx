@@ -4,39 +4,51 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { serviceCategories } from "@/src/libs/services";
+import { buildPageAlternates } from "@/src/libs/seo";
+import { siteConfig } from "@/src/libs/constants";
 
-export const metadata: Metadata = {
-  title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
-  description:
-    "Desarrollador web freelance en Colombia especializado en desarrollo, rediseño y optimización web para empresas globales. SOLUCIONES PROFESIONALES multi-idioma para potenciar tu presencia digital.",
-  keywords: [
-    "danidevcol",
-    "Desarrollo web Colombia",
-    "Desarrollador web freelance",
-    "Optimización web internacional",
-    "Desarrollo web global",
-    "Optimización de páginas web",
-    "Rediseño web",
-    "Sitios web para negocios",
-    "Contratar desarrollador web",
-    "Mejorar página web",
-    "Editar sitio web",
-    "Colombia"
-  ],
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const alternates = buildPageAlternates(locale, "/");
+
+  return {
     title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
     description:
-      "Soluciones profesionales de desarrollo y optimización web para empresas. Desarrollador freelance con soporte global y multi-idioma.",
-    type: "website",
-    locale: "es_CO",
-    url: "https://danidevcol.com",
-    siteName: "danidevcol"
-  },
-  robots: {
-    index: true,
-    follow: true
-  }
-};
+      "Desarrollador web freelance en Colombia especializado en desarrollo, rediseño y optimización web para empresas globales. SOLUCIONES PROFESIONALES multi-idioma para potenciar tu presencia digital.",
+    keywords: [
+      "danidevcol",
+      "Desarrollo web Colombia",
+      "Desarrollador web freelance",
+      "Optimización web internacional",
+      "Desarrollo web global",
+      "Optimización de páginas web",
+      "Rediseño web",
+      "Sitios web para negocios",
+      "Contratar desarrollador web",
+      "Mejorar página web",
+      "Editar sitio web",
+      "Colombia",
+    ],
+    alternates,
+    openGraph: {
+      title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
+      description:
+        "Soluciones profesionales de desarrollo y optimización web para empresas. Desarrollador freelance con soporte global y multi-idioma.",
+      type: "website",
+      locale,
+      url: new URL(alternates.canonical as string, siteConfig.url).toString(),
+      siteName: "danidevcol",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

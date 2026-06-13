@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { buildPageAlternates } from "@/src/libs/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -15,8 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "SEO optimization",
       "web design",
       "diseño web",
-      "servicio web"
-    ]
+      "servicio web",
+    ],
+    alternates: buildPageAlternates(locale, "/services"),
   };
 }
 

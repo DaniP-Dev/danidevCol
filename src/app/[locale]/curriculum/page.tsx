@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import { socialLinks } from "@/src/libs/constants";
+import { buildPageAlternates } from "@/src/libs/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -16,8 +17,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "Next.js developer",
       "React developer",
       "TypeScript expert",
-      "web developer resume"
-    ]
+      "web developer resume",
+    ],
+    alternates: buildPageAlternates(locale, "/curriculum"),
   };
 }
 
