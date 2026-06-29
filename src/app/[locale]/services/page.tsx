@@ -27,9 +27,11 @@ import PhraseService from "@/src/components/servicesPage/PhraseService";
 import { serviceCategories } from "@/src/libs/services";
 import CardService from "@/src/components/servicesPage/CardService";
 import Benefits from "@/src/components/servicesPage/Benefits";
-import { contactCta, siteConfig } from "@/src/libs/constants";
+import { siteConfig } from "@/src/libs/constants";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 
-export default async function page() {
+export default async function page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("Services");
   const servicesUrl = `${siteConfig.url}/services`;
 
@@ -98,14 +100,13 @@ export default async function page() {
              <p className="text-base md:text-lg font-medium mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
                {t("page.cta.description")}
              </p>
-             <a
-               href={contactCta.href}
-               target={contactCta.target}
-               rel={contactCta.rel}
+            <ContactCTA
+              location="services_cta"
+              locale={locale}
                className="inline-block px-6 py-3 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-full hover:bg-teal-50 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
              >
                {t("page.cta.button")}
-             </a>
+            </ContactCTA>
            </div>
            {/* Decoraciones de fondo */}
            <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/20 rounded-full blur-2xl"></div>

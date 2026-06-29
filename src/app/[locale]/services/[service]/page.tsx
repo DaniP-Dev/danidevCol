@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Link } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
 import { buildServiceAlternates } from "@/src/libs/seo";
-import { contactCta } from "@/src/libs/constants";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -72,14 +72,13 @@ export default async function Page({ params }: PageProps) {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
               {longDescription}
             </p>
-            <a
-              href={contactCta.href}
-              target={contactCta.target}
-              rel={contactCta.rel}
+            <ContactCTA
+              location="service_detail_hero"
+              locale={locale}
               className="inline-block px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
             >
               {ctaText}
-            </a>
+            </ContactCTA>
           </div>
           
           {/* SVG Illustration */}
@@ -169,14 +168,13 @@ export default async function Page({ params }: PageProps) {
             {t("serviceDetail.cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={contactCta.href}
-              target={contactCta.target}
-              rel={contactCta.rel}
+            <ContactCTA
+              location="service_detail_final"
+              locale={locale}
               className="px-8 py-4 bg-white text-teal-700 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
             >
               {t("serviceDetail.cta.primaryButton")}
-            </a>
+            </ContactCTA>
             <Link
               href="/services"
               locale={locale}

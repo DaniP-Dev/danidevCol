@@ -11,7 +11,9 @@ export const socialLinks = {
 export const contactCta = {
   href: socialLinks.whatsapp,
   target: "_blank",
-  rel: "noopener noreferrer"
+  rel: "noopener noreferrer",
+  eventName: "contact_cta_click",
+  channel: "whatsapp"
 } as const;
 
 export const siteConfig = {

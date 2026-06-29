@@ -30,7 +30,15 @@ const CardPortfolio = ({
       onClick={() => onOpenModal(id)}
       className="bg-neutral-primary-soft block max-w-sm border border-default rounded-base shadow-xs cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
     >
-      <a href="#" onClick={(e) => e.preventDefault()} className="block">
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onOpenModal(id);
+        }}
+        className="block w-full"
+        aria-label={t("labels.viewMore")}
+      >
         <Image
           className="rounded-t-base"
           src={image}
@@ -42,7 +50,7 @@ const CardPortfolio = ({
           loading={priority ? undefined : "lazy"}
           quality={80}
         />
-      </a>
+      </button>
       <div className="p-6 text-center">
         {isTrending && (
           <span className="inline-flex items-center bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">
@@ -66,11 +74,19 @@ const CardPortfolio = ({
             {t("labels.trending")}
           </span>
         )}
-        <a href="#" onClick={(e) => e.preventDefault()} className="block">
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onOpenModal(id);
+          }}
+          className="block w-full text-left"
+          aria-label={`${t("labels.viewMore")}: ${name}`}
+        >
           <h5 className="mt-3 mb-6 text-2xl font-semibold tracking-tight text-heading">
             {name}
           </h5>
-        </a>
+        </button>
         <p className="mb-6 text-gray-700 dark:text-gray-300 line-clamp-3">{description}</p>
         <button
           onClick={(e) => {

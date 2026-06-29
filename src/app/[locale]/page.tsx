@@ -5,7 +5,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { serviceCategories } from "@/src/libs/services";
 import { buildPageAlternates } from "@/src/libs/seo";
-import { contactCta, siteConfig } from "@/src/libs/constants";
+import { siteConfig } from "@/src/libs/constants";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 
 export async function generateMetadata({
   params,
@@ -14,30 +15,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const alternates = buildPageAlternates(locale, "/");
+  const tMetadata = await getTranslations({ locale, namespace: "Metadata.home" });
+  const metadataKeywords = tMetadata.raw("keywords");
+  const keywords = Array.isArray(metadataKeywords)
+    ? metadataKeywords.filter((keyword): keyword is string => typeof keyword === "string")
+    : [];
 
   return {
-    title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
-    description:
-      "Desarrollador web freelance en Colombia especializado en desarrollo, rediseño y optimización web para empresas globales. SOLUCIONES PROFESIONALES multi-idioma para potenciar tu presencia digital.",
-    keywords: [
-      "danidevcol",
-      "Desarrollo web Colombia",
-      "Desarrollador web freelance",
-      "Optimización web internacional",
-      "Desarrollo web global",
-      "Optimización de páginas web",
-      "Rediseño web",
-      "Sitios web para negocios",
-      "Contratar desarrollador web",
-      "Mejorar página web",
-      "Editar sitio web",
-      "Colombia",
-    ],
+    title: tMetadata("title"),
+    description: tMetadata("description"),
+    keywords,
     alternates,
     openGraph: {
-      title: "danidevcol | Desarrollo Web en Colombia y Optimización Global",
-      description:
-        "Soluciones profesionales de desarrollo y optimización web para empresas. Desarrollador freelance con soporte global y multi-idioma.",
+      title: tMetadata("title"),
+      description: tMetadata("description"),
       type: "website",
       locale,
       url: new URL(alternates.canonical as string, siteConfig.url).toString(),
@@ -83,10 +74,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="mt-8 text-base font-normal leading-7 text-gray-400 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
 
               <div className="flex items-center justify-center mt-8 space-x-5 xl:mt-16 lg:justify-start">
-                <a
-                  href={contactCta.href}
-                  target={contactCta.target}
-                  rel={contactCta.rel}
+                <ContactCTA
+                  location="home_hero"
+                  locale={locale}
                   className="
                             inline-flex
                             items-center
@@ -109,7 +99,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   role="button"
                 >
                   {t("hero.cta")}
-                </a>
+                </ContactCTA>
 
                 <Link
                   href="/services"
@@ -276,14 +266,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </p>
           </div>
 
-          <a
-            href={contactCta.href}
-            target={contactCta.target}
-            rel={contactCta.rel}
+          <ContactCTA
+            location="home_final"
+            locale={locale}
             className="inline-flex items-center justify-center px-10 py-5 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
           >
             {t("cta.button")}
-          </a>
+          </ContactCTA>
         </div>
       </section>
     </div>
