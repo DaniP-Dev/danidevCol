@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 interface CardPortfolioProps {
   id: number;
@@ -9,6 +10,7 @@ interface CardPortfolioProps {
   description: string;
   image?: string;
   isTrending?: boolean;
+  priority?: boolean;
   onOpenModal: (projectId: number) => void;
 }
 
@@ -18,6 +20,7 @@ const CardPortfolio = ({
   description,
   image = "/docs/images/blog/image-1.jpg",
   isTrending = false,
+  priority = false,
   onOpenModal,
 }: CardPortfolioProps) => {
   const t = useTranslations("PortfolioPage");
@@ -28,10 +31,16 @@ const CardPortfolio = ({
       className="bg-neutral-primary-soft block max-w-sm border border-default rounded-base shadow-xs cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
     >
       <a href="#" onClick={(e) => e.preventDefault()} className="block">
-        <img
+        <Image
           className="rounded-t-base"
           src={image}
           alt={`Portafolio de danidevcol: ${name}`}
+          width={600}
+          height={340}
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          priority={priority}
+          loading={priority ? undefined : "lazy"}
+          quality={80}
         />
       </a>
       <div className="p-6 text-center">

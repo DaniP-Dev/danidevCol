@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -37,10 +38,15 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         <div className="bg-white dark:bg-gray-900 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           {/* Header */}
           <div className="relative">
-            <img
+            <Image
               src={project.image}
               alt={`Trabajo de danidevcol: ${project.name}`}
               className="w-full h-64 object-cover rounded-t-lg"
+              width={1200}
+              height={640}
+              sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1024px) 80vw, 768px"
+              loading="lazy"
+              quality={82}
             />
             <button
               onClick={onClose}

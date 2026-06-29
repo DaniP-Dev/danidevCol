@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useEffect, useState } from "react";
 import { Dropdown, DropdownHeader, DropdownItem } from "flowbite-react";
 import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
@@ -17,28 +16,10 @@ export default function LanguageToggle() {
   const currentLocale = useLocale() as keyof typeof languageData;
   const router = useRouter();
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch by only rendering after mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleLanguageChange = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
   };
-
-  if (!mounted) {
-    return (
-      <button
-        type="button"
-        className="flex items-center justify-center p-2 rounded-lg text-white bg-blue-600 w-10 h-10 animate-pulse"
-        disabled
-      >
-        <span className="w-5 h-5 bg-blue-400 rounded-full"></span>
-      </button>
-    );
-  }
 
   return (
     <div className="flex items-center">

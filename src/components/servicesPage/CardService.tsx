@@ -1,7 +1,6 @@
 "use client";
 
 import { Link } from "@/src/i18n/navigation";
-import { useEffect, useState } from "react";
 import "./CardService.css";
 
 export interface CardServiceProps {
@@ -13,13 +12,9 @@ export interface CardServiceProps {
 const icons = ["💻", "📱", "☁️", "🔒", "🛠️", "🎨", "🚀"];
 
 export default function CardService({ slug, title, description }: CardServiceProps) {
-  const [icon, setIcon] = useState("");
+  const slugHash = Array.from(slug).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const icon = icons[slugHash % icons.length];
 
-  useEffect(() => {
-    // Solo en cliente, asignar un icono random
-    setIcon(icons[Math.floor(Math.random() * icons.length)]);
-  }, []);
-  
   return (
     <Link href={`/services/${slug}`} className="block h-full">
       <div className="card-service-wrapper">
@@ -80,7 +75,7 @@ export default function CardService({ slug, title, description }: CardServicePro
           <div className="content-container-service">
             <div className="content-top-service">
               <div className="service-icon">
-                {icon || "⚡"}
+                {icon}
               </div>
               <p className="title-service">{title}</p>
             </div>

@@ -87,6 +87,7 @@
     },
     "page": {
       "cardsTitle": "Our Services",
+      "highlight": "From concept to launch, we build clear and fast web products focused on business results.",
       "cta": {
         "title": "Ready to scale your project?",
         "description": "Contact us today and discover how our solutions can transform your digital presence.",
@@ -97,6 +98,50 @@
       "slug": "services",
       "title": "My Services",
       "description": "Explore the range of services I offer to help you achieve your goals."
+    },
+    "serviceDetail": {
+      "metadata": {
+        "notFoundTitle": "Service not found",
+        "keywords": {
+          "webDevelopment": "web development",
+          "digitalSolutions": "digital solutions"
+        }
+      },
+      "benefits": {
+        "title": "Key benefits",
+        "subtitle": "What you get from our service"
+      },
+      "process": {
+        "title": "Our process",
+        "subtitle": "How we work to ensure your success"
+      },
+      "cta": {
+        "title": "Ready to transform your business?",
+        "description": "Contact us today and discover how we can help you achieve your digital goals.",
+        "primaryButton": "Schedule consultation",
+        "secondaryButton": "View other services"
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": {
+          "timeline": {
+            "question": "How long does the project take?",
+            "answer": "The timeline depends on project complexity. On average, new projects take 2 to 4 months, while improvements are usually completed faster."
+          },
+          "technologies": {
+            "question": "What technologies do you use?",
+            "answer": "We use modern technologies such as React, Next.js, Node.js, and TypeScript, plus other tools that ensure scalability and maintainability."
+          },
+          "support": {
+            "question": "Do you offer post-launch support?",
+            "answer": "Yes, we include ongoing technical support and security updates. We also offer customized maintenance plans."
+          },
+          "communication": {
+            "question": "What does the communication process look like?",
+            "answer": "We keep communication constant through weekly meetings, progress updates, and a dedicated project lead to support you at every stage."
+          }
+        }
+      }
     },
     "existingProjects": {
       "slug": "existing-projects",

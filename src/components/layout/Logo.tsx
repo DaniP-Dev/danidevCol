@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "next-intl";
+import { Link } from "@/src/i18n/navigation";
 
 export default function Logo() {
+  const locale = useLocale();
+
   return (
-    <a href="/" className="flex items-center justify-center ">
+    <Link href="/" locale={locale} className="flex items-center justify-center ">
       <Image
         src="/yo.png"
         alt="DaniDev"
@@ -14,6 +20,6 @@ export default function Logo() {
       <span className="ml-3 text-xl font-semibold text-gray-900 dark:text-white">
         DaniDev
       </span>
-    </a>
+    </Link>
   );
 }

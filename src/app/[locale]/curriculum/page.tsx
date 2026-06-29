@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
-import { socialLinks } from "@/src/libs/constants";
+import { siteConfig, socialLinks } from "@/src/libs/constants";
 import { buildPageAlternates } from "@/src/libs/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -39,7 +39,7 @@ export default async function CurriculumPage() {
               "@type": "Person",
               "name": t("header.name"),
               "jobTitle": "Full Stack Developer",
-              "url": "https://danidevcol.com"
+              "url": siteConfig.url
             },
             "skills": [
               "Next.js",

@@ -1,18 +1,11 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
 
-  // Avoid hydration mismatch by only rendering after mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
+  if (!resolvedTheme) {
     return (
       <div className="p-2 w-10 h-10 rounded-lg bg-gray-700 dark:bg-gray-800 animate-pulse" />
     );

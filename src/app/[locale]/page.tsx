@@ -1,11 +1,11 @@
 
-import { Link } from "next-view-transitions";
+import { Link } from "@/src/i18n/navigation";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { serviceCategories } from "@/src/libs/services";
 import { buildPageAlternates } from "@/src/libs/seo";
-import { siteConfig } from "@/src/libs/constants";
+import { contactCta, siteConfig } from "@/src/libs/constants";
 
 export async function generateMetadata({
   params,
@@ -63,7 +63,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
         <div className="relative py-12 bg-gray-900 sm:py-16 lg:py-20 xl:pt-32 xl:pb-44">
           <div className="absolute inset-0 hidden lg:block">
-            <img className="object-cover object-bottom-right w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/background.png" alt="" />
+            <Image
+              className="object-cover object-bottom-right"
+              src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/background.png"
+              alt=""
+              fill
+              sizes="100vw"
+              priority
+            />
           </div>
 
           <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -76,8 +83,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="mt-8 text-base font-normal leading-7 text-gray-400 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
 
               <div className="flex items-center justify-center mt-8 space-x-5 xl:mt-16 lg:justify-start">
-                <Link
-                  href={`/${locale}/contacto`}
+                <a
+                  href={contactCta.href}
+                  target={contactCta.target}
+                  rel={contactCta.rel}
                   className="
                             inline-flex
                             items-center
@@ -100,10 +109,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   role="button"
                 >
                   {t("hero.cta")}
-                </Link>
+                </a>
 
                 <Link
-                  href={`/${locale}/servicios`}
+                  href="/services"
+                  locale={locale}
                   className="
                             inline-flex
                             items-center
@@ -132,7 +142,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
 
           <div className="mt-8 lg:hidden">
-            <img className="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/bg.png" alt="" />
+            <Image
+              className="object-cover w-full h-auto"
+              src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/bg.png"
+              alt=""
+              width={1200}
+              height={675}
+              sizes="100vw"
+              priority
+              fetchPriority="high"
+            />
           </div>
         </div>
       </section>
@@ -192,7 +211,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             return (
               <Link
                 key={service.key}
-                href={`/${locale}/services/${slug}`}
+                href={`/services/${slug}`}
+                locale={locale}
                 className="group relative rounded-2xl overflow-hidden bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 hover:border-teal-300/50 dark:hover:border-teal-400/50 transition-all duration-300 p-8 hover:shadow-xl hover:shadow-teal-500/10"
               >
                 <div className="space-y-4">
@@ -256,12 +276,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </p>
           </div>
 
-          <Link
-            href={`/${locale}/contacto`}
+          <a
+            href={contactCta.href}
+            target={contactCta.target}
+            rel={contactCta.rel}
             className="inline-flex items-center justify-center px-10 py-5 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
           >
             {t("cta.button")}
-          </Link>
+          </a>
         </div>
       </section>
     </div>

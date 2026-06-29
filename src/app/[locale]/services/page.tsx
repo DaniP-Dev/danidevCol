@@ -25,12 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 import HeroSection from "@/src/components/servicesPage/HeroSection";
 import PhraseService from "@/src/components/servicesPage/PhraseService";
 import { serviceCategories } from "@/src/libs/services";
-import { Link } from "@/src/i18n/navigation";
 import CardService from "@/src/components/servicesPage/CardService";
 import Benefits from "@/src/components/servicesPage/Benefits";
+import { contactCta, siteConfig } from "@/src/libs/constants";
 
 export default async function page() {
   const t = await getTranslations("Services");
+  const servicesUrl = `${siteConfig.url}/services`;
 
   return (
     <>
@@ -43,7 +44,7 @@ export default async function page() {
             "@type": "ProfessionalService",
             "name": "danidevcol Web Services",
             "description": "Web development, SEO optimization, and digital consulting services",
-            "url": "https://danidevcol.com/services",
+            "url": servicesUrl,
             "areaServed": "Worldwide",
             "serviceType": [
               "Web Design",
@@ -97,9 +98,14 @@ export default async function page() {
              <p className="text-base md:text-lg font-medium mb-6 opacity-90 max-w-2xl mx-auto leading-relaxed">
                {t("page.cta.description")}
              </p>
-             <Link href="/contacto" className="inline-block px-6 py-3 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-full hover:bg-teal-50 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+             <a
+               href={contactCta.href}
+               target={contactCta.target}
+               rel={contactCta.rel}
+               className="inline-block px-6 py-3 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-full hover:bg-teal-50 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
+             >
                {t("page.cta.button")}
-             </Link>
+             </a>
            </div>
            {/* Decoraciones de fondo */}
            <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/20 rounded-full blur-2xl"></div>

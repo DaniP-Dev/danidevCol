@@ -1,13 +1,10 @@
 import { routing } from "@/src/i18n/routing";
 import {
-  absoluteUrl,
   buildLanguageAlternates,
   buildServiceLanguageAlternates,
 } from "@/src/libs/seo";
 
 const lastMod = "2026-04-02";
-
-type Locale = (typeof routing.locales)[number];
 
 function escapeXml(value: string): string {
   return value

@@ -87,10 +87,55 @@
     },
     "page": {
       "cardsTitle": "Nuestros Servicios",
+      "highlight": "Del concepto al lanzamiento, construimos productos web claros, rápidos y orientados a resultados.",
       "cta": {
         "title": "¿Listo para escalar tu proyecto?",
         "description": "Contáctanos hoy mismo y descubre cómo nuestras soluciones pueden transformar tu presencia digital.",
         "button": "Solicitar una consulta"
+      }
+    },
+    "serviceDetail": {
+      "metadata": {
+        "notFoundTitle": "Servicio no encontrado",
+        "keywords": {
+          "webDevelopment": "desarrollo web",
+          "digitalSolutions": "soluciones digitales"
+        }
+      },
+      "benefits": {
+        "title": "Beneficios principales",
+        "subtitle": "Lo que conseguirás con nuestro servicio"
+      },
+      "process": {
+        "title": "Nuestro proceso",
+        "subtitle": "Cómo trabajamos para asegurar tu éxito"
+      },
+      "cta": {
+        "title": "¿Listo para transformar tu negocio?",
+        "description": "Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.",
+        "primaryButton": "Agendar consulta",
+        "secondaryButton": "Ver otros servicios"
+      },
+      "faq": {
+        "title": "Preguntas frecuentes",
+        "items": {
+          "timeline": {
+            "question": "¿Cuánto tiempo toma el proyecto?",
+            "answer": "El timeline depende de la complejidad del proyecto. En promedio, los proyectos nuevos toman entre 2 y 4 meses, mientras que las mejoras suelen completarse en menos tiempo."
+          },
+          "technologies": {
+            "question": "¿Qué tecnologías utilizan?",
+            "answer": "Usamos tecnologías modernas como React, Next.js, Node.js y TypeScript, junto con otras herramientas que garantizan escalabilidad y mantenimiento."
+          },
+          "support": {
+            "question": "¿Ofrecen soporte post-lanzamiento?",
+            "answer": "Sí, incluimos soporte técnico continuo y actualizaciones de seguridad. También ofrecemos planes de mantenimiento personalizados."
+          },
+          "communication": {
+            "question": "¿Cómo es el proceso de comunicación?",
+            "answer": "Mantenemos una comunicación constante con reuniones semanales, reportes de avance y un responsable del proyecto para acompañarte en cada etapa."
+          }
+        }
       }
     },
     "existingProjects": {

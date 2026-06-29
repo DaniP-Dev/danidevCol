@@ -3,9 +3,10 @@ import { getTranslations } from "next-intl/server";
 import { serviceCategories } from "@/src/libs/services";
 import { getServiceBenefits, getServiceProcess } from "@/src/libs/serviceContent";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
 import { buildServiceAlternates } from "@/src/libs/seo";
+import { contactCta } from "@/src/libs/constants";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -20,13 +21,17 @@ export async function generateMetadata({
   const category = await findCategoryBySlug(service);
 
   if (!category) {
-    return { title: "Service Not Found" };
+    return { title: t("serviceDetail.metadata.notFoundTitle") };
   }
   
   return {
     title: t(`${category.key}.title`),
     description: t(`${category.key}.description`),
-    keywords: [t(`${category.key}.title`), "web development", "digital solutions"],
+    keywords: [
+      t(`${category.key}.title`),
+      t("serviceDetail.metadata.keywords.webDevelopment"),
+      t("serviceDetail.metadata.keywords.digitalSolutions"),
+    ],
     alternates: await buildServiceAlternates(
       locale,
       category.key as "existingProjects" | "newProjects",
@@ -50,6 +55,7 @@ export default async function Page({ params }: PageProps) {
   const benefits = getServiceBenefits(category.key, locale);
   const process = getServiceProcess(category.key, locale);
   const ctaText = t(`${category.key}.cta`);
+  const faqItems = ["timeline", "technologies", "support", "communication"] as const;
 
   return (
     <div className="w-full bg-background">
@@ -66,12 +72,14 @@ export default async function Page({ params }: PageProps) {
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
               {longDescription}
             </p>
-            <Link
-              href={`/${locale}/contacto`}
+            <a
+              href={contactCta.href}
+              target={contactCta.target}
+              rel={contactCta.rel}
               className="inline-block px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
             >
               {ctaText}
-            </Link>
+            </a>
           </div>
           
           {/* SVG Illustration */}
@@ -88,10 +96,10 @@ export default async function Page({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              Beneficios Principales
+              {t("serviceDetail.benefits.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Lo que conseguirás con nuestro servicio
+              {t("serviceDetail.benefits.subtitle")}
             </p>
           </div>
 
@@ -121,10 +129,10 @@ export default async function Page({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              Nuestro Proceso
+              {t("serviceDetail.process.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Cómo trabajamos para asegurar tu éxito
+              {t("serviceDetail.process.subtitle")}
             </p>
           </div>
 
@@ -155,23 +163,26 @@ export default async function Page({ params }: PageProps) {
       <section className="w-full bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-800 py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            ¿Listo para transformar tu negocio?
+            {t("serviceDetail.cta.title")}
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.
+            {t("serviceDetail.cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={`/${locale}/contacto`}
+            <a
+              href={contactCta.href}
+              target={contactCta.target}
+              rel={contactCta.rel}
               className="px-8 py-4 bg-white text-teal-700 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
             >
-              Agendar Consulta
-            </Link>
+              {t("serviceDetail.cta.primaryButton")}
+            </a>
             <Link
-              href={`/${locale}/services`}
+              href="/services"
+              locale={locale}
               className="px-8 py-4 bg-white/20 text-white font-bold rounded-lg border-2 border-white/40 hover:bg-white/30 transition-all duration-300"
             >
-              Ver Otros Servicios
+              {t("serviceDetail.cta.secondaryButton")}
             </Link>
           </div>
         </div>
@@ -182,39 +193,22 @@ export default async function Page({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              Preguntas Frecuentes
+              {t("serviceDetail.faq.title")}
             </h2>
           </div>
 
           <div className="space-y-4">
-            {[
-              {
-                q: "¿Cuánto tiempo toma el proyecto?",
-                a: "El timeline depende de la complejidad del proyecto. En promedio, proyectos nuevos toman entre 2-4 meses, mientras que mejoras pueden ser más rápidas."
-              },
-              {
-                q: "¿Qué tecnologías utilizan?",
-                a: "Usamos tecnologías modernas como React, Next.js, Node.js, TypeScript y otras herramientas que garantizan escalabilidad y mantenimiento."
-              },
-              {
-                q: "¿Ofrecen soporte post-lanzamiento?",
-                a: "Sí, incluimos soporte técnico continuo y actualización de seguridad. También ofrecemos planes de mantenimiento personalizados."
-              },
-              {
-                q: "¿Cómo es el proceso de comunicación?",
-                a: "Mantenemos comunicación constante mediante reuniones semanales, actualizaciones de progreso y un gestor de proyecto dedicado."
-              }
-            ].map((item, index) => (
+            {faqItems.map((faqKey, index) => (
               <details
                 key={index}
                 className="p-6 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 group cursor-pointer"
               >
                 <summary className="font-bold text-teal-800 dark:text-teal-300 text-lg flex justify-between items-center">
-                  {item.q}
+                  {t(`serviceDetail.faq.items.${faqKey}.question`)}
                   <span className="text-teal-600 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {item.a}
+                  {t(`serviceDetail.faq.items.${faqKey}.answer`)}
                 </p>
               </details>
             ))}

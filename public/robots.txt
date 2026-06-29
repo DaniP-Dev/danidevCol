@@ -1,4 +1,4 @@
-# robots.txt for danidevcol.com
+# robots.txt for www.danidevcol.com
 # Allow all search engines to crawl the site
 
 User-agent: *
@@ -30,7 +30,7 @@ Disallow: /node_modules
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://danidevcol.com/sitemap.xml
+Sitemap: https://www.danidevcol.com/sitemap.xml
 
 # Specific rules for major search engines
 

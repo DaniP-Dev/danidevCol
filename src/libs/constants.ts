@@ -8,6 +8,12 @@ export const socialLinks = {
   whatsapp: "https://wa.me/573016328564"
 };
 
+export const contactCta = {
+  href: socialLinks.whatsapp,
+  target: "_blank",
+  rel: "noopener noreferrer"
+} as const;
+
 export const siteConfig = {
   name: "DaniDevCol",
   author: "Daniel Pérez Guzman",

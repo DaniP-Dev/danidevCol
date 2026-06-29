@@ -2,6 +2,7 @@ import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import { buildPageAlternates } from "@/src/libs/seo";
+import { siteConfig } from "@/src/libs/constants";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "PortfolioPage" });
+  const portfolioUrl = `${siteConfig.url}/portfolio`;
 
   const projectKeys = [
     "somosCriteria",
@@ -56,11 +58,11 @@ export default async function page({ params }: { params: Promise<{ locale: strin
             "@type": "CollectionPage",
             "name": "Web Development Portfolio",
             "description": "Portfolio with 6+ web development projects showcasing Next.js, React, and digital solutions",
-            "url": "https://danidevcol.com/portfolio",
+            "url": portfolioUrl,
             "creator": {
               "@type": "Person",
               "name": "Daniel Pérez Guzman",
-              "url": "https://danidevcol.com"
+              "url": siteConfig.url
             }
           })
         }}

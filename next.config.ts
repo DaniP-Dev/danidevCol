@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.rareblocks.xyz",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntl();
