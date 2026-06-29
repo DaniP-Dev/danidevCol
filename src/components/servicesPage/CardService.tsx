@@ -4,19 +4,21 @@ import { Link } from "@/src/i18n/navigation";
 import "./CardService.css";
 
 export interface CardServiceProps {
-  slug: string;
+  href: string;
   title: string;
   description: string;
+  icon?: string;
 }
 
 const icons = ["💻", "📱", "☁️", "🔒", "🛠️", "🎨", "🚀"];
 
-export default function CardService({ slug, title, description }: CardServiceProps) {
-  const slugHash = Array.from(slug).reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const icon = icons[slugHash % icons.length];
+export default function CardService({ href, title, description, icon }: CardServiceProps) {
+  const slugHash = Array.from(href).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const computedIcon = icons[slugHash % icons.length];
+  const displayedIcon = icon ?? computedIcon;
 
   return (
-    <Link href={`/services/${slug}`} className="block h-full">
+    <Link href={href} className="block h-full">
       <div className="card-service-wrapper">
         <svg className="svg-container-service" width="0" height="0">
           <defs>
@@ -75,7 +77,7 @@ export default function CardService({ slug, title, description }: CardServicePro
           <div className="content-container-service">
             <div className="content-top-service">
               <div className="service-icon">
-                {icon}
+                {displayedIcon}
               </div>
               <p className="title-service">{title}</p>
             </div>

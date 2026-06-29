@@ -62,42 +62,93 @@
   },
   "Services": {
     "benefits": {
-      "title": "Why choose us?",
+      "title": "Why work with me?",
       "items": {
         "custom": {
-          "title": "Tailored solutions",
-          "description": "We build personalized projects based on your needs and business goals."
+          "title": "Goal-first approach",
+          "description": "We define the business outcome first, then pick the right technology."
         },
         "innovation": {
-          "title": "Innovation and technology",
-          "description": "We use the latest technologies to deliver modern, fast, and efficient results."
+          "title": "Practical tech choices",
+          "description": "I use modern stacks when they add real value in speed, maintainability, and growth."
         },
         "support": {
-          "title": "Professional support",
-          "description": "We guide you through every stage of the project and provide continuous support to ensure your success."
+          "title": "Hands-on guidance",
+          "description": "I do not just deliver and disappear. We leave clear processes for your team."
         }
       }
     },
     "hero": {
-      "titlePrefix": "Professional services in",
-      "titleHighlight": "web and software development",
-      "description": "Tailored digital solutions to boost your business. Expertise in design, development, and scalability.",
-      "primaryButton": "Start your project",
-      "secondaryButton": "Learn more"
+      "titlePrefix": "Services built around",
+      "titleHighlight": "business outcomes",
+      "description": "Pick your goal first, then choose the path: start from scratch or improve what already exists.",
+      "primaryButton": "I want a proposal",
+      "secondaryButton": "See service structure"
     },
     "page": {
-      "cardsTitle": "Our Services",
-      "highlight": "From concept to launch, we build clear and fast web products focused on business results.",
+      "cardsTitle": "Choose your main goal",
+      "highlight": "Service structure in two levels: first your goal, then your situation (from scratch or existing project).",
       "cta": {
-        "title": "Ready to scale your project?",
-        "description": "Contact us today and discover how our solutions can transform your digital presence.",
-        "button": "Request a consultation"
+        "title": "Not sure which goal fits best?",
+        "description": "I can help you choose the most profitable path based on timeline, budget, and current setup.",
+        "button": "Book a diagnosis call"
       }
     },
-    "servicePage": {
-      "slug": "services",
-      "title": "My Services",
-      "description": "Explore the range of services I offer to help you achieve your goals."
+    "objectivePage": {
+      "metadata": {
+        "notFoundTitle": "Goal not found",
+        "title": "{objective} | Services",
+        "keywords": {
+          "webSolutions": "web solutions",
+          "digitalGrowth": "digital growth"
+        }
+      },
+      "scenariosTitle": "Choose your current situation",
+      "scenariosSubtitle": "Each goal includes one path for new projects and one for existing projects.",
+      "viewService": "View detailed service",
+      "bottomTitle": "Want to compare other goals?",
+      "bottomDescription": "Go back and review other paths before booking your consultation.",
+      "backToObjectives": "Back to goals"
+    },
+    "objectives": {
+      "presenciaImpacto": {
+        "slug": "presence-impact",
+        "title": "I just want to be visible (Presence and Impact)",
+        "subtitle": "Get online fast to capture leads and communicate your offer clearly.",
+        "description": "Best for businesses that need visibility and trust without unnecessary technical complexity."
+      },
+      "autogestionContenido": {
+        "slug": "content-management",
+        "title": "I need to manage my own content",
+        "subtitle": "Update and publish without relying on a developer every time.",
+        "description": "Designed for catalogs, blogs, and content-heavy sites that change frequently."
+      },
+      "ecommerce": {
+        "slug": "ecommerce",
+        "title": "I want to sell products 24/7",
+        "subtitle": "Collect payments online, manage orders, and reduce checkout friction.",
+        "description": "Focused on conversion, stability, and operations for stores that want sustainable growth."
+      },
+      "automatizacionInterna": {
+        "slug": "internal-automation",
+        "title": "Everything is manual and chaotic",
+        "subtitle": "Automate operations and recover time with measurable workflows.",
+        "description": "For teams running on spreadsheets and manual tasks that slow down growth."
+      }
+    },
+    "scenarios": {
+      "fromScratch": {
+        "slug": "from-scratch",
+        "label": "From scratch",
+        "title": "Build from scratch",
+        "description": "We design the solution from day one with a clean architecture aligned with your goals."
+      },
+      "existingProject": {
+        "slug": "existing-project",
+        "label": "Existing project",
+        "title": "Improve what you already have",
+        "description": "We audit your current setup, fix bottlenecks, and bring it up to modern standards."
+      }
     },
     "serviceDetail": {
       "metadata": {
@@ -107,57 +158,120 @@
           "digitalSolutions": "digital solutions"
         }
       },
-      "benefits": {
-        "title": "Key benefits",
-        "subtitle": "What you get from our service"
+      "labels": {
+        "problem": "Problem",
+        "solution": "Solution",
+        "implementation": "Implementation"
       },
-      "process": {
-        "title": "Our process",
-        "subtitle": "How we work to ensure your success"
-      },
+      "hookTitle": "What do you get from this path?",
       "cta": {
-        "title": "Ready to transform your business?",
-        "description": "Contact us today and discover how we can help you achieve your digital goals.",
         "primaryButton": "Schedule consultation",
-        "secondaryButton": "View other services"
+        "secondaryButton": "Back to goal"
+      }
+    },
+    "matrix": {
+      "presenciaImpacto": {
+        "fromScratch": {
+          "title": "Fast presence website with Next.js + Vercel",
+          "subtitle": "Landing page or corporate site without backend overhead.",
+          "description": "I build a high-speed website to capture leads and communicate your service with strong SEO foundations.",
+          "longDescription": "If your priority is to launch quickly and look professional, this path gives you a modern lightweight site ready to rank from day one.",
+          "problem": "You need immediate digital presence without a heavy or expensive platform.",
+          "solution": "Next.js implementation on Vercel, optimized for performance, technical SEO, and measurement.",
+          "implementation": "Landing pages, corporate websites, QR menus, and initial setup with Search Console and Google Maps.",
+          "hook": "You get online with a site that loads in milliseconds and builds trust on the first visit.",
+          "cta": "I want my fast website"
+        },
+        "existingProject": {
+          "title": "Existing website rescue and optimization",
+          "subtitle": "Refactor your current site for design quality, speed, and SEO.",
+          "description": "I take your existing site and turn it into a clearer, faster, and conversion-oriented asset.",
+          "longDescription": "If your site looks outdated, loads slowly, or does not convert, this path prioritizes the highest-impact fixes without rebuilding everything.",
+          "problem": "Your current site is losing opportunities due to poor UX, low speed, or technical errors.",
+          "solution": "Full audit, UI/UX redesign, technical SEO fixes, and Core Web Vitals improvements.",
+          "implementation": "Works with Wix, legacy HTML, or heavy builders through staged improvements.",
+          "hook": "Without throwing away your current project, you gain performance, clarity, and better search visibility.",
+          "cta": "I want to improve my site"
+        }
       },
-      "faq": {
-        "title": "Frequently asked questions",
-        "items": {
-          "timeline": {
-            "question": "How long does the project take?",
-            "answer": "The timeline depends on project complexity. On average, new projects take 2 to 4 months, while improvements are usually completed faster."
-          },
-          "technologies": {
-            "question": "What technologies do you use?",
-            "answer": "We use modern technologies such as React, Next.js, Node.js, and TypeScript, plus other tools that ensure scalability and maintainability."
-          },
-          "support": {
-            "question": "Do you offer post-launch support?",
-            "answer": "Yes, we include ongoing technical support and security updates. We also offer customized maintenance plans."
-          },
-          "communication": {
-            "question": "What does the communication process look like?",
-            "answer": "We keep communication constant through weekly meetings, progress updates, and a dedicated project lead to support you at every stage."
-          }
+      "autogestionContenido": {
+        "fromScratch": {
+          "title": "Self-managed content site from scratch",
+          "subtitle": "Clean WordPress or dynamic Next.js with custom admin panel.",
+          "description": "You get a simple content workflow so your team can publish without breaking layout or structure.",
+          "longDescription": "Perfect for real-estate pages, catalogs, and blogs where content changes often and operational autonomy is critical.",
+          "problem": "Every small content update depends on technical support and slows down execution.",
+          "solution": "I implement a structured CMS and a safe editorial workflow.",
+          "implementation": "Admin configuration, content models, stable templates, and automatic indexing setup.",
+          "hook": "Your team publishes in minutes and each new page goes live with SEO-ready structure.",
+          "cta": "I want true self-management"
+        },
+        "existingProject": {
+          "title": "Cleanup and reorganization of existing CMS",
+          "subtitle": "Fix WordPress chaos or migrate when needed.",
+          "description": "I turn a hard-to-manage panel into a practical tool your team can use confidently.",
+          "longDescription": "When WordPress gets overloaded with plugins, every change becomes risky. This path restores stability and simplifies operations.",
+          "problem": "Updating content is slow, fragile, and requires advanced technical knowledge.",
+          "solution": "Technical cleanup, database optimization, ACF admin redesign, and migration plan when needed.",
+          "implementation": "Remove unnecessary dependencies, standardize content structure, and document workflows.",
+          "hook": "Your CMS stops being a blocker and becomes a reliable channel for growth.",
+          "cta": "I want to fix my CMS"
+        }
+      },
+      "ecommerce": {
+        "fromScratch": {
+          "title": "Shopify store from scratch",
+          "subtitle": "Ecommerce ready to sell with conversion-focused setup.",
+          "description": "I launch your Shopify store with clean structure, clear checkout, and tracking on day one.",
+          "longDescription": "If you are starting online sales, this path helps you launch quickly with a reliable technical foundation for growth.",
+          "problem": "You need 24/7 online sales without infrastructure headaches.",
+          "solution": "Full Shopify implementation including catalog, payments, shipping, and analytics.",
+          "implementation": "Store setup, product page optimization, and Google tools integration.",
+          "hook": "You focus on products and logistics while the technical side remains stable and scalable.",
+          "cta": "I want to launch my store"
+        },
+        "existingProject": {
+          "title": "Optimize or migrate your existing ecommerce",
+          "subtitle": "Recover sales in Shopify or migrate from unstable platforms.",
+          "description": "I reduce checkout friction and improve performance to lower cart abandonment.",
+          "longDescription": "If your store crashes, loads slowly, or checkout blocks customers, this path fixes your commercial core.",
+          "problem": "You are losing revenue due to technical failures, low speed, or unnecessary checkout steps.",
+          "solution": "Shopify optimization, local payment integrations, and controlled migration from WooCommerce or PrestaShop.",
+          "implementation": "Conversion audit, checkout simplification, app optimization, and speed improvements.",
+          "hook": "With less purchase friction and better stability, your current traffic converts better.",
+          "cta": "I want to optimize my store"
+        }
+      },
+      "automatizacionInterna": {
+        "fromScratch": {
+          "title": "Custom internal software from scratch",
+          "subtitle": "Digitize operations and remove repetitive manual tasks.",
+          "description": "I build internal systems aligned with your real workflow so your team can execute faster.",
+          "longDescription": "When operations depend on spreadsheets and disconnected chats, growth becomes painful. This path creates central control and traceability.",
+          "problem": "Your team loses hours on manual work and lacks reliable metrics for decisions.",
+          "solution": "Custom software modules aligned with your operational process and KPIs.",
+          "implementation": "Rapid prototyping, role-based dashboards, and key reports for daily management.",
+          "hook": "Tasks that currently take hours become repeatable workflows solved in minutes.",
+          "cta": "I want to automate operations"
+        },
+        "existingProject": {
+          "title": "Integrate and evolve your current systems",
+          "subtitle": "Connect your tools without replacing everything at once.",
+          "description": "I add automation on top of your current stack to reduce duplicate work and manual errors.",
+          "longDescription": "If you already have ERP, billing, or internal software, this path protects that investment while adding automation progressively.",
+          "problem": "Your systems are disconnected, so teams repeat tasks across multiple tools.",
+          "solution": "API integrations, legacy module refactor, and progressive replacement of obsolete parts.",
+          "implementation": "Process mapping, automated flow design, and low-risk phased delivery.",
+          "hook": "Without a traumatic migration, your team gains speed, control, and fewer human errors.",
+          "cta": "I want to connect my systems"
         }
       }
     },
     "existingProjects": {
-      "slug": "existing-projects",
-      "title": "Website Improvement and Optimization",
-      "subtitle": "Give Your Website a New Lease on Life",
-      "description": "I offer services to enhance and optimize your current websites, ensuring they perform at their best and meet modern standards.",
-      "longDescription": "Does your website need a boost? I specialize in transforming existing websites, improving their performance, security, and user experience.",
-      "cta": "Transform My Website"
+      "slug": "existing-projects"
     },
     "newProjects": {
-      "slug": "new-projects",
-      "title": "Custom Website Development from Scratch",
-      "subtitle": "Your Idea, My Expertise",
-      "description": "I can help you build new websites from the ground up, tailored to your specific needs and requirements.",
-      "longDescription": "Do you have a brilliant idea but don't know where to start? I create modern, scalable, and secure websites designed specifically for your business.",
-      "cta": "Start My Project"
+      "slug": "new-projects"
     }
   },
   "Navigation": {

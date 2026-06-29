@@ -3,7 +3,7 @@ import { Link } from "@/src/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { serviceCategories } from "@/src/libs/services";
+import { getObjectiveSlug, serviceCatalog } from "@/src/libs/services";
 import { buildPageAlternates } from "@/src/libs/seo";
 import { siteConfig } from "@/src/libs/constants";
 import ContactCTA from "@/src/components/layout/ContactCTA";
@@ -45,6 +45,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   const t = await getTranslations("HomePage");
   const tServices = await getTranslations("Services");
+  const objectiveCards = await Promise.all(
+    serviceCatalog.map(async (objective) => {
+      const objectiveSlug = await getObjectiveSlug(locale, objective.key);
+      return {
+        key: objective.key,
+        href: `/services/${objectiveSlug}`,
+        icon: objective.icon,
+        title: tServices(`objectives.${objective.key}.title`),
+        description: tServices(`objectives.${objective.key}.description`),
+      };
+    }),
+  );
 
   return (
     <div className="w-full bg-background overflow-hidden">
@@ -193,27 +205,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {serviceCategories.map((service) => {
-            const slug = tServices(`${service.key}.slug`);
-            const title = tServices(`${service.key}.title`);
-            const description = tServices(`${service.key}.description`);
-
+          {objectiveCards.map((service) => {
             return (
               <Link
                 key={service.key}
-                href={`/services/${slug}`}
+                href={service.href}
                 locale={locale}
                 className="group relative rounded-2xl overflow-hidden bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 hover:border-teal-300/50 dark:hover:border-teal-400/50 transition-all duration-300 p-8 hover:shadow-xl hover:shadow-teal-500/10"
               >
                 <div className="space-y-4">
                   <div className="w-14 h-14 rounded-lg bg-linear-to-br from-teal-400 to-emerald-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">
-                    {service.key === "existingProjects" ? "🚀" : "💡"}
+                    {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-teal-800 dark:text-teal-300 group-hover:text-teal-600 dark:group-hover:text-teal-200 transition-colors">
-                    {title}
+                    {service.title}
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {description}
+                    {service.description}
                   </p>
                   <div className="flex items-center text-teal-600 dark:text-teal-400 group-hover:gap-2 gap-0 transition-all">
                     <span className="font-semibold">{t("footer.seeMore")}</span>

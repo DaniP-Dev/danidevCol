@@ -1,8 +1,13 @@
 import { routing } from "@/src/i18n/routing";
 import {
   buildLanguageAlternates,
+  buildObjectiveLanguageAlternates,
   buildServiceLanguageAlternates,
 } from "@/src/libs/seo";
+import {
+  getServiceCombinations,
+  serviceObjectiveKeys,
+} from "@/src/libs/services";
 
 const lastMod = "2026-04-02";
 
@@ -50,10 +55,17 @@ export async function GET() {
   const servicesAlternates = buildLanguageAlternates("/services");
   const portfolioAlternates = buildLanguageAlternates("/portfolio");
   const curriculumAlternates = buildLanguageAlternates("/curriculum");
-  const existingProjectsAlternates =
-    await buildServiceLanguageAlternates("existingProjects");
-  const newProjectsAlternates =
-    await buildServiceLanguageAlternates("newProjects");
+  const objectiveEntries = await Promise.all(
+    serviceObjectiveKeys.map(async (objectiveKey) => ({
+      key: objectiveKey,
+      alternates: await buildObjectiveLanguageAlternates(objectiveKey),
+    })),
+  );
+  const serviceEntries = await Promise.all(
+    getServiceCombinations().map(async ({ objective, scenario }) => ({
+      alternates: await buildServiceLanguageAlternates(objective, scenario),
+    })),
+  );
 
   const sitemapParts: string[] = [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -94,10 +106,18 @@ export async function GET() {
     }
   }
 
-  const serviceEntries = [
-    { key: "existingProjects" as const, alternates: existingProjectsAlternates },
-    { key: "newProjects" as const, alternates: newProjectsAlternates },
-  ];
+  for (const objective of objectiveEntries) {
+    for (const locale of routing.locales) {
+      sitemapParts.push(
+        buildUrlEntry({
+          url: objective.alternates[locale],
+          changefreq: "monthly",
+          priority: "0.75",
+          languages: objective.alternates,
+        }),
+      );
+    }
+  }
 
   for (const service of serviceEntries) {
     for (const locale of routing.locales) {

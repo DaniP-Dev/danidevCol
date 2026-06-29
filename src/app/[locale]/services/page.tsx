@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 import HeroSection from "@/src/components/servicesPage/HeroSection";
 import PhraseService from "@/src/components/servicesPage/PhraseService";
-import { serviceCategories } from "@/src/libs/services";
+import { getObjectiveSlug, serviceCatalog } from "@/src/libs/services";
 import CardService from "@/src/components/servicesPage/CardService";
 import Benefits from "@/src/components/servicesPage/Benefits";
 import { siteConfig } from "@/src/libs/constants";
@@ -33,7 +33,23 @@ import ContactCTA from "@/src/components/layout/ContactCTA";
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations("Services");
-  const servicesUrl = `${siteConfig.url}/services`;
+  const pageAlternates = buildPageAlternates(locale, "/services");
+  const servicesUrl = typeof pageAlternates.canonical === "string"
+    ? pageAlternates.canonical
+    : pageAlternates.canonical?.toString() ?? `${siteConfig.url}/services`;
+  const objectiveCards = await Promise.all(
+    serviceCatalog.map(async (objective) => {
+      const objectiveSlug = await getObjectiveSlug(locale, objective.key);
+      return {
+        key: objective.key,
+        href: `/services/${objectiveSlug}`,
+        icon: objective.icon,
+        title: t(`objectives.${objective.key}.title`),
+        description: t(`objectives.${objective.key}.description`),
+      };
+    }),
+  );
+  const serviceTypes = objectiveCards.map((objective) => objective.title);
 
   return (
     <>
@@ -44,16 +60,12 @@ export default async function page({ params }: { params: Promise<{ locale: strin
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "danidevcol Web Services",
-            "description": "Web development, SEO optimization, and digital consulting services",
+            "name": `${siteConfig.name} ${t("page.cardsTitle")}`,
+            "description": t("page.highlight"),
             "url": servicesUrl,
             "areaServed": "Worldwide",
-            "serviceType": [
-              "Web Design",
-              "Web Development",
-              "SEO Optimization",
-              "Custom Software"
-            ]
+            "availableLanguage": ["es", "en", "pt", "ar"],
+            "serviceType": serviceTypes
           })
         }}
       />
@@ -75,12 +87,13 @@ export default async function page({ params }: { params: Promise<{ locale: strin
             {t("page.cardsTitle")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-stretch">
-            {serviceCategories.map((category) => (
+            {objectiveCards.map((objective) => (
               <CardService
-                key={category.key}
-                slug={t(`${category.key}.slug`)}
-                title={t(`${category.key}.title`)}
-                description={t(`${category.key}.description`)}
+                key={objective.key}
+                href={objective.href}
+                icon={objective.icon}
+                title={objective.title}
+                description={objective.description}
               />
             ))}
           </div>

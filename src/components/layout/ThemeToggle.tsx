@@ -1,11 +1,17 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
+  const isHydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  if (!resolvedTheme) {
+  if (!isHydrated || !resolvedTheme) {
     return (
       <div className="p-2 w-10 h-10 rounded-lg bg-gray-700 dark:bg-gray-800 animate-pulse" />
     );

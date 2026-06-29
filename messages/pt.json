@@ -62,36 +62,92 @@
   },
   "Services": {
     "benefits": {
-      "title": "Por que nos escolher?",
+      "title": "Por que trabalhar comigo?",
       "items": {
         "custom": {
-          "title": "Soluções sob medida",
-          "description": "Desenvolvemos projetos personalizados de acordo com suas necessidades e objetivos de negócio."
+          "title": "Foco no objetivo",
+          "description": "Primeiro definimos o resultado de negócio e depois escolhemos a tecnologia certa."
         },
         "innovation": {
-          "title": "Inovação e tecnologia",
-          "description": "Utilizamos as tecnologias mais recentes para garantir resultados modernos, rápidos e eficientes."
+          "title": "Tecnologia com propósito",
+          "description": "Uso stacks modernas quando realmente melhoram velocidade, manutenção e crescimento."
         },
         "support": {
-          "title": "Suporte profissional",
-          "description": "Apoiamos você em cada etapa do projeto e oferecemos suporte contínuo para garantir seu sucesso."
+          "title": "Acompanhamento contínuo",
+          "description": "A entrega inclui processos claros para seu time operar e evoluir com segurança."
         }
       }
     },
     "hero": {
-      "titlePrefix": "Serviços profissionais de",
-      "titleHighlight": "desenvolvimento web e software",
-      "description": "Soluções digitais sob medida para impulsionar seu negócio. Experiência em design, desenvolvimento e escalabilidade.",
-      "primaryButton": "Comece seu projeto",
-      "secondaryButton": "Saiba mais"
+      "titlePrefix": "Serviços focados em",
+      "titleHighlight": "resultado de negócio",
+      "description": "Escolha seu objetivo e siga o caminho certo: projeto novo ou melhoria do que já existe.",
+      "primaryButton": "Quero uma proposta",
+      "secondaryButton": "Ver estrutura de serviços"
     },
     "page": {
-      "cardsTitle": "Nossos Serviços",
-      "highlight": "Do conceito ao lançamento, criamos produtos web claros e rápidos, focados em resultados de negócio.",
+      "cardsTitle": "Escolha seu objetivo principal",
+      "highlight": "Estrutura em 2 níveis: primeiro o objetivo, depois a situação atual do projeto.",
       "cta": {
-        "title": "Pronto para escalar seu projeto?",
-        "description": "Entre em contato hoje e descubra como nossas soluções podem transformar sua presença digital.",
-        "button": "Solicitar uma consultoria"
+        "title": "Ainda com dúvida sobre o melhor caminho?",
+        "description": "Definimos juntos a rota mais rentável considerando prazo, orçamento e estágio atual.",
+        "button": "Agendar diagnóstico"
+      }
+    },
+    "objectivePage": {
+      "metadata": {
+        "notFoundTitle": "Objetivo não encontrado",
+        "title": "{objective} | Serviços",
+        "keywords": {
+          "webSolutions": "soluções web",
+          "digitalGrowth": "crescimento digital"
+        }
+      },
+      "scenariosTitle": "Selecione sua situação atual",
+      "scenariosSubtitle": "Cada objetivo possui uma rota para projetos novos e outra para projetos existentes.",
+      "viewService": "Ver serviço detalhado",
+      "bottomTitle": "Quer comparar outro objetivo?",
+      "bottomDescription": "Volte e compare as opções antes de agendar sua consultoria.",
+      "backToObjectives": "Voltar aos objetivos"
+    },
+    "objectives": {
+      "presenciaImpacto": {
+        "slug": "presenca-impacto",
+        "title": "Só quero ser visto (Presença e Impacto)",
+        "subtitle": "Entrar no ar rápido para captar leads e apresentar seu serviço com clareza.",
+        "description": "Ideal para negócios que precisam de visibilidade e credibilidade sem complexidade desnecessária."
+      },
+      "autogestionContenido": {
+        "slug": "autogestao-conteudo",
+        "title": "Preciso gerenciar meu conteúdo",
+        "subtitle": "Publicar e atualizar sem depender de um programador para tudo.",
+        "description": "Perfeito para catálogos, blogs e sites com conteúdo dinâmico e atualizações frequentes."
+      },
+      "ecommerce": {
+        "slug": "ecommerce",
+        "title": "Quero vender produtos 24/7",
+        "subtitle": "Receber pagamentos online, gerenciar pedidos e melhorar a conversão.",
+        "description": "Foco total em estabilidade, conversão e operação para lojas que querem crescer com consistência."
+      },
+      "automatizacionInterna": {
+        "slug": "automacao-interna",
+        "title": "Faço tudo manualmente e virou caos",
+        "subtitle": "Automatize processos e recupere horas de trabalho do time.",
+        "description": "Para equipes que ainda dependem de planilhas e tarefas repetitivas sem indicadores confiáveis."
+      }
+    },
+    "scenarios": {
+      "fromScratch": {
+        "slug": "do-zero",
+        "label": "Do zero",
+        "title": "Criar do zero",
+        "description": "Desenhamos a solução desde o início com arquitetura limpa e metas claras."
+      },
+      "existingProject": {
+        "slug": "projeto-existente",
+        "label": "Projeto existente",
+        "title": "Otimizar o que já existe",
+        "description": "Auditamos seu projeto atual e corrigimos gargalos para atingir padrão moderno."
       }
     },
     "serviceDetail": {
@@ -102,57 +158,120 @@
           "digitalSolutions": "soluções digitais"
         }
       },
-      "benefits": {
-        "title": "Principais benefícios",
-        "subtitle": "O que você conquista com o nosso serviço"
+      "labels": {
+        "problem": "Problema",
+        "solution": "Solução",
+        "implementation": "Implementação"
       },
-      "process": {
-        "title": "Nosso processo",
-        "subtitle": "Como trabalhamos para garantir o seu sucesso"
-      },
+      "hookTitle": "O que você ganha com essa rota?",
       "cta": {
-        "title": "Pronto para transformar seu negócio?",
-        "description": "Entre em contato hoje e descubra como podemos ajudar você a alcançar seus objetivos digitais.",
         "primaryButton": "Agendar consultoria",
-        "secondaryButton": "Ver outros serviços"
+        "secondaryButton": "Voltar ao objetivo"
+      }
+    },
+    "matrix": {
+      "presenciaImpacto": {
+        "fromScratch": {
+          "title": "Site de presença rápida com Next.js + Vercel",
+          "subtitle": "Landing page ou site institucional sem backend complexo.",
+          "description": "Construo um site muito rápido para captar leads e apresentar seu serviço com base sólida de SEO.",
+          "longDescription": "Se sua prioridade é entrar no ar rápido e parecer profissional, essa rota entrega uma web leve, moderna e pronta para posicionar desde o início.",
+          "problem": "Você precisa de presença digital imediata sem um sistema pesado e caro de manter.",
+          "solution": "Implementação em Next.js com deploy em Vercel, otimizada para velocidade e SEO técnico.",
+          "implementation": "Landing pages, sites institucionais, cardápios QR e conexão inicial com Search Console e Google Maps.",
+          "hook": "Seu negócio fica visível com uma web que carrega em milissegundos e transmite confiança.",
+          "cta": "Quero meu site rápido"
+        },
+        "existingProject": {
+          "title": "Resgate e otimização de site existente",
+          "subtitle": "Refatoração de design, performance e SEO técnico.",
+          "description": "Transformo seu site atual em uma base clara, rápida e orientada à conversão.",
+          "longDescription": "Se seu site está lento, desatualizado ou confuso, essa rota foca nas melhorias de maior impacto comercial sem reconstruir tudo.",
+          "problem": "Seu site perde clientes por experiência ruim, baixa velocidade ou erros técnicos.",
+          "solution": "Auditoria completa, ajuste de UI/UX, correções de SEO técnico e melhora de Core Web Vitals.",
+          "implementation": "Atuação em Wix, HTML legado ou construtores pesados com melhorias por etapas.",
+          "hook": "Sem jogar fora seu projeto atual, você ganha desempenho, clareza e melhor base para ranquear.",
+          "cta": "Quero melhorar meu site"
+        }
       },
-      "faq": {
-        "title": "Perguntas frequentes",
-        "items": {
-          "timeline": {
-            "question": "Quanto tempo o projeto leva?",
-            "answer": "O cronograma depende da complexidade do projeto. Em média, novos projetos levam de 2 a 4 meses, enquanto melhorias costumam ser entregues em menos tempo."
-          },
-          "technologies": {
-            "question": "Quais tecnologias vocês usam?",
-            "answer": "Usamos tecnologias modernas como React, Next.js, Node.js e TypeScript, além de outras ferramentas que garantem escalabilidade e manutenção."
-          },
-          "support": {
-            "question": "Vocês oferecem suporte após o lançamento?",
-            "answer": "Sim, incluímos suporte técnico contínuo e atualizações de segurança. Também oferecemos planos de manutenção personalizados."
-          },
-          "communication": {
-            "question": "Como funciona o processo de comunicação?",
-            "answer": "Mantemos uma comunicação constante com reuniões semanais, atualizações de progresso e uma pessoa responsável pelo projeto para acompanhar você em cada etapa."
-          }
+      "autogestionContenido": {
+        "fromScratch": {
+          "title": "Site autogerenciável criado do zero",
+          "subtitle": "WordPress limpo ou Next.js dinâmico com painel sob medida.",
+          "description": "Você recebe um painel simples para publicar conteúdo sem quebrar layout ou estrutura.",
+          "longDescription": "Ideal para imobiliárias, catálogos e blogs com atualização frequente e necessidade de autonomia total.",
+          "problem": "Cada atualização depende de suporte técnico e atrasa sua operação.",
+          "solution": "Implemento CMS estruturado com fluxo editorial seguro e fácil de usar.",
+          "implementation": "Modelagem de conteúdo, configuração de painel, templates estáveis e indexação automática.",
+          "hook": "Seu time publica em minutos e cada novo conteúdo já nasce preparado para SEO.",
+          "cta": "Quero autogestão real"
+        },
+        "existingProject": {
+          "title": "Limpeza e reorganização de CMS existente",
+          "subtitle": "Corrigir WordPress caótico ou migrar quando necessário.",
+          "description": "Converto um painel difícil em uma ferramenta prática para seu time.",
+          "longDescription": "Quando o WordPress vira uma soma de plugins sem controle, qualquer mudança é arriscada. Essa rota recupera estabilidade e produtividade.",
+          "problem": "Atualizar conteúdo está lento, instável e dependente de conhecimento técnico avançado.",
+          "solution": "Limpeza técnica, otimização de banco, reorganização de painel com ACF e plano de migração.",
+          "implementation": "Remoção de dependências desnecessárias, padronização de estrutura e documentação de operação.",
+          "hook": "Seu CMS deixa de ser um bloqueio e passa a apoiar crescimento e comunicação do negócio.",
+          "cta": "Quero organizar meu CMS"
+        }
+      },
+      "ecommerce": {
+        "fromScratch": {
+          "title": "Loja Shopify criada do zero",
+          "subtitle": "Ecommerce pronto para vender com foco em conversão.",
+          "description": "Monto sua loja Shopify com catálogo bem estruturado, checkout claro e métricas desde o início.",
+          "longDescription": "Se você está começando no ecommerce, essa rota acelera seu lançamento com infraestrutura confiável e preparada para escalar.",
+          "problem": "Você precisa vender online 24/7 sem dor com servidor e manutenção.",
+          "solution": "Implementação completa em Shopify com pagamentos, frete, catálogo e analytics.",
+          "implementation": "Configuração da loja, otimização de páginas de produto e integração com ferramentas Google.",
+          "hook": "Você foca em vender e operar; eu deixo a base técnica estável e escalável.",
+          "cta": "Quero lançar minha loja"
+        },
+        "existingProject": {
+          "title": "Otimização ou migração do ecommerce atual",
+          "subtitle": "Recuperar vendas no Shopify ou migrar de plataformas instáveis.",
+          "description": "Reduzo fricção no checkout e melhoro performance para diminuir abandono de carrinho.",
+          "longDescription": "Se sua loja cai, está lenta ou perde clientes no pagamento, essa rota corrige os pontos críticos da operação comercial.",
+          "problem": "Você perde receita por falhas técnicas, baixa velocidade e fluxo de compra confuso.",
+          "solution": "Otimização de Shopify, integração de pagamentos locais e migração controlada de WooCommerce/PrestaShop.",
+          "implementation": "Auditoria de conversão, simplificação de checkout, revisão de apps e melhorias de velocidade.",
+          "hook": "Com menos fricção e mais estabilidade, seu tráfego atual converte melhor.",
+          "cta": "Quero otimizar minha loja"
+        }
+      },
+      "automatizacionInterna": {
+        "fromScratch": {
+          "title": "Software interno sob medida do zero",
+          "subtitle": "Automatize processos e elimine tarefas manuais repetitivas.",
+          "description": "Desenvolvo sistemas internos alinhados ao fluxo real da sua operação.",
+          "longDescription": "Quando a rotina depende de planilhas e mensagens soltas, o crescimento trava. Essa rota cria uma base central com rastreabilidade e controle.",
+          "problem": "Seu time perde horas em tarefas manuais e sem métricas confiáveis.",
+          "solution": "Construção de módulos sob medida com foco em produtividade e controle operacional.",
+          "implementation": "Prototipagem rápida, painéis por papel e relatórios principais para o dia a dia.",
+          "hook": "O que hoje leva horas passa a ser executado em minutos com padrão e previsibilidade.",
+          "cta": "Quero automatizar minha operação"
+        },
+        "existingProject": {
+          "title": "Integração e evolução de sistemas existentes",
+          "subtitle": "Conectar ferramentas atuais sem trocar tudo de uma vez.",
+          "description": "Adiciono automações ao seu stack atual para reduzir retrabalho e erros manuais.",
+          "longDescription": "Se você já usa ERP, faturamento ou software interno, essa rota aproveita o investimento atual e evolui por fases.",
+          "problem": "Seus sistemas não conversam e a equipe duplica tarefas em várias ferramentas.",
+          "solution": "Integrações por API, refatoração de módulos críticos e substituição progressiva do legado.",
+          "implementation": "Mapeamento de processos, desenho de fluxos automáticos e implantação faseada com baixo risco.",
+          "hook": "Sem migração traumática, sua operação ganha velocidade, controle e menos erro humano.",
+          "cta": "Quero integrar meus sistemas"
         }
       }
     },
     "existingProjects": {
-      "slug": "melhorias-web-sites",
-      "title": "Melhoria e Otimização de Sites Web",
-      "subtitle": "Dê uma Nova Vida ao Seu Site",
-      "description": "Ofereço serviços para melhorar e otimizar seus sites atuais, garantindo que funcionem no seu mejor e atendam aos padrões modernos.",
-      "longDescription": "Seu site precisa de um impulso? Especializo-me em transformar sites existentes, melhorando seu desempenho, segurança e experiência do usuário.",
-      "cta": "Transformar Meu Site"
+      "slug": "melhorias-web-sites"
     },
     "newProjects": {
-      "slug": "desenvolvimento-do-zero",
-      "title": "Desenvolvimento de Sites do Zero",
-      "subtitle": "Sua Ideia, Minha Expertise",
-      "description": "Posso ajudá-lo a construir novos sites do zero, adaptados às suas necessidades e requisitos específicos.",
-      "longDescription": "Você tem uma ideia brilhante mais não sabe por onde começar? Crio sites modernos, escaláveis e seguros projetados especificamente para seu negócio.",
-      "cta": "Iniciar Meu Projeto"
+      "slug": "desenvolvimento-do-zero"
     }
   },
   "Navigation": {

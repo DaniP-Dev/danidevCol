@@ -1,12 +1,15 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { serviceCategories } from "@/src/libs/services";
-import { getServiceBenefits, getServiceProcess } from "@/src/libs/serviceContent";
-import { notFound } from "next/navigation";
 import { Link } from "@/src/i18n/navigation";
-import { routing } from "@/src/i18n/routing";
-import { buildServiceAlternates } from "@/src/libs/seo";
-import ContactCTA from "@/src/components/layout/ContactCTA";
+import { notFound, redirect } from "next/navigation";
+import {
+  getObjectiveSlug,
+  getScenarioSlug,
+  resolveLegacyServiceSlug,
+  resolveObjectiveKeyBySlug,
+  serviceScenarioKeys,
+} from "@/src/libs/services";
+import { buildObjectiveAlternates, buildServiceAlternates } from "@/src/libs/seo";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -17,237 +20,146 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { service, locale } = await params;
   const t = await getTranslations({ locale, namespace: "Services" });
+  const objectiveKey = await resolveObjectiveKeyBySlug(service);
 
-  const category = await findCategoryBySlug(service);
+  if (!objectiveKey) {
+    const legacy = await resolveLegacyServiceSlug(service);
+    if (legacy) {
+      const legacyPath = `matrix.${legacy.objective}.${legacy.scenario}`;
 
-  if (!category) {
-    return { title: t("serviceDetail.metadata.notFoundTitle") };
+      return {
+        title: t(`${legacyPath}.title`),
+        description: t(`${legacyPath}.description`),
+        keywords: [
+          t(`objectives.${legacy.objective}.title`),
+          t(`scenarios.${legacy.scenario}.title`),
+          t("objectivePage.metadata.keywords.webSolutions"),
+          t("objectivePage.metadata.keywords.digitalGrowth"),
+        ],
+        alternates: await buildServiceAlternates(
+          locale,
+          legacy.objective,
+          legacy.scenario,
+        ),
+      };
+    }
+
+    return { title: t("objectivePage.metadata.notFoundTitle") };
   }
-  
+
   return {
-    title: t(`${category.key}.title`),
-    description: t(`${category.key}.description`),
+    title: t("objectivePage.metadata.title", {
+      objective: t(`objectives.${objectiveKey}.title`),
+    }),
+    description: t(`objectives.${objectiveKey}.description`),
     keywords: [
-      t(`${category.key}.title`),
-      t("serviceDetail.metadata.keywords.webDevelopment"),
-      t("serviceDetail.metadata.keywords.digitalSolutions"),
+      t(`objectives.${objectiveKey}.title`),
+      t("objectivePage.metadata.keywords.webSolutions"),
+      t("objectivePage.metadata.keywords.digitalGrowth"),
     ],
-    alternates: await buildServiceAlternates(
-      locale,
-      category.key as "existingProjects" | "newProjects",
-    ),
+    alternates: await buildObjectiveAlternates(locale, objectiveKey),
   };
 }
 
 export default async function Page({ params }: PageProps) {
   const { service, locale } = await params;
   const t = await getTranslations({ locale, namespace: "Services" });
+  const objectiveKey = await resolveObjectiveKeyBySlug(service);
 
-  const category = await findCategoryBySlug(service);
-
-  if (!category) {
+  if (!objectiveKey) {
+    const legacy = await resolveLegacyServiceSlug(service);
+    if (legacy) {
+      const objectiveSlug = await getObjectiveSlug(locale, legacy.objective);
+      const scenarioSlug = await getScenarioSlug(locale, legacy.scenario);
+      redirect(`/services/${objectiveSlug}/${scenarioSlug}`);
+    }
     notFound();
   }
 
-  const title = t(`${category.key}.title`);
-  const subtitle = t(`${category.key}.subtitle`);
-  const longDescription = t(`${category.key}.longDescription`);
-  const benefits = getServiceBenefits(category.key, locale);
-  const process = getServiceProcess(category.key, locale);
-  const ctaText = t(`${category.key}.cta`);
-  const faqItems = ["timeline", "technologies", "support", "communication"] as const;
+  const objectiveSlug = await getObjectiveSlug(locale, objectiveKey);
+  const scenarios = await Promise.all(
+    serviceScenarioKeys.map(async (scenarioKey) => {
+      const scenarioSlug = await getScenarioSlug(locale, scenarioKey);
+      return {
+        key: scenarioKey,
+        href: `/services/${objectiveSlug}/${scenarioSlug}`,
+        title: t(`scenarios.${scenarioKey}.title`),
+        description: t(`scenarios.${scenarioKey}.description`),
+      };
+    }),
+  );
 
   return (
     <div className="w-full bg-background">
-      {/* Hero Section */}
       <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300 mb-4 leading-tight">
-              {title}
-            </h1>
-            <p className="text-xl text-teal-700 dark:text-teal-400 font-semibold mb-6">
-              {subtitle}
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              {longDescription}
-            </p>
-            <ContactCTA
-              location="service_detail_hero"
-              locale={locale}
-              className="inline-block px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              {ctaText}
-            </ContactCTA>
-          </div>
-          
-          {/* SVG Illustration */}
-          <div className="hidden md:flex items-center justify-center">
-            <div className="w-80 h-80 bg-linear-to-br from-teal-100 dark:from-teal-900/30 to-emerald-100 dark:to-emerald-900/30 rounded-3xl flex items-center justify-center text-6xl">
-              {category.key === "existingProjects" ? "🚀" : "💡"}
-            </div>
-          </div>
+        <div className="max-w-4xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300 mb-4 leading-tight">
+            {t(`objectives.${objectiveKey}.title`)}
+          </h1>
+          <p className="text-xl text-teal-700 dark:text-teal-400 font-semibold mb-6">
+            {t(`objectives.${objectiveKey}.subtitle`)}
+          </p>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            {t(`objectives.${objectiveKey}.description`)}
+          </p>
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="w-full bg-teal-50/50 dark:bg-[#0b111a]/50 py-16 md:py-24 border-y border-teal-100/50 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              {t("serviceDetail.benefits.title")}
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-3">
+              {t("objectivePage.scenariosTitle")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t("serviceDetail.benefits.subtitle")}
+              {t("objectivePage.scenariosSubtitle")}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 hover:border-teal-300/50 dark:hover:border-teal-400/50 transition-all duration-300"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {scenarios.map((scenario) => (
+              <Link
+                key={scenario.key}
+                href={scenario.href}
+                locale={locale}
+                className="rounded-2xl bg-white/70 dark:bg-white/5 p-7 border border-teal-100/40 dark:border-white/10 hover:border-teal-400/50 dark:hover:border-teal-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10"
               >
-                <div className="text-3xl mb-4">
-                  {["✨", "⚡", "🔒", "📈", "🎨", "🛠️"][index]}
-                </div>
-                <h3 className="text-xl font-bold text-teal-800 dark:text-teal-300 mb-2">
-                  {benefit.title}
+                <p className="inline-flex px-3 py-1 mb-4 text-xs font-semibold tracking-wide uppercase rounded-full bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-200">
+                  {t(`scenarios.${scenario.key}.label`)}
+                </p>
+                <h3 className="text-2xl font-bold text-teal-800 dark:text-teal-300 mb-2">
+                  {scenario.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {benefit.description}
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                  {scenario.description}
                 </p>
-              </div>
+                <div className="flex items-center text-teal-600 dark:text-teal-300 font-semibold">
+                  {t("objectivePage.viewService")}
+                  <span className="ml-2">→</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="w-full py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              {t("serviceDetail.process.title")}
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t("serviceDetail.process.subtitle")}
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {process.map((item, index) => (
-              <div
-                key={index}
-                className="flex gap-6 items-start"
-              >
-                <div className="shrink-0 w-12 h-12 rounded-full bg-linear-to-br from-teal-500 to-emerald-500 text-white font-bold flex items-center justify-center text-lg">
-                  {index + 1}
-                </div>
-                <div className="grow">
-                  <h3 className="text-xl font-bold text-teal-800 dark:text-teal-300 mb-2">
-                    {item.step}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="w-full bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-800 py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            {t("serviceDetail.cta.title")}
+          <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
+            {t("objectivePage.bottomTitle")}
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            {t("serviceDetail.cta.description")}
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            {t("objectivePage.bottomDescription")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ContactCTA
-              location="service_detail_final"
-              locale={locale}
-              className="px-8 py-4 bg-white text-teal-700 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
-            >
-              {t("serviceDetail.cta.primaryButton")}
-            </ContactCTA>
-            <Link
-              href="/services"
-              locale={locale}
-              className="px-8 py-4 bg-white/20 text-white font-bold rounded-lg border-2 border-white/40 hover:bg-white/30 transition-all duration-300"
-            >
-              {t("serviceDetail.cta.secondaryButton")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="w-full py-16 md:py-24 bg-teal-50/30 dark:bg-[#0b111a]/50">
-        <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-teal-800 dark:text-teal-300 mb-4">
-              {t("serviceDetail.faq.title")}
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqItems.map((faqKey, index) => (
-              <details
-                key={index}
-                className="p-6 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 group cursor-pointer"
-              >
-                <summary className="font-bold text-teal-800 dark:text-teal-300 text-lg flex justify-between items-center">
-                  {t(`serviceDetail.faq.items.${faqKey}.question`)}
-                  <span className="text-teal-600 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {t(`serviceDetail.faq.items.${faqKey}.answer`)}
-                </p>
-              </details>
-            ))}
-          </div>
+          <Link
+            href="/services"
+            locale={locale}
+            className="inline-flex px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300"
+          >
+            {t("objectivePage.backToObjectives")}
+          </Link>
         </div>
       </section>
     </div>
   );
-}
-
-function normalizeSlug(value: string): string {
-  return decodeURIComponent(value)
-    .trim()
-    .toLowerCase()
-    .replace(/^\/+|\/+$/g, "");
-}
-
-async function findCategoryBySlug(rawSlug: string) {
-  const target = normalizeSlug(rawSlug);
-
-  const byCanonical = serviceCategories.find((category) => {
-    const canonicalSlug = category.url.split("/").filter(Boolean).pop() || "";
-    return normalizeSlug(canonicalSlug) === target;
-  });
-
-  if (byCanonical) {
-    return byCanonical;
-  }
-
-  for (const locale of routing.locales) {
-    const t = await getTranslations({ locale, namespace: "Services" });
-
-    const byLocaleSlug = serviceCategories.find((category) => {
-      const translatedSlug = t(`${category.key}.slug`);
-      return normalizeSlug(translatedSlug) === target;
-    });
-
-    if (byLocaleSlug) {
-      return byLocaleSlug;
-    }
-  }
-
-  return undefined;
 }
