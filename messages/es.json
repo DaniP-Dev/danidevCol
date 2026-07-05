@@ -280,6 +280,18 @@
     "portfolio": "Portafolio",
     "services": "Servicios"
   },
+  "LocaleSuggestion": {
+    "title": "¿Prefieres otro idioma?",
+    "description": "Podemos mostrar esta página en {language}.",
+    "switchButton": "Cambiar",
+    "dismissButton": "No, gracias",
+    "languageNames": {
+      "es": "Español",
+      "en": "Inglés",
+      "pt": "Portugués",
+      "ar": "Árabe"
+    }
+  },
   "Footer": {
     "brand": "DaniDevCol",
     "description": "Desarrollo web y optimización SEO.",

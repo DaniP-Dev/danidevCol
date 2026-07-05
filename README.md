@@ -34,4 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Estrategia de enlaces por idioma (campañas)
+
+- Usa enlaces directos por audiencia para evitar fricción en la primera visita:
+  - Español: `/es/services/presencia-impacto`
+  - Inglés: `/en/services/presence-impact`
+  - Portugués: `/pt/services/presenca-impacto`
+  - Árabe: `/ar/services/حضور-وتأثير`
+- El banner de sugerencia de idioma se activa cuando el locale del enlace no coincide con la preferencia del visitante.
+- No hay redirección forzada: los enlaces compartidos mantienen su idioma explícito en la URL.
+- Si el usuario cambia idioma manualmente, su preferencia se guarda en cookie para próximas visitas.
+
 # danidevCol

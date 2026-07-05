@@ -4,6 +4,10 @@ import { useLocale } from "next-intl";
 import { Dropdown, DropdownHeader, DropdownItem } from "flowbite-react";
 import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
+import {
+  clearLocaleSuggestionDismissedCookie,
+  setLocalePreferenceCookie,
+} from "@/src/i18n/localePreference";
 
 const languageData = {
   es: { name: "Español", flag: "🇪🇸" },
@@ -18,6 +22,8 @@ export default function LanguageToggle() {
   const pathname = usePathname();
 
   const handleLanguageChange = (newLocale: string) => {
+    setLocalePreferenceCookie(newLocale);
+    clearLocaleSuggestionDismissedCookie();
     router.replace(pathname, { locale: newLocale });
   };
 

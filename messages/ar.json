@@ -280,6 +280,18 @@
     "portfolio": "المحفظة",
     "services": "الخدمات"
   },
+  "LocaleSuggestion": {
+    "title": "هل تفضل لغة أخرى؟",
+    "description": "يمكننا عرض هذه الصفحة باللغة {language}.",
+    "switchButton": "تبديل",
+    "dismissButton": "لا، شكرًا",
+    "languageNames": {
+      "es": "الإسبانية",
+      "en": "الإنجليزية",
+      "pt": "البرتغالية",
+      "ar": "العربية"
+    }
+  },
   "Footer": {
     "brand": "DaniDevCol",
     "description": "تطوير المواقع وتحسين محركات البحث.",
