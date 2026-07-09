@@ -34,3 +34,13 @@ export const siteConfig = {
   ogImage: "https://www.danidevcol.com/og-image.png",
   email: "danidevcol@gmail.com"
 };
+
+/** Fechas reales de última edición de contenido (YYYY-MM-DD). Actualizar al publicar cambios SEO/copy. */
+export const sitemapLastModified = {
+  home: "2026-07-09",
+  services: "2026-07-09",
+  portfolio: "2026-07-09",
+  curriculum: "2026-07-09",
+  serviceObjectives: "2026-07-09",
+  serviceScenarios: "2026-07-09",
+} as const;

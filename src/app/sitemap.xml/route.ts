@@ -1,4 +1,5 @@
 import { routing } from "@/src/i18n/routing";
+import { sitemapLastModified } from "@/src/libs/constants";
 import {
   buildLanguageAlternates,
   buildObjectiveLanguageAlternates,
@@ -8,8 +9,6 @@ import {
   getServiceCombinations,
   serviceObjectiveKeys,
 } from "@/src/libs/services";
-
-const lastMod = new Date().toISOString().slice(0, 10);
 
 function escapeXml(value: string): string {
   return value
@@ -29,6 +28,7 @@ function buildHreflangLinks(languages: Record<string, string>): string[] {
 
 function buildUrlEntry(options: {
   url: string;
+  lastMod: string;
   changefreq: string;
   priority: string;
   languages?: Record<string, string>;
@@ -41,7 +41,7 @@ function buildUrlEntry(options: {
     "  <url>",
     `    <loc>${escapeXml(options.url)}</loc>`,
     alternateLinks,
-    `    <lastmod>${lastMod}</lastmod>`,
+    `    <lastmod>${options.lastMod}</lastmod>`,
     `    <changefreq>${options.changefreq}</changefreq>`,
     `    <priority>${options.priority}</priority>`,
     "  </url>",
@@ -77,6 +77,7 @@ export async function GET() {
     sitemapParts.push(
       buildUrlEntry({
         url: homeAlternates[locale],
+        lastMod: sitemapLastModified.home,
         changefreq: "weekly",
         priority: "1.0",
         languages: homeAlternates,
@@ -85,12 +86,29 @@ export async function GET() {
   }
 
   const sectionEntries: Array<{
+    lastMod: string;
+    changefreq: string;
     priority: string;
     languages: Record<string, string>;
   }> = [
-    { priority: "0.8", languages: servicesAlternates },
-    { priority: "0.9", languages: portfolioAlternates },
-    { priority: "0.8", languages: curriculumAlternates },
+    {
+      lastMod: sitemapLastModified.services,
+      changefreq: "weekly",
+      priority: "0.9",
+      languages: servicesAlternates,
+    },
+    {
+      lastMod: sitemapLastModified.portfolio,
+      changefreq: "weekly",
+      priority: "0.9",
+      languages: portfolioAlternates,
+    },
+    {
+      lastMod: sitemapLastModified.curriculum,
+      changefreq: "weekly",
+      priority: "0.9",
+      languages: curriculumAlternates,
+    },
   ];
 
   for (const section of sectionEntries) {
@@ -98,7 +116,8 @@ export async function GET() {
       sitemapParts.push(
         buildUrlEntry({
           url: section.languages[locale],
-          changefreq: "monthly",
+          lastMod: section.lastMod,
+          changefreq: section.changefreq,
           priority: section.priority,
           languages: section.languages,
         }),
@@ -111,8 +130,9 @@ export async function GET() {
       sitemapParts.push(
         buildUrlEntry({
           url: objective.alternates[locale],
+          lastMod: sitemapLastModified.serviceObjectives,
           changefreq: "monthly",
-          priority: "0.75",
+          priority: "0.8",
           languages: objective.alternates,
         }),
       );
@@ -124,6 +144,7 @@ export async function GET() {
       sitemapParts.push(
         buildUrlEntry({
           url: service.alternates[locale],
+          lastMod: sitemapLastModified.serviceScenarios,
           changefreq: "monthly",
           priority: "0.7",
           languages: service.alternates,
