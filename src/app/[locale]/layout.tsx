@@ -12,11 +12,12 @@ import { ThemeProvider } from "@/src/components/providers/ThemeProvider";
 import { siteConfig, socialLinks } from "@/src/libs/constants";
 import Script from "next/script";
 import { cookies, headers } from "next/headers";
-import LanguageSuggestionBanner from "@/src/components/layout/LanguageSuggestionBanner";
+import LanguageSuggestionModal from "@/src/components/layout/LanguageSuggestionModal";
 import {
   getSuggestedLocale,
   LOCALE_PREFERENCE_COOKIE,
   LOCALE_SUGGESTION_DISMISSED_COOKIE,
+  type LocaleSuggestionMessages,
 } from "@/src/i18n/localePreference";
 
 const GTM_ID_REGEX = /^GTM-[A-Z0-9]+$/i;
@@ -88,12 +89,17 @@ export default async function RootLayout({ children, params }: Props) {
 
   const headerStore = await headers();
   const cookieStore = await cookies();
-  const suggestedLocale = getSuggestedLocale({
+  const clientLocale = getSuggestedLocale({
     currentLocale: locale,
     acceptLanguageHeader: headerStore.get("accept-language"),
     preferredLocaleCookie: cookieStore.get(LOCALE_PREFERENCE_COOKIE)?.value,
     dismissedSuggestionCookie: cookieStore.get(LOCALE_SUGGESTION_DISMISSED_COOKIE)?.value,
   });
+
+  const suggestionMessages: LocaleSuggestionMessages | null = clientLocale
+    ? (await import(`../../../messages/${clientLocale}.json`)).default
+        .LocaleSuggestion
+    : null;
 
   return (
     <ViewTransitions>
@@ -203,8 +209,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               />
               {/* Header siempre visible */}
               <Header />
-              <LanguageSuggestionBanner
-                suggestedLocale={suggestedLocale}
+              <LanguageSuggestionModal
+                clientLocale={clientLocale}
+                messages={suggestionMessages}
               />
 
               {/* Grid container para Desktop */}

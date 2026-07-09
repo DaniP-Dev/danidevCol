@@ -3,6 +3,21 @@ import { routing } from "./routing";
 
 export type SupportedLocale = (typeof routing.locales)[number];
 
+export type LocaleSuggestionMessages = {
+  title: string;
+  description: string;
+  switchButton: string;
+  dismissButton: string;
+  languageNames: Record<SupportedLocale, string>;
+};
+
+export function formatLocaleSuggestionDescription(
+  template: string,
+  language: string,
+): string {
+  return template.replace("{language}", language);
+}
+
 export const LOCALE_PREFERENCE_COOKIE = "ddc_locale_pref";
 export const LOCALE_SUGGESTION_DISMISSED_COOKIE = "ddc_locale_suggestion_dismissed";
 

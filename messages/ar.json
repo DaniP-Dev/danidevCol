@@ -282,7 +282,7 @@
   },
   "LocaleSuggestion": {
     "title": "هل تفضل لغة أخرى؟",
-    "description": "يمكننا عرض هذه الصفحة باللغة {language}.",
+    "description": "هل تريد عرض هذه الصفحة باللغة {language}؟",
     "switchButton": "تبديل",
     "dismissButton": "لا، شكرًا",
     "languageNames": {
