@@ -6,7 +6,7 @@
       "location": "Colombia (Global Support)",
       "title": "Amplify Your Digital Presence",
       "subtitle": "As a freelance web developer in Colombia, I provide world-class solutions for businesses ready to scale online with specialized web development and optimization.",
-      "cta": "Get Started",
+      "cta": "Message me on WhatsApp",
       "ctaSecondary": "Explore Services"
     },
     "features": {
@@ -52,7 +52,7 @@
     "cta": {
       "title": "Ready to transform your digital presence?",
       "subtitle": "Let me help you take your business to the next level",
-      "button": "Request Free Consultation"
+      "button": "Message me on WhatsApp"
     },
     "footer": {
       "about": "danidevcol",
@@ -91,7 +91,7 @@
       "cta": {
         "title": "Not sure which goal fits best?",
         "description": "I can help you choose the most profitable path based on timeline, budget, and current setup.",
-        "button": "Book a diagnosis call"
+        "button": "Message me on WhatsApp"
       }
     },
     "objectivePage": {
@@ -106,8 +106,9 @@
       "scenariosTitle": "Choose your current situation",
       "scenariosSubtitle": "Each goal includes one path for new projects and one for existing projects.",
       "viewService": "View detailed service",
-      "bottomTitle": "Want to compare other goals?",
-      "bottomDescription": "Go back and review other paths before booking your consultation.",
+      "bottomTitle": "Prefer to talk first?",
+      "bottomDescription": "If you are unsure which path to pick, message me on WhatsApp and I will guide you.",
+      "whatsappButton": "Message me on WhatsApp",
       "backToObjectives": "Back to goals"
     },
     "objectives": {
@@ -165,7 +166,7 @@
       },
       "hookTitle": "What do you get from this path?",
       "cta": {
-        "primaryButton": "Schedule consultation",
+        "primaryButton": "Message me on WhatsApp",
         "secondaryButton": "Back to goal"
       }
     },
@@ -278,7 +279,29 @@
     "home": "Home",
     "curriculum": "Curriculum",
     "portfolio": "Portfolio",
-    "services": "Services"
+    "services": "Services",
+    "contact": "Message me"
+  },
+  "Contact": {
+    "navCta": "Message me",
+    "whatsappMessage": {
+      "clientGeneric": "Hi Daniel, I came from {page} and I want to talk about a web project.",
+      "clientService": "Hi Daniel, I am interested in: {objective} / {scenario}. Can we talk?",
+      "clientObjective": "Hi Daniel, I am interested in the goal: {objective}. Can you help me choose the best path?",
+      "hiring": "Hi Daniel, I saw your resume and would like to talk about a developer opportunity."
+    },
+    "form": {
+      "title": "Or leave your details",
+      "subtitle": "I will reply by email. No spam.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "success": "Done! I will get back to you soon.",
+      "error": "Could not send. Try again or message me on WhatsApp.",
+      "unavailable": "The form is unavailable right now. Message me on WhatsApp."
+    }
   },
   "LocaleSuggestion": {
     "title": "Prefer another language?",
@@ -322,6 +345,12 @@
         "github": "github.com/DaniP-Dev"
       },
       "degree": "Computer Systems Maintenance"
+    },
+    "finalCta": {
+      "title": "Looking for a developer for your team?",
+      "description": "Message me on WhatsApp or LinkedIn, or leave your details and I will reply.",
+      "whatsapp": "Message me on WhatsApp",
+      "linkedin": "View LinkedIn"
     },
     "sections": {
       "profile": "Professional Profile",
@@ -485,6 +514,12 @@
   },
   "PortfolioPage": {
     "title": "Project Portfolio",
+    "finalCta": {
+      "title": "Want a similar result for your business?",
+      "description": "Tell me about your project on WhatsApp or explore the services.",
+      "whatsapp": "Message me on WhatsApp",
+      "services": "View services"
+    },
     "labels": {
       "trending": "Featured",
       "viewMore": "View more",

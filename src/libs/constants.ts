@@ -5,7 +5,7 @@ export const socialLinks = {
   youtube: "https://www.youtube.com/@danidevcol",
   x: "https://x.com/danidevcol",
   github: "https://github.com/DaniP-Dev",
-  whatsapp: "https://wa.me/573016328564"
+  whatsapp: "https://wa.me/573016328564",
 };
 
 export const contactCta = {
@@ -13,8 +13,18 @@ export const contactCta = {
   target: "_blank",
   rel: "noopener noreferrer",
   eventName: "contact_cta_click",
-  channel: "whatsapp"
+  formEventName: "contact_form_submit",
+  channel: "whatsapp",
 } as const;
+
+/** Build a WhatsApp deep link with an optional prefilled message. */
+export function buildWhatsAppHref(message?: string): string {
+  if (!message?.trim()) {
+    return socialLinks.whatsapp;
+  }
+
+  return `${socialLinks.whatsapp}?text=${encodeURIComponent(message.trim())}`;
+}
 
 export const siteConfig = {
   name: "DaniDevCol",

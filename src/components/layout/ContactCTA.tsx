@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, MouseEvent } from "react";
-import { contactCta } from "@/src/libs/constants";
+import { buildWhatsAppHref, contactCta } from "@/src/libs/constants";
 
 declare global {
   interface Window {
@@ -9,9 +9,13 @@ declare global {
   }
 }
 
-type ContactCTAProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "target" | "rel"> & {
+type ContactCTAProps = Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  "href" | "target" | "rel"
+> & {
   location: string;
   locale: string;
+  message?: string;
 };
 
 function pushContactCtaEvent(location: string, locale: string) {
@@ -31,6 +35,7 @@ function pushContactCtaEvent(location: string, locale: string) {
 export default function ContactCTA({
   location,
   locale,
+  message,
   onClick,
   ...anchorProps
 }: ContactCTAProps) {
@@ -41,7 +46,7 @@ export default function ContactCTA({
 
   return (
     <a
-      href={contactCta.href}
+      href={buildWhatsAppHref(message)}
       target={contactCta.target}
       rel={contactCta.rel}
       onClick={handleClick}

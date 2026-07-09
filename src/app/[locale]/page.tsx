@@ -45,6 +45,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   const t = await getTranslations("HomePage");
   const tServices = await getTranslations("Services");
+  const tContact = await getTranslations("Contact");
+  const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
+    page: "Home",
+  });
   const objectiveCards = await Promise.all(
     serviceCatalog.map(async (objective) => {
       const objectiveSlug = await getObjectiveSlug(locale, objective.key);
@@ -89,6 +93,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <ContactCTA
                   location="home_hero"
                   locale={locale}
+                  message={whatsappMessage}
                   className="
                             inline-flex
                             items-center
@@ -277,6 +282,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ContactCTA
             location="home_final"
             locale={locale}
+            message={whatsappMessage}
             className="inline-flex items-center justify-center px-10 py-5 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold text-lg rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
           >
             {t("cta.button")}

@@ -28,7 +28,7 @@ const CardPortfolio = ({
   return (
     <div
       onClick={() => onOpenModal(id)}
-      className="bg-neutral-primary-soft block max-w-sm border border-default rounded-base shadow-xs cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      className="group block max-w-sm overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-lg shadow-teal-900/10 ring-1 ring-teal-900/5 cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-2xl hover:shadow-teal-600/20 dark:border-teal-700/50 dark:bg-[#121a24] dark:shadow-black/50 dark:ring-white/5 dark:hover:border-teal-400/70 dark:hover:shadow-teal-500/20"
     >
       <button
         type="button"
@@ -36,11 +36,11 @@ const CardPortfolio = ({
           e.stopPropagation();
           onOpenModal(id);
         }}
-        className="block w-full"
+        className="block w-full overflow-hidden"
         aria-label={t("labels.viewMore")}
       >
         <Image
-          className="rounded-t-base"
+          className="rounded-t-2xl object-cover transition-transform duration-300 group-hover:scale-105"
           src={image}
           alt={`Portafolio de danidevcol: ${name}`}
           width={600}
@@ -53,7 +53,7 @@ const CardPortfolio = ({
       </button>
       <div className="p-6 text-center">
         {isTrending && (
-          <span className="inline-flex items-center bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">
+          <span className="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-2.5 py-0.5 text-xs font-semibold text-teal-700 dark:border-teal-800 dark:bg-teal-900/40 dark:text-teal-200">
             <svg
               className="w-3 h-3 me-1"
               aria-hidden="true"
@@ -83,7 +83,7 @@ const CardPortfolio = ({
           className="block w-full text-left"
           aria-label={`${t("labels.viewMore")}: ${name}`}
         >
-          <h5 className="mt-3 mb-6 text-2xl font-semibold tracking-tight text-heading">
+          <h5 className="mt-3 mb-4 text-2xl font-bold tracking-tight text-teal-800 dark:text-teal-300">
             {name}
           </h5>
         </button>
@@ -93,7 +93,7 @@ const CardPortfolio = ({
             e.stopPropagation();
             onOpenModal(id);
           }}
-          className="inline-flex items-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none transition-colors"
+          className="inline-flex items-center rounded-lg bg-linear-to-r from-teal-600 to-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:shadow-md hover:shadow-teal-500/30 focus:outline-none focus:ring-2 focus:ring-teal-500/40 dark:from-teal-700 dark:to-emerald-700"
         >
           {t("labels.viewMore")}
           <svg

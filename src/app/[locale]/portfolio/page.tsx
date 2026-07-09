@@ -1,8 +1,10 @@
 import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { Link } from "@/src/i18n/navigation";
 import { buildPageAlternates } from "@/src/libs/seo";
 import { siteConfig } from "@/src/libs/constants";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -25,6 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "PortfolioPage" });
+  const tContact = await getTranslations({ locale, namespace: "Contact" });
+  const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
+    page: "Portfolio",
+  });
   const portfolioUrl = `${siteConfig.url}/portfolio`;
 
   const projectKeys = [
@@ -67,10 +73,32 @@ export default async function page({ params }: { params: Promise<{ locale: strin
           })
         }}
       />
-      <section className="py-10 px-4 flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-6 text-teal-700">{t("title")}</h1>
-      <PortfolioGrid projects={projects} />
-    </section>
+      <section className="w-full py-10 px-4 flex flex-col items-center bg-teal-50/50 dark:bg-[#0b111a]">
+        <h1 className="text-2xl font-bold mb-6 text-teal-700 dark:text-teal-300">{t("title")}</h1>
+        <PortfolioGrid projects={projects} />
+
+        <div className="mt-14 w-full max-w-3xl rounded-3xl bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-900 p-8 md:p-10 text-center text-white shadow-xl">
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-3">{t("finalCta.title")}</h2>
+          <p className="text-base md:text-lg text-white/90 mb-8">{t("finalCta.description")}</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <ContactCTA
+              location="portfolio_final"
+              locale={locale}
+              message={whatsappMessage}
+              className="px-8 py-4 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
+            >
+              {t("finalCta.whatsapp")}
+            </ContactCTA>
+            <Link
+              href="/services"
+              locale={locale}
+              className="px-8 py-4 bg-white/20 text-white font-bold rounded-lg border-2 border-white/40 hover:bg-white/30 transition-all duration-300 text-center"
+            >
+              {t("finalCta.services")}
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

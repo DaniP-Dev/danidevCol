@@ -2,6 +2,8 @@ import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import { siteConfig, socialLinks } from "@/src/libs/constants";
 import { buildPageAlternates } from "@/src/libs/seo";
+import ContactCTA from "@/src/components/layout/ContactCTA";
+import ContactForm from "@/src/components/contact/ContactForm";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -23,8 +25,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function CurriculumPage() {
+export default async function CurriculumPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("CurriculumPage");
+  const tContact = await getTranslations("Contact");
+  const hiringMessage = tContact("whatsappMessage.hiring");
 
   return (
     <>
@@ -71,7 +80,7 @@ export default async function CurriculumPage() {
           })
         }}
       />
-      <main className="min-h-screen bg-gray-50 py-4 sm:py-10 print:bg-white print:py-0">
+      <main className="min-h-screen bg-teal-50/40 dark:bg-[#0b111a] py-4 sm:py-10 print:bg-white print:py-0">
         <div className="mx-auto w-full max-w-[850px] bg-white shadow-xl print:shadow-none font-sans text-gray-800 text-[13.5px] leading-snug px-6 sm:px-16 py-8 sm:py-14">
           
           {/* ── ENCABEZADO ── */}
@@ -81,10 +90,15 @@ export default async function CurriculumPage() {
             <p className="text-[14px] text-gray-800 mt-2 font-medium text-center">{t("header.degree")}</p>
             
             <div className="flex flex-col sm:flex-row w-full justify-between items-center mt-7 text-[13px] font-medium px-0 sm:px-4 gap-4 sm:gap-0">
-              <a href={socialLinks.whatsapp} className="flex items-center gap-2 hover:opacity-80 text-[#78A4B2]" target="_blank" rel="noopener noreferrer">
+              <ContactCTA
+                location="curriculum_header"
+                locale={locale}
+                message={hiringMessage}
+                className="flex items-center gap-2 hover:opacity-80 text-[#78A4B2]"
+              >
                 <WhatsappIcon />
                 <span className="underline">+57 3016328564</span>
-              </a>
+              </ContactCTA>
               <div className="flex gap-4 text-gray-800">
                 <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><LinkedinIcon /></a>
                 <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><GithubIcon /></a>
@@ -185,6 +199,40 @@ export default async function CurriculumPage() {
 
           </div>
         </div>
+
+        {/* Hiring CTA — outside print CV card */}
+        <div className="mx-auto w-full max-w-[850px] mt-8 px-4 print:hidden space-y-6">
+          <div className="rounded-3xl bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-[#0d211e] p-8 md:p-10 text-center text-white shadow-xl">
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-3">{t("finalCta.title")}</h2>
+            <p className="text-base md:text-lg text-white/90 mb-8">{t("finalCta.description")}</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <ContactCTA
+                location="curriculum_final"
+                locale={locale}
+                message={hiringMessage}
+                className="px-8 py-4 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
+              >
+                {t("finalCta.whatsapp")}
+              </ContactCTA>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/20 text-white font-bold rounded-lg border-2 border-white/40 hover:bg-white/30 transition-all duration-300 text-center"
+              >
+                {t("finalCta.linkedin")}
+              </a>
+            </div>
+          </div>
+
+          <ContactForm
+            intent="hiring"
+            locale={locale}
+            location="curriculum_form"
+            elevated
+            className="w-full"
+          />
+        </div>
       </main>
     </>
   );
@@ -226,4 +274,3 @@ function GithubIcon() {
     <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
   );
 }
-

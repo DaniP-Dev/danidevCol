@@ -6,7 +6,7 @@
       "location": "Colombia (Atención Global)",
       "title": "Potencia Tu Presencia Digital",
       "subtitle": "Como desarrollador web freelance en Colombia, ofrezco soluciones de clase mundial para empresas que quieren crecer en línea con desarrollo y optimización web especializada.",
-      "cta": "Comenzar Ahora",
+      "cta": "Escríbeme por WhatsApp",
       "ctaSecondary": "Ver Servicios"
     },
     "features": {
@@ -52,7 +52,7 @@
     "cta": {
       "title": "¿Listo para transformar tu presencia digital?",
       "subtitle": "Déjame ayudarte a llevar tu negocio al siguiente nivel",
-      "button": "Solicitar Consulta Gratis"
+      "button": "Escríbeme por WhatsApp"
     },
     "footer": {
       "about": "danidevcol",
@@ -91,7 +91,7 @@
       "cta": {
         "title": "¿No sabes cuál objetivo elegir?",
         "description": "Te ayudo a definir la ruta más rentable según tu estado actual, presupuesto y urgencia.",
-        "button": "Agendar diagnóstico"
+        "button": "Escríbeme por WhatsApp"
       }
     },
     "objectivePage": {
@@ -106,8 +106,9 @@
       "scenariosTitle": "Selecciona tu situación actual",
       "scenariosSubtitle": "Cada objetivo tiene una ruta para proyectos nuevos y otra para proyectos existentes.",
       "viewService": "Ver servicio detallado",
-      "bottomTitle": "¿Quieres revisar otro objetivo?",
-      "bottomDescription": "Puedes volver y comparar rutas antes de agendar tu consulta.",
+      "bottomTitle": "¿Prefieres hablar primero?",
+      "bottomDescription": "Si aún no sabes qué ruta elegir, escríbeme por WhatsApp y te oriento.",
+      "whatsappButton": "Escríbeme por WhatsApp",
       "backToObjectives": "Volver a objetivos"
     },
     "objectives": {
@@ -165,7 +166,7 @@
       },
       "hookTitle": "¿Qué ganas con esta ruta?",
       "cta": {
-        "primaryButton": "Agendar consulta",
+        "primaryButton": "Escríbeme por WhatsApp",
         "secondaryButton": "Volver al objetivo"
       }
     },
@@ -278,7 +279,29 @@
     "home": "Inicio",
     "curriculum": "Currículum",
     "portfolio": "Portafolio",
-    "services": "Servicios"
+    "services": "Servicios",
+    "contact": "Escríbeme"
+  },
+  "Contact": {
+    "navCta": "Escríbeme",
+    "whatsappMessage": {
+      "clientGeneric": "Hola Daniel, vengo de {page} y quiero hablar de un proyecto web.",
+      "clientService": "Hola Daniel, me interesa: {objective} / {scenario}. ¿Podemos hablar?",
+      "clientObjective": "Hola Daniel, me interesa el objetivo: {objective}. ¿Me orientas sobre la mejor ruta?",
+      "hiring": "Hola Daniel, vi tu currículum y me gustaría hablar sobre una oportunidad como desarrollador."
+    },
+    "form": {
+      "title": "O déjame tus datos",
+      "subtitle": "Te respondo por email. Sin spam.",
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "submit": "Enviar",
+      "submitting": "Enviando…",
+      "success": "¡Listo! Te responderé pronto.",
+      "error": "No se pudo enviar. Intenta de nuevo o escríbeme por WhatsApp.",
+      "unavailable": "El formulario no está disponible ahora. Escríbeme por WhatsApp."
+    }
   },
   "LocaleSuggestion": {
     "title": "¿Prefieres otro idioma?",
@@ -322,6 +345,12 @@
         "github": "github.com/DaniP-Dev"
       },
       "degree": "Mantenimiento de Sistemas Informáticos"
+    },
+    "finalCta": {
+      "title": "¿Buscas un desarrollador para tu equipo?",
+      "description": "Escríbeme por WhatsApp o LinkedIn, o déjame tus datos y te respondo.",
+      "whatsapp": "Escríbeme por WhatsApp",
+      "linkedin": "Ver LinkedIn"
     },
     "sections": {
       "profile": "Sobre Mí",
@@ -485,6 +514,12 @@
   },
   "PortfolioPage": {
     "title": "Portafolio de Proyectos",
+    "finalCta": {
+      "title": "¿Quieres un resultado parecido para tu negocio?",
+      "description": "Cuéntame tu proyecto por WhatsApp o explora los servicios.",
+      "whatsapp": "Escríbeme por WhatsApp",
+      "services": "Ver servicios"
+    },
     "labels": {
       "trending": "Destacado",
       "viewMore": "Ver más",

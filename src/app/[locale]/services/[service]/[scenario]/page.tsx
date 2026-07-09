@@ -62,6 +62,11 @@ export default async function Page({ params }: PageProps) {
 
   const objectiveHref = `/services/${await getObjectiveSlug(locale, objectiveKey)}`;
   const contentPath = `matrix.${objectiveKey}.${scenarioKey}`;
+  const tContact = await getTranslations({ locale, namespace: "Contact" });
+  const whatsappMessage = tContact("whatsappMessage.clientService", {
+    objective: t(`objectives.${objectiveKey}.title`),
+    scenario: t(`scenarios.${scenarioKey}.title`),
+  });
 
   return (
     <div className="w-full bg-background">
@@ -83,6 +88,7 @@ export default async function Page({ params }: PageProps) {
           <ContactCTA
             location="service_detail_hero"
             locale={locale}
+            message={whatsappMessage}
             className="inline-block px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 transform hover:-translate-y-1"
           >
             {t(`${contentPath}.cta`)}
@@ -133,6 +139,7 @@ export default async function Page({ params }: PageProps) {
               <ContactCTA
                 location="service_detail_final"
                 locale={locale}
+                message={whatsappMessage}
                 className="px-8 py-4 bg-white text-teal-700 font-bold rounded-lg hover:bg-teal-50 transition-all duration-300"
               >
                 {t("serviceDetail.cta.primaryButton")}

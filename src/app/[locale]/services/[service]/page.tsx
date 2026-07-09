@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/src/i18n/navigation";
 import { notFound, redirect } from "next/navigation";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 import {
   getObjectiveSlug,
   getScenarioSlug,
@@ -77,6 +78,10 @@ export default async function Page({ params }: PageProps) {
   }
 
   const objectiveSlug = await getObjectiveSlug(locale, objectiveKey);
+  const tContact = await getTranslations({ locale, namespace: "Contact" });
+  const whatsappMessage = tContact("whatsappMessage.clientObjective", {
+    objective: t(`objectives.${objectiveKey}.title`),
+  });
   const scenarios = await Promise.all(
     serviceScenarioKeys.map(async (scenarioKey) => {
       const scenarioSlug = await getScenarioSlug(locale, scenarioKey);
@@ -151,13 +156,23 @@ export default async function Page({ params }: PageProps) {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             {t("objectivePage.bottomDescription")}
           </p>
-          <Link
-            href="/services"
-            locale={locale}
-            className="inline-flex px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300"
-          >
-            {t("objectivePage.backToObjectives")}
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <ContactCTA
+              location="objective_bottom"
+              locale={locale}
+              message={whatsappMessage}
+              className="inline-flex px-8 py-4 bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300"
+            >
+              {t("objectivePage.whatsappButton")}
+            </ContactCTA>
+            <Link
+              href="/services"
+              locale={locale}
+              className="inline-flex px-8 py-4 bg-white/80 dark:bg-white/10 text-teal-800 dark:text-teal-200 font-bold rounded-lg border border-teal-200 dark:border-white/20 hover:bg-teal-50 dark:hover:bg-white/15 transition-all duration-300"
+            >
+              {t("objectivePage.backToObjectives")}
+            </Link>
+          </div>
         </div>
       </section>
     </div>

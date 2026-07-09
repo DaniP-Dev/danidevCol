@@ -29,10 +29,15 @@ import CardService from "@/src/components/servicesPage/CardService";
 import Benefits from "@/src/components/servicesPage/Benefits";
 import { siteConfig } from "@/src/libs/constants";
 import ContactCTA from "@/src/components/layout/ContactCTA";
+import ContactForm from "@/src/components/contact/ContactForm";
 
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations("Services");
+  const tContact = await getTranslations("Contact");
+  const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
+    page: "Services",
+  });
   const pageAlternates = buildPageAlternates(locale, "/services");
   const servicesUrl = typeof pageAlternates.canonical === "string"
     ? pageAlternates.canonical
@@ -106,7 +111,7 @@ export default async function page({ params }: { params: Promise<{ locale: strin
       </div>
       
       {/* CTA Section */}
-      <div id="cta-section" className="w-full max-w-5xl mx-auto px-4 py-12">
+      <div id="cta-section" className="w-full max-w-5xl mx-auto px-4 py-12 space-y-8">
         <div className="bg-linear-to-r from-teal-600 to-emerald-500 dark:from-teal-800 dark:to-[#0d211e] rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
            <div className="relative z-10">
              <h2 className="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight">{t("page.cta.title")}</h2>
@@ -116,6 +121,7 @@ export default async function page({ params }: { params: Promise<{ locale: strin
             <ContactCTA
               location="services_cta"
               locale={locale}
+              message={whatsappMessage}
                className="inline-block px-6 py-3 bg-white text-teal-800 dark:text-teal-900 font-bold rounded-full hover:bg-teal-50 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1"
              >
                {t("page.cta.button")}
@@ -125,6 +131,13 @@ export default async function page({ params }: { params: Promise<{ locale: strin
            <div className="absolute -top-16 -left-16 w-48 h-48 bg-white/20 rounded-full blur-2xl"></div>
            <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         </div>
+
+        <ContactForm
+          intent="project"
+          locale={locale}
+          location="services_form"
+          className="max-w-2xl mx-auto"
+        />
       </div>
     </div>
     </>

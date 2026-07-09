@@ -38,7 +38,7 @@ const PortfolioGrid = ({ projects }: PortfolioGridProps) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
         {projects.map((project, index) => (
           <CardPortfolio
             key={project.id}

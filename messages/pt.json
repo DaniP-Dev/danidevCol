@@ -6,7 +6,7 @@
       "location": "Colômbia (Atendimento Global)",
       "title": "Potencialize Sua Presença Digital",
       "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
-      "cta": "Comece Agora",
+      "cta": "Fale comigo no WhatsApp",
       "ctaSecondary": "Explorar Serviços"
     },
     "features": {
@@ -52,7 +52,7 @@
     "cta": {
       "title": "Pronto para transformar sua presença digital?",
       "subtitle": "Deixe-me ajudá-lo a llevar seu negócio para o próximo nível",
-      "button": "Solicitar Consulta Gratuita"
+      "button": "Fale comigo no WhatsApp"
     },
     "footer": {
       "about": "danidevcol",
@@ -91,7 +91,7 @@
       "cta": {
         "title": "Ainda com dúvida sobre o melhor caminho?",
         "description": "Definimos juntos a rota mais rentável considerando prazo, orçamento e estágio atual.",
-        "button": "Agendar diagnóstico"
+        "button": "Fale comigo no WhatsApp"
       }
     },
     "objectivePage": {
@@ -106,8 +106,9 @@
       "scenariosTitle": "Selecione sua situação atual",
       "scenariosSubtitle": "Cada objetivo possui uma rota para projetos novos e outra para projetos existentes.",
       "viewService": "Ver serviço detalhado",
-      "bottomTitle": "Quer comparar outro objetivo?",
-      "bottomDescription": "Volte e compare as opções antes de agendar sua consultoria.",
+      "bottomTitle": "Prefere falar primeiro?",
+      "bottomDescription": "Se ainda não sabe qual rota escolher, fale comigo no WhatsApp e eu te oriento.",
+      "whatsappButton": "Fale comigo no WhatsApp",
       "backToObjectives": "Voltar aos objetivos"
     },
     "objectives": {
@@ -165,7 +166,7 @@
       },
       "hookTitle": "O que você ganha com essa rota?",
       "cta": {
-        "primaryButton": "Agendar consultoria",
+        "primaryButton": "Fale comigo no WhatsApp",
         "secondaryButton": "Voltar ao objetivo"
       }
     },
@@ -278,7 +279,29 @@
     "home": "Início",
     "curriculum": "Currículo",
     "portfolio": "Portfólio",
-    "services": "Serviços"
+    "services": "Serviços",
+    "contact": "Fale comigo"
+  },
+  "Contact": {
+    "navCta": "Fale comigo",
+    "whatsappMessage": {
+      "clientGeneric": "Olá Daniel, vim de {page} e quero falar sobre um projeto web.",
+      "clientService": "Olá Daniel, tenho interesse em: {objective} / {scenario}. Podemos conversar?",
+      "clientObjective": "Olá Daniel, tenho interesse no objetivo: {objective}. Pode me orientar sobre a melhor rota?",
+      "hiring": "Olá Daniel, vi seu currículo e gostaria de falar sobre uma oportunidade como desenvolvedor."
+    },
+    "form": {
+      "title": "Ou deixe seus dados",
+      "subtitle": "Respondo por e-mail. Sem spam.",
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "submit": "Enviar",
+      "submitting": "Enviando…",
+      "success": "Pronto! Responderei em breve.",
+      "error": "Não foi possível enviar. Tente de novo ou fale comigo no WhatsApp.",
+      "unavailable": "O formulário não está disponível agora. Fale comigo no WhatsApp."
+    }
   },
   "LocaleSuggestion": {
     "title": "Prefere outro idioma?",
@@ -322,6 +345,12 @@
         "github": "github.com/DaniP-Dev"
       },
       "degree": "Manutenção de Sistemas Informáticos"
+    },
+    "finalCta": {
+      "title": "Procura um desenvolvedor para sua equipe?",
+      "description": "Fale comigo no WhatsApp ou LinkedIn, ou deixe seus dados e eu respondo.",
+      "whatsapp": "Fale comigo no WhatsApp",
+      "linkedin": "Ver LinkedIn"
     },
     "sections": {
       "profile": "Perfil Profissional",
@@ -485,6 +514,12 @@
   },
   "PortfolioPage": {
     "title": "Portfólio de Projetos",
+    "finalCta": {
+      "title": "Quer um resultado parecido para o seu negócio?",
+      "description": "Conte-me seu projeto no WhatsApp ou explore os serviços.",
+      "whatsapp": "Fale comigo no WhatsApp",
+      "services": "Ver serviços"
+    },
     "labels": {
       "trending": "Destaque",
       "viewMore": "Ver mais",

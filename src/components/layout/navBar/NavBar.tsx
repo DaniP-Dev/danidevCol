@@ -2,7 +2,8 @@
 
 import { navItems } from "./nav";
 import { Link } from "@/src/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import ContactCTA from "@/src/components/layout/ContactCTA";
 
 type Props = {
   typeDisplay?: "mobile" | "desktop";
@@ -11,6 +12,11 @@ type Props = {
 export default function NavBar({ typeDisplay = "mobile" }: Props) {
   const isMobile = typeDisplay === "mobile";
   const t = useTranslations("Navigation");
+  const tContact = useTranslations("Contact");
+  const locale = useLocale();
+  const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
+    page: "Nav",
+  });
 
   // Map href to translation keys
   const getTranslationKey = (href: string) => {
@@ -128,8 +134,18 @@ export default function NavBar({ typeDisplay = "mobile" }: Props) {
             </span>
           </Link>
         ))}
+
+        {!isMobile && (
+          <ContactCTA
+            location="nav_desktop"
+            locale={locale}
+            message={whatsappMessage}
+            className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 px-4 py-3 text-base font-bold text-white transition hover:shadow-lg hover:shadow-teal-500/30"
+          >
+            {t("contact")}
+          </ContactCTA>
+        )}
       </div>
     </nav>
   );
 }
-
