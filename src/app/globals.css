@@ -9,11 +9,22 @@
   --foreground: #253439;
   --brand-blue: #68ABAD;
   --brand-dark: #253439;
+  /* Chrome (header / nav / footer): vivid teal, WCAG-safe with white text */
+  --chrome: #0f6b73;
+  --chrome-fg: #ffffff;
+  --chrome-muted: #d5f5f6;
+  --chrome-border: rgba(255, 255, 255, 0.14);
+  --chrome-hover: rgba(255, 255, 255, 0.12);
+  --chrome-accent: #5eead4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-chrome: var(--chrome);
+  --color-chrome-fg: var(--chrome-fg);
+  --color-chrome-muted: var(--chrome-muted);
+  --color-chrome-accent: var(--chrome-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -51,4 +62,25 @@ body {
 .bg-custom {
   background-color: var(--background) !important;
   color: var(--foreground) !important;
+}
+
+.bg-chrome {
+  background-color: var(--chrome);
+  color: var(--chrome-fg);
+}
+
+.border-chrome {
+  border-color: var(--chrome-border);
+}
+
+.text-chrome-muted {
+  color: var(--chrome-muted);
+}
+
+.text-chrome-accent {
+  color: var(--chrome-accent);
+}
+
+.hover-chrome:hover {
+  background-color: var(--chrome-hover);
 }

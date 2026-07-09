@@ -72,11 +72,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="absolute inset-0 hidden lg:block">
             <Image
               className="object-cover object-bottom-right"
-              src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/background.png"
+              src="/hero/hero-desktop.webp"
               alt=""
               fill
-              sizes="100vw"
-              priority
+              sizes="(min-width: 1024px) 100vw, 0px"
+              quality={75}
             />
           </div>
 
@@ -87,7 +87,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 {t("hero.location")}
               </div>
               <h1 className="text-3xl font-bold text-white sm:text-4xl xl:text-5xl xl:leading-tight">{t("hero.title")}</h1>
-              <p className="mt-8 text-base font-normal leading-7 text-gray-400 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
+              <p className="mt-8 text-base font-normal leading-7 text-gray-300 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
 
               <div className="flex items-center justify-center mt-8 space-x-5 xl:mt-16 lg:justify-start">
                 <ContactCTA
@@ -151,11 +151,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="mt-8 lg:hidden">
             <Image
               className="object-cover w-full h-auto"
-              src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/bg.png"
+              src="/hero/hero-mobile.webp"
               alt=""
               width={1200}
-              height={675}
-              sizes="100vw"
+              height={807}
+              sizes="(max-width: 1023px) 100vw, 0px"
+              quality={75}
               priority
               fetchPriority="high"
             />
@@ -172,7 +173,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
               {t("features.title")}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               {t("features.subtitle")}
             </p>
           </div>
@@ -204,7 +205,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
             {t("services.title")}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             {t("services.subtitle")}
           </p>
         </div>
@@ -228,7 +229,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-teal-600 dark:text-teal-400 group-hover:gap-2 gap-0 transition-all">
+                  <div className="flex items-center text-teal-800 dark:text-teal-300 group-hover:gap-2 gap-0 transition-all">
                     <span className="font-semibold">{t("footer.seeMore")}</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
@@ -274,7 +275,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
               {t("cta.title")}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-700 dark:text-gray-300">
               {t("cta.subtitle")}
             </p>
           </div>

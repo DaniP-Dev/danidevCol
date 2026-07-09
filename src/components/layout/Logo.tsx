@@ -17,7 +17,7 @@ export default function Logo() {
         className="h-10 w-10 rounded-full object-cover"
         priority
       />
-      <span className="ml-3 text-xl font-semibold text-gray-900 dark:text-white">
+      <span className="ml-3 text-xl font-semibold text-white">
         DaniDev
       </span>
     </Link>

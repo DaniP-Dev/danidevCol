@@ -217,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               {/* Grid container para Desktop */}
               <div className="md:grid md:grid-cols-[250px_1fr] md:h-[calc(100vh-80px)]">
                 {/* Sidebar Desktop - Fixed con scroll interno */}
-                <aside className="hidden md:block md:overflow-y-auto md:border-r md:border-gray-200 md:dark:border-gray-700 bg-custom dark:bg-gray-800">
+                <aside className="hidden md:block md:overflow-y-auto md:border-r border-chrome bg-chrome">
                   <NavBar typeDisplay="desktop" />
                 </aside>
 

@@ -32,14 +32,14 @@ export default function NavBar({ typeDisplay = "mobile" }: Props) {
   // Función helper para los estilos de íconos
   const getIconClass = () => 
     isMobile
-      ? "w-7 h-7 mb-2 text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
-      : "w-7 h-7 text-white dark:text-white shrink-0";
+      ? "w-7 h-7 mb-2 text-white group-hover:text-chrome-accent"
+      : "w-7 h-7 text-white shrink-0";
 
   return (
     <nav
       className={`${
         isMobile
-          ? "fixed bottom-0 left-0 z-50 w-full h-16 bg-custom border-t border-gray-200 dark:bg-custom dark:border-gray-600"
+          ? "fixed bottom-0 left-0 z-50 w-full h-16 bg-chrome border-t border-chrome"
           : "sticky top-0 h-full p-4"
       }`}
     >
@@ -63,8 +63,8 @@ export default function NavBar({ typeDisplay = "mobile" }: Props) {
             href={item.href}
             className={
               isMobile
-                ? "inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-                : "flex items-center gap-3 p-3 text-gray-700 dark:text-gray-200 hover:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                ? "inline-flex flex-col items-center justify-center px-5 hover-chrome group"
+                : "flex items-center gap-3 p-3 text-white hover-chrome rounded-lg transition-colors"
             }
           >
             {/* INICIO */}
@@ -126,8 +126,8 @@ export default function NavBar({ typeDisplay = "mobile" }: Props) {
             <span
               className={
                 isMobile
-                  ? "text-sm font-bold text-white dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-500"
-                  : "text-xl font-black text-white dark:text-white"
+                  ? "text-sm font-bold text-white group-hover:text-chrome-accent"
+                  : "text-xl font-black text-white"
               }
             >
               {t(getTranslationKey(item.href as string))}

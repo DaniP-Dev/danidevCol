@@ -70,14 +70,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.rareblocks.xyz",
-      },
-    ],
-  },
 };
 
 const withNextIntl = createNextIntl();
