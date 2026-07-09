@@ -9,7 +9,12 @@ import {
   resolveObjectiveKeyBySlug,
   resolveScenarioKeyBySlug,
 } from "@/src/libs/services";
-import { buildServiceAlternates } from "@/src/libs/seo";
+import {
+  buildPageOpenGraph,
+  buildPageTwitter,
+  buildServiceAlternates,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 
 interface PageProps {
   params: Promise<{ service: string; scenario: string; locale: string }>;
@@ -32,17 +37,32 @@ export async function generateMetadata({
   }
 
   const path = `matrix.${objectiveKey}.${scenarioKey}`;
+  const title = t(`${path}.title`);
+  const description = t(`${path}.description`);
+  const alternates = await buildServiceAlternates(
+    locale,
+    objectiveKey,
+    scenarioKey,
+  );
+  const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title: t(`${path}.title`),
-    description: t(`${path}.description`),
+    title,
+    description,
     keywords: [
       t(`objectives.${objectiveKey}.title`),
       t(`scenarios.${scenarioKey}.title`),
       t("serviceDetail.metadata.keywords.webDevelopment"),
       t("serviceDetail.metadata.keywords.digitalSolutions"),
     ],
-    alternates: await buildServiceAlternates(locale, objectiveKey, scenarioKey),
+    alternates,
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
+      locale,
+    }),
+    twitter: buildPageTwitter({ title, description }),
   };
 }
 
@@ -82,8 +102,18 @@ export default async function Page({ params }: PageProps) {
           <p className="text-xl text-teal-700 dark:text-teal-400 font-semibold mb-6">
             {t(`${contentPath}.subtitle`)}
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             {t(`${contentPath}.longDescription`)}
+          </p>
+          <p className="text-base text-gray-600 dark:text-gray-400 mb-8">
+            {t("serviceDetail.socialProof")}{" "}
+            <Link
+              href="/portfolio"
+              locale={locale}
+              className="font-semibold text-teal-700 dark:text-teal-300 underline underline-offset-2 hover:text-teal-600 dark:hover:text-teal-200"
+            >
+              {t("serviceDetail.socialProofLink")}
+            </Link>
           </p>
           <ContactCTA
             location="service_detail_hero"

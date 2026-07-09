@@ -10,7 +10,13 @@ import {
   resolveObjectiveKeyBySlug,
   serviceScenarioKeys,
 } from "@/src/libs/services";
-import { buildObjectiveAlternates, buildServiceAlternates } from "@/src/libs/seo";
+import {
+  buildObjectiveAlternates,
+  buildPageOpenGraph,
+  buildPageTwitter,
+  buildServiceAlternates,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 
 interface PageProps {
   params: Promise<{ service: string; locale: string }>;
@@ -27,38 +33,61 @@ export async function generateMetadata({
     const legacy = await resolveLegacyServiceSlug(service);
     if (legacy) {
       const legacyPath = `matrix.${legacy.objective}.${legacy.scenario}`;
+      const title = t(`${legacyPath}.title`);
+      const description = t(`${legacyPath}.description`);
+      const alternates = await buildServiceAlternates(
+        locale,
+        legacy.objective,
+        legacy.scenario,
+      );
+      const canonicalUrl = resolveCanonicalUrl(alternates);
 
       return {
-        title: t(`${legacyPath}.title`),
-        description: t(`${legacyPath}.description`),
+        title,
+        description,
         keywords: [
           t(`objectives.${legacy.objective}.title`),
           t(`scenarios.${legacy.scenario}.title`),
           t("objectivePage.metadata.keywords.webSolutions"),
           t("objectivePage.metadata.keywords.digitalGrowth"),
         ],
-        alternates: await buildServiceAlternates(
+        alternates,
+        openGraph: buildPageOpenGraph({
+          title,
+          description,
+          url: canonicalUrl,
           locale,
-          legacy.objective,
-          legacy.scenario,
-        ),
+        }),
+        twitter: buildPageTwitter({ title, description }),
       };
     }
 
     return { title: t("objectivePage.metadata.notFoundTitle") };
   }
 
+  const title = t("objectivePage.metadata.title", {
+    objective: t(`objectives.${objectiveKey}.title`),
+  });
+  const description = t(`objectives.${objectiveKey}.description`);
+  const alternates = await buildObjectiveAlternates(locale, objectiveKey);
+  const canonicalUrl = resolveCanonicalUrl(alternates);
+
   return {
-    title: t("objectivePage.metadata.title", {
-      objective: t(`objectives.${objectiveKey}.title`),
-    }),
-    description: t(`objectives.${objectiveKey}.description`),
+    title,
+    description,
     keywords: [
       t(`objectives.${objectiveKey}.title`),
       t("objectivePage.metadata.keywords.webSolutions"),
       t("objectivePage.metadata.keywords.digitalGrowth"),
     ],
-    alternates: await buildObjectiveAlternates(locale, objectiveKey),
+    alternates,
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
+      locale,
+    }),
+    twitter: buildPageTwitter({ title, description }),
   };
 }
 
@@ -106,6 +135,16 @@ export default async function Page({ params }: PageProps) {
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             {t(`objectives.${objectiveKey}.description`)}
+          </p>
+          <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
+            {t("objectivePage.socialProof")}{" "}
+            <Link
+              href="/portfolio"
+              locale={locale}
+              className="font-semibold text-teal-700 dark:text-teal-300 underline underline-offset-2 hover:text-teal-600 dark:hover:text-teal-200"
+            >
+              {t("objectivePage.socialProofLink")}
+            </Link>
           </p>
         </div>
       </section>

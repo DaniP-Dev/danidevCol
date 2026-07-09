@@ -1,18 +1,32 @@
+import type { Metadata } from "next";
 import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import { Link } from "@/src/i18n/navigation";
-import { buildPageAlternates } from "@/src/libs/seo";
+import {
+  buildPageAlternates,
+  buildPageOpenGraph,
+  buildPageTwitter,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 import { siteConfig } from "@/src/libs/constants";
 import ContactCTA from "@/src/components/layout/ContactCTA";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata.portfolio" });
+  const title = t("title");
+  const description = t("description");
+  const alternates = buildPageAlternates(locale, "/portfolio");
+  const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
     keywords: [
       "portafolio web",
       "proyectos Next.js",
@@ -21,7 +35,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "casos de éxito",
       "web design examples",
     ],
-    alternates: buildPageAlternates(locale, "/portfolio"),
+    alternates,
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
+      locale,
+    }),
+    twitter: buildPageTwitter({ title, description }),
   };
 }
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
@@ -31,7 +52,9 @@ export default async function page({ params }: { params: Promise<{ locale: strin
   const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
     page: "Portfolio",
   });
-  const portfolioUrl = `${siteConfig.url}/portfolio`;
+  const portfolioUrl = resolveCanonicalUrl(
+    buildPageAlternates(locale, "/portfolio"),
+  );
 
   const projectKeys = [
     "somosCriteria",
@@ -62,19 +85,50 @@ export default async function page({ params }: { params: Promise<{ locale: strin
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Web Development Portfolio",
-            "description": "Portfolio with 6+ web development projects showcasing Next.js, React, and digital solutions",
-            "url": portfolioUrl,
-            "creator": {
+            name: t("title"),
+            description: t("intro"),
+            url: portfolioUrl,
+            creator: {
               "@type": "Person",
-              "name": "Daniel Pérez Guzman",
-              "url": siteConfig.url
-            }
-          })
+              name: siteConfig.author,
+              url: siteConfig.url,
+            },
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: projects.map((project, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                item: {
+                  "@type": "CreativeWork",
+                  name: project.name,
+                  description: project.description,
+                  url: project.link,
+                },
+              })),
+            },
+          }),
         }}
       />
       <section className="w-full py-10 px-4 flex flex-col items-center bg-teal-50/50 dark:bg-[#0b111a]">
-        <h1 className="text-2xl font-bold mb-6 text-teal-700 dark:text-teal-300">{t("title")}</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-3 text-teal-700 dark:text-teal-300 text-center max-w-3xl">
+          {t("title")}
+        </h1>
+        <p className="text-base text-gray-600 dark:text-gray-400 mb-8 text-center max-w-2xl">
+          {t("intro")}
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {(["somosCriteria", "servicrep", "womenOasix"] as const).map((key) => (
+            <a
+              key={key}
+              href={t(`projects.${key}.link`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-sm font-semibold text-teal-800 dark:text-teal-200 bg-white/80 dark:bg-white/5 border border-teal-200/60 dark:border-teal-800/60 rounded-full hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-colors"
+            >
+              {t(`featuredProjects.${key}`)}
+            </a>
+          ))}
+        </div>
         <PortfolioGrid projects={projects} />
 
         <div className="mt-14 w-full max-w-3xl rounded-3xl bg-linear-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-900 p-8 md:p-10 text-center text-white shadow-xl">

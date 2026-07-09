@@ -105,3 +105,68 @@ export async function buildServiceAlternates(
     languages,
   };
 }
+
+type PageSocialMetadataInput = {
+  title: string;
+  description: string;
+  url: string;
+  locale: string;
+};
+
+export function buildPageOpenGraph({
+  title,
+  description,
+  url,
+  locale,
+}: PageSocialMetadataInput): NonNullable<Metadata["openGraph"]> {
+  return {
+    title,
+    description,
+    type: "website",
+    locale,
+    url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        alt: title,
+      },
+    ],
+  };
+}
+
+export function buildPageTwitter({
+  title,
+  description,
+}: Pick<PageSocialMetadataInput, "title" | "description">): NonNullable<
+  Metadata["twitter"]
+> {
+  return {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [siteConfig.ogImage],
+  };
+}
+
+export function resolveCanonicalUrl(
+  alternates: NonNullable<Metadata["alternates"]>,
+): string {
+  if (typeof alternates.canonical === "string") {
+    return alternates.canonical;
+  }
+
+  if (alternates.canonical instanceof URL) {
+    return alternates.canonical.toString();
+  }
+
+  if (
+    alternates.canonical &&
+    typeof alternates.canonical === "object" &&
+    "url" in alternates.canonical
+  ) {
+    return String(alternates.canonical.url);
+  }
+
+  return siteConfig.url;
+}

@@ -4,10 +4,11 @@
     "description": "Professional web development, optimization, and design solutions to amplify your digital presence.",
     "hero": {
       "location": "Colombia (Global Support)",
-      "title": "Amplify Your Digital Presence",
+      "title": "Web development in Colombia to amplify your digital presence",
       "subtitle": "As a freelance web developer in Colombia, I provide world-class solutions for businesses ready to scale online with specialized web development and optimization.",
       "cta": "Message me on WhatsApp",
-      "ctaSecondary": "Explore Services"
+      "ctaSecondary": "Explore Services",
+      "ctaPortfolio": "See real case studies"
     },
     "features": {
       "location": "Based in Colombia, Multi-language Global Support",
@@ -79,11 +80,12 @@
       }
     },
     "hero": {
-      "titlePrefix": "Services built around",
-      "titleHighlight": "business outcomes",
+      "titlePrefix": "Web development built around",
+      "titleHighlight": "outcomes for businesses",
       "description": "Pick your goal first, then choose the path: start from scratch or improve what already exists.",
       "primaryButton": "I want a proposal",
-      "secondaryButton": "See service structure"
+      "secondaryButton": "See service structure",
+      "portfolioLink": "See real case studies"
     },
     "page": {
       "cardsTitle": "Choose your main goal",
@@ -106,6 +108,8 @@
       "scenariosTitle": "Choose your current situation",
       "scenariosSubtitle": "Each goal includes one path for new projects and one for existing projects.",
       "viewService": "View detailed service",
+      "socialProof": "Results similar to projects like Servicrep, Somos Criteria, and Oasix.",
+      "socialProofLink": "View portfolio",
       "bottomTitle": "Prefer to talk first?",
       "bottomDescription": "If you are unsure which path to pick, message me on WhatsApp and I will guide you.",
       "whatsappButton": "Message me on WhatsApp",
@@ -164,6 +168,8 @@
         "solution": "Solution",
         "implementation": "Implementation"
       },
+      "socialProof": "Results similar to projects like Servicrep, Somos Criteria, and Oasix.",
+      "socialProofLink": "View portfolio",
       "hookTitle": "What do you get from this path?",
       "cta": {
         "primaryButton": "Message me on WhatsApp",
@@ -338,7 +344,8 @@
   "CurriculumPage": {
     "header": {
       "name": "Daniel Perez Guzman",
-      "role": "Frontend Developer / Web Integrator",
+      "role": "Full Stack Developer",
+      "headline": "Daniel Perez Guzman — Full Stack Developer",
       "contacts": {
         "whatsapp": "WhatsApp",
         "linkedin": "linkedin.com/in/danielperez",
@@ -346,6 +353,7 @@
       },
       "degree": "Computer Systems Maintenance"
     },
+    "portfolioLinkLabel": "View in portfolio",
     "finalCta": {
       "title": "Looking for a developer for your team?",
       "description": "Message me on WhatsApp or LinkedIn, or leave your details and I will reply.",
@@ -371,6 +379,7 @@
         "role": "Founder and Full Stack Developer",
         "date": "Jan 2023 – Present",
         "location": "Soledad, Atlantico",
+        "portfolioKey": "servicrep",
         "bullets": {
           "b1": "Developed an inspection and certification management system for fuel stations (EDS), optimizing workflows and process traceability.",
           "b2": "Implemented certificate validation through QR codes, speeding up verification and increasing trust in provided services.",
@@ -383,6 +392,7 @@
         "role": "Freelance Web Developer",
         "date": "Mar 2022 – Dec 2022",
         "location": "Remote",
+        "portfolioKey": "womenOasix",
         "bullets": {
           "b1": "Built responsive interfaces with React and Tailwind CSS, improving interaction and satisfaction for end users.",
           "b2": "Developed REST API integrations and optimized application performance, contributing to operational continuity and project scalability for clients.",
@@ -392,10 +402,11 @@
         }
       },
       "freelance": {
-        "company": "Freelance Web Developer",
+        "company": "Freelance",
         "role": "Independent Web Developer",
         "date": "2021 – Present",
         "location": "Remote",
+        "portfolioKey": "somosCriteria",
         "bullets": {
           "b1": "Develop and maintain websites and small web apps for diverse clients.",
           "b2": "Deploy projects to production using cPanel and Vercel, ensuring availability and stability.",
@@ -509,11 +520,26 @@
     },
     "curriculum": {
       "title": "Daniel Pérez Guzman - Full Stack Developer | danidevcol",
-      "description": "CV of Daniel Pérez: Full Stack Developer with 3+ years in Next.js, React, TypeScript. Expert in web optimization, project management, and automation. Colombia-based."
+      "description": "CV of Daniel Pérez: Full Stack Developer with 3+ years in Next.js, React, TypeScript. Expert in web optimization, project management, and automation. Colombia-based.",
+      "keywords": [
+        "curriculum vitae",
+        "developer CV",
+        "Full Stack Developer",
+        "Next.js developer",
+        "React developer",
+        "TypeScript",
+        "hire web developer Colombia"
+      ]
     }
   },
   "PortfolioPage": {
-    "title": "Project Portfolio",
+    "title": "Web development case studies with Next.js and React",
+    "intro": "Real projects for companies like Somos Criteria, Servicrep, and Oasix.",
+    "featuredProjects": {
+      "somosCriteria": "Somos Criteria",
+      "servicrep": "Servicrep",
+      "womenOasix": "Oasix"
+    },
     "finalCta": {
       "title": "Want a similar result for your business?",
       "description": "Tell me about your project on WhatsApp or explore the services.",

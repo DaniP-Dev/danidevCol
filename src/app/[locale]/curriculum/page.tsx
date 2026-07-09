@@ -1,27 +1,47 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { Link } from "@/src/i18n/navigation";
 import { siteConfig, socialLinks } from "@/src/libs/constants";
-import { buildPageAlternates } from "@/src/libs/seo";
+import {
+  buildPageAlternates,
+  buildPageOpenGraph,
+  buildPageTwitter,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 import ContactCTA from "@/src/components/layout/ContactCTA";
 import ContactForm from "@/src/components/contact/ContactForm";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+const experienceKeys = ["servicrep", "freelance", "oasix"] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata.curriculum" });
+  const title = t("title");
+  const description = t("description");
+  const alternates = buildPageAlternates(locale, "/curriculum");
+  const canonicalUrl = resolveCanonicalUrl(alternates);
+  const metadataKeywords = t.raw("keywords");
+  const keywords = Array.isArray(metadataKeywords)
+    ? metadataKeywords.filter((keyword): keyword is string => typeof keyword === "string")
+    : [];
 
   return {
-    title: t("title"),
-    description: t("description"),
-    keywords: [
-      "curriculum vitae",
-      "CV developerr",
-      "Full Stack Developer",
-      "Next.js developer",
-      "React developer",
-      "TypeScript expert",
-      "web developer resume",
-    ],
-    alternates: buildPageAlternates(locale, "/curriculum"),
+    title,
+    description,
+    keywords,
+    alternates,
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
+      locale,
+    }),
+    twitter: buildPageTwitter({ title, description }),
   };
 }
 
@@ -32,8 +52,36 @@ export default async function CurriculumPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations("CurriculumPage");
+  const tPortfolio = await getTranslations("PortfolioPage");
   const tContact = await getTranslations("Contact");
   const hiringMessage = tContact("whatsappMessage.hiring");
+  const curriculumUrl = resolveCanonicalUrl(
+    buildPageAlternates(locale, "/curriculum"),
+  );
+
+  const experienceEntries = experienceKeys.map((key) => {
+    const portfolioKey = t(`experience.${key}.portfolioKey`);
+    const hasProjectLink =
+      key !== "freelance" && tPortfolio.has(`projects.${portfolioKey}.link`);
+    const projectLink = hasProjectLink
+      ? tPortfolio(`projects.${portfolioKey}.link`)
+      : null;
+
+    return {
+      key,
+      company: t(`experience.${key}.company`),
+      role: t(`experience.${key}.role`),
+      date: t(`experience.${key}.date`),
+      bullets: ["b1", "b2", "b3", "b4", "b5"]
+        .map((bullet) =>
+          t.has(`experience.${key}.bullets.${bullet}`)
+            ? t(`experience.${key}.bullets.${bullet}`)
+            : null,
+        )
+        .filter((bullet): bullet is string => Boolean(bullet)),
+      projectLink,
+    };
+  });
 
   return (
     <>
@@ -43,50 +91,44 @@ export default async function CurriculumPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Resume",
-            "applicant": {
+            "@type": "ProfilePage",
+            name: t("header.headline"),
+            url: curriculumUrl,
+            mainEntity: {
               "@type": "Person",
-              "name": t("header.name"),
-              "jobTitle": "Full Stack Developer",
-              "url": siteConfig.url
+              name: t("header.name"),
+              jobTitle: t("header.role"),
+              url: siteConfig.url,
+              email: siteConfig.email,
+              sameAs: [socialLinks.linkedin, socialLinks.github],
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
+                "Firebase",
+                "Node.js",
+                "HTML",
+                "CSS",
+                "Git",
+              ],
+              worksFor: experienceEntries.map((entry) => ({
+                "@type": "Organization",
+                name: entry.company,
+                ...(entry.projectLink ? { url: entry.projectLink } : {}),
+              })),
             },
-            "skills": [
-              "Next.js",
-              "React",
-              "TypeScript",
-              "Tailwind CSS",
-              "Firebase",
-              "Node.js",
-              "HTML",
-              "CSS",
-              "Git"
-            ],
-            "workExperience": [
-              {
-                "@type": "WorkPosition",
-                "title": t("experience.servicrep.role"),
-                "companyName": t("experience.servicrep.company"),
-                "startDate": "2023-01-01",
-                "currentlyEmployed": true
-              },
-              {
-                "@type": "WorkPosition",
-                "title": t("experience.oasix.role"),
-                "companyName": t("experience.oasix.company"),
-                "startDate": "2022-03-01",
-                "endDate": "2022-12-31"
-              }
-            ]
-          })
+          }),
         }}
       />
-      <main className="min-h-screen bg-teal-50/40 dark:bg-[#0b111a] py-4 sm:py-10 print:bg-white print:py-0">
+      <div className="min-h-screen bg-teal-50/40 dark:bg-[#0b111a] py-4 sm:py-10 print:bg-white print:py-0">
         <div className="mx-auto w-full max-w-[850px] bg-white shadow-xl print:shadow-none font-sans text-gray-800 text-[13.5px] leading-snug px-6 sm:px-16 py-8 sm:py-14">
           
           {/* ── ENCABEZADO ── */}
           <header className="mb-8 flex flex-col items-center">
-            <h2 className="text-[13px] font-bold text-gray-700 uppercase tracking-wide text-center">{t("header.role")}</h2>
-            <h1 className="text-[32px] sm:text-[42px] font-bold uppercase tracking-widest text-[#78A4B2] mt-0.5 leading-none text-center">{t("header.name")}</h1>
+            <h1 className="text-[28px] sm:text-[36px] font-bold uppercase tracking-wide text-[#78A4B2] leading-tight text-center">
+              {t("header.headline")}
+            </h1>
             <p className="text-[14px] text-gray-800 mt-2 font-medium text-center">{t("header.degree")}</p>
             
             <div className="flex flex-col sm:flex-row w-full justify-between items-center mt-7 text-[13px] font-medium px-0 sm:px-4 gap-4 sm:gap-0">
@@ -167,33 +209,48 @@ export default async function CurriculumPage({
               </Section>
 
               <Section title={t("sections.experience")}>
-                <div className="mt-4 mb-6">
-                  <div className="text-[14px] leading-tight">
-                    <p className="font-bold">{t("experience.freelance.company")}</p>
-                    <p className="font-bold mt-1"><span className="text-[#78A4B2] underline">{t("experience.freelance.role")}</span>, {t("experience.freelance.date")}</p>
+                {experienceEntries.map((entry) => (
+                  <div key={entry.key} className="mt-4 mb-6">
+                    <div className="text-[14px] leading-tight">
+                      <p className="font-bold">
+                        {entry.projectLink ? (
+                          <a
+                            href={entry.projectLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#78A4B2] underline hover:opacity-80"
+                          >
+                            {entry.company}
+                          </a>
+                        ) : (
+                          entry.company
+                        )}
+                      </p>
+                      <p className="font-bold mt-1">
+                        <span className="text-[#78A4B2]">{entry.role}</span>
+                        {", "}
+                        {entry.date}
+                      </p>
+                      <p className="mt-1 print:hidden">
+                        <Link
+                          href="/portfolio"
+                          locale={locale}
+                          className="text-[12px] font-semibold text-[#78A4B2] underline underline-offset-2 hover:opacity-80"
+                        >
+                          {t("portfolioLinkLabel")}
+                        </Link>
+                      </p>
+                    </div>
+                    <ul className="list-none space-y-1.5 mt-3">
+                      {entry.bullets.map((bullet) => (
+                        <li key={bullet} className="flex">
+                          <Bullet />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="list-none space-y-1.5 mt-3">
-                    <li className="flex"><Bullet/>{t("experience.freelance.bullets.b1")}</li>
-                    <li className="flex"><Bullet/>{t("experience.freelance.bullets.b2")}</li>
-                    <li className="flex"><Bullet/>{t("experience.freelance.bullets.b3")}</li>
-                    <li className="flex"><Bullet/>{t("experience.freelance.bullets.b4")}</li>
-                    <li className="flex"><Bullet/>{t("experience.freelance.bullets.b5")}</li>
-                  </ul>
-                </div>
-
-                <div className="mb-6">
-                  <div className="text-[14px] leading-tight">
-                    <p className="font-bold">{t("experience.oasix.company")}</p>
-                    <p className="font-bold mt-1"><span className="text-[#78A4B2] underline">{t("experience.oasix.role")}</span> {t("experience.oasix.date")}</p>
-                  </div>
-                  <ul className="list-none space-y-1.5 mt-3">
-                    <li className="flex"><Bullet/>{t("experience.oasix.bullets.b1")}</li>
-                    <li className="flex"><Bullet/>{t("experience.oasix.bullets.b2")}</li>
-                    <li className="flex"><Bullet/>{t("experience.oasix.bullets.b3")}</li>
-                    <li className="flex"><Bullet/>{t("experience.oasix.bullets.b4")}</li>
-                    <li className="flex"><Bullet/>{t("experience.oasix.bullets.b5")}</li>
-                  </ul>
-                </div>
+                ))}
               </Section>
             </div>
 
@@ -233,7 +290,7 @@ export default async function CurriculumPage({
             className="w-full"
           />
         </div>
-      </main>
+      </div>
     </>
   );
 }

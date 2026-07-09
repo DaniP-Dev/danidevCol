@@ -4,10 +4,11 @@
     "description": "Desenvolvimento, otimização e design de sites profissionais para elevar sua presença digital.",
     "hero": {
       "location": "Colômbia (Atendimento Global)",
-      "title": "Potencialize Sua Presença Digital",
+      "title": "Desenvolvimento web na Colômbia para potencializar sua presença digital",
       "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
       "cta": "Fale comigo no WhatsApp",
-      "ctaSecondary": "Explorar Serviços"
+      "ctaSecondary": "Explorar Serviços",
+      "ctaPortfolio": "Ver casos reais"
     },
     "features": {
       "location": "Localizado na Colômbia, Suporte Global Multi-idioma",
@@ -79,11 +80,12 @@
       }
     },
     "hero": {
-      "titlePrefix": "Serviços focados em",
-      "titleHighlight": "resultado de negócio",
+      "titlePrefix": "Desenvolvimento web focado em",
+      "titleHighlight": "resultados para empresas",
       "description": "Escolha seu objetivo e siga o caminho certo: projeto novo ou melhoria do que já existe.",
       "primaryButton": "Quero uma proposta",
-      "secondaryButton": "Ver estrutura de serviços"
+      "secondaryButton": "Ver estrutura de serviços",
+      "portfolioLink": "Ver casos reais"
     },
     "page": {
       "cardsTitle": "Escolha seu objetivo principal",
@@ -106,6 +108,8 @@
       "scenariosTitle": "Selecione sua situação atual",
       "scenariosSubtitle": "Cada objetivo possui uma rota para projetos novos e outra para projetos existentes.",
       "viewService": "Ver serviço detalhado",
+      "socialProof": "Resultados semelhantes a projetos como Servicrep, Somos Criteria e Oasix.",
+      "socialProofLink": "Ver portfólio",
       "bottomTitle": "Prefere falar primeiro?",
       "bottomDescription": "Se ainda não sabe qual rota escolher, fale comigo no WhatsApp e eu te oriento.",
       "whatsappButton": "Fale comigo no WhatsApp",
@@ -164,6 +168,8 @@
         "solution": "Solução",
         "implementation": "Implementação"
       },
+      "socialProof": "Resultados semelhantes a projetos como Servicrep, Somos Criteria e Oasix.",
+      "socialProofLink": "Ver portfólio",
       "hookTitle": "O que você ganha com essa rota?",
       "cta": {
         "primaryButton": "Fale comigo no WhatsApp",
@@ -338,7 +344,8 @@
   "CurriculumPage": {
     "header": {
       "name": "Daniel Perez Guzman",
-      "role": "Desenvolvedor Frontend / Integrador Web",
+      "role": "Desenvolvedor Full Stack",
+      "headline": "Daniel Perez Guzman — Desenvolvedor Full Stack",
       "contacts": {
         "whatsapp": "WhatsApp",
         "linkedin": "linkedin.com/in/danielperez",
@@ -346,6 +353,7 @@
       },
       "degree": "Manutenção de Sistemas Informáticos"
     },
+    "portfolioLinkLabel": "Ver no portfólio",
     "finalCta": {
       "title": "Procura um desenvolvedor para sua equipe?",
       "description": "Fale comigo no WhatsApp ou LinkedIn, ou deixe seus dados e eu respondo.",
@@ -366,23 +374,12 @@
       "text": "Profissional voltado ao desenvolvimento de interfaces web funcionais, responsivas e alinhadas aos requisitos do usuário. Experiência na implementação de soluções front-end aplicando boas práticas de desenvolvimento, manutenção de código e otimização de componentes. Foco na construção de produtos digitais claros, eficientes e fáceis de usar."
     },
     "experience": {
-      "servicrep": {
-        "company": "Servicrep",
-        "role": "Fundador e Desenvolvedor Full Stack",
-        "date": "Jan 2023 – Presente",
-        "location": "Soledad, Atlântico",
-        "bullets": {
-          "b1": "Desenvolvi sistema de gestão de inspeções e certificações para postos de combustível EDS, otimizando o fluxo de trabalho e a rastreabilidade dos processos.",
-          "b2": "Implementei validação de certificados por códigos QR, agilizando a verificação e fortalecendo a confiança nos serviços oferecidos.",
-          "b3": "Integrei Google Sheets como banco de dados intermediário, facilitando a análise e o acompanhamento de relatórios para decisões mais efetivas.",
-          "b4": "Desenhei um sistema de templates PDF para certificados, garantindo consistência institucional e melhorando a apresentação para clientes e órgãos reguladores."
-        }
-      },
       "oasix": {
         "company": "Oasix",
         "role": "Desenvolvedor Web Freelancer",
         "date": "Mar 2022 – Dez 2022",
         "location": "Remoto",
+        "portfolioKey": "womenOasix",
         "bullets": {
           "b1": "Construí interfaces responsivas com React e Tailwind CSS, melhorando a interação e a satisfação dos usuários finais.",
           "b2": "Desenvolvi integrações com APIs REST e otimizei o desempenho de aplicações, contribuindo para a continuidade operacional e escalabilidade dos projetos dos clientes.",
@@ -392,16 +389,30 @@
         }
       },
       "freelance": {
-        "company": "Freelance Web Developer",
+        "company": "Freelance",
         "role": "Desenvolvedor Web Independente",
         "date": "2021 – Presente",
         "location": "Remoto",
+        "portfolioKey": "somosCriteria",
         "bullets": {
           "b1": "Desenvolvimento e manutenção de sites e pequenas web apps para clientes diversos.",
           "b2": "Deploy em produção usando cPanel e Vercel, garantindo disponibilidade e estabilidade dos projetos.",
           "b3": "Configuração de domínios personalizados para melhorar a presença digital dos clientes.",
           "b4": "Implementação de SEO básico e otimização de desempenho para aumentar visibilidade e eficiência dos sites.",
           "b5": "Elaboração de documentação técnica e suporte a clientes em ambientes web, facilitando a gestão e o uso das soluções entregues."
+        }
+      },
+      "servicrep": {
+        "company": "Servicrep",
+        "role": "Fundador e Desenvolvedor Full Stack",
+        "date": "Jan 2023 – Presente",
+        "location": "Soledad, Atlântico",
+        "portfolioKey": "servicrep",
+        "bullets": {
+          "b1": "Desenvolvi sistema de gestão de inspeções e certificações para postos de combustível EDS, otimizando o fluxo de trabalho e a rastreabilidade dos processos.",
+          "b2": "Implementei validação de certificados por códigos QR, agilizando a verificação e fortalecendo a confiança nos serviços oferecidos.",
+          "b3": "Integrei Google Sheets como banco de dados intermediário, facilitando a análise e o acompanhamento de relatórios para decisões mais efetivas.",
+          "b4": "Desenhei um sistema de templates PDF para certificados, garantindo consistência institucional e melhorando a apresentação para clientes e órgãos reguladores."
         }
       }
     },
@@ -509,11 +520,26 @@
     },
     "curriculum": {
       "title": "Daniel Pérez Guzman - Desenvolvedor Full Stack | danidevcol",
-      "description": "CV de Daniel Pérez: Desenvolvedor Full Stack com 3+ anos em Next.js, React, TypeScript. Especialista em otimização web, gestão de projetos e automação. Colômbia."
+      "description": "CV de Daniel Pérez: Desenvolvedor Full Stack com 3+ anos em Next.js, React, TypeScript. Especialista em otimização web, gestão de projetos e automação. Colômbia.",
+      "keywords": [
+        "currículo",
+        "CV desenvolvedor",
+        "Desenvolvedor Full Stack",
+        "Desenvolvedor Next.js",
+        "Desenvolvedor React",
+        "TypeScript",
+        "contratar desenvolvedor web Colômbia"
+      ]
     }
   },
   "PortfolioPage": {
-    "title": "Portfólio de Projetos",
+    "title": "Casos de desenvolvimento web com Next.js e React",
+    "intro": "Projetos reais para empresas como Somos Criteria, Servicrep e Oasix.",
+    "featuredProjects": {
+      "somosCriteria": "Somos Criteria",
+      "servicrep": "Servicrep",
+      "womenOasix": "Oasix"
+    },
     "finalCta": {
       "title": "Quer um resultado parecido para o seu negócio?",
       "description": "Conte-me seu projeto no WhatsApp ou explore os serviços.",

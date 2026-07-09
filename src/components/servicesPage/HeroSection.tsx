@@ -26,6 +26,9 @@ export default function HeroSection() {
           <Link href="#beneficios" className="px-8 py-3.5 bg-white/20 hover:bg-white/30 dark:bg-gray-800/40 dark:hover:bg-gray-800/60 font-semibold rounded-full transition-all backdrop-blur-md border border-white/20 dark:border-white/10">
             {t("hero.secondaryButton")}
           </Link>
+          <Link href="/portfolio" className="px-8 py-3.5 bg-white/10 hover:bg-white/20 dark:bg-gray-800/30 dark:hover:bg-gray-800/50 font-semibold rounded-full transition-all backdrop-blur-md border border-teal-500/30 text-teal-800 dark:text-teal-200">
+            {t("hero.portfolioLink")}
+          </Link>
         </div>
       </div>
       {/* Bolas animadas para fondo visual usando Tailwind para definir colores adaptables */}

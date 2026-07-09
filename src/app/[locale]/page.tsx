@@ -4,8 +4,12 @@ import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getObjectiveSlug, serviceCatalog } from "@/src/libs/services";
-import { buildPageAlternates } from "@/src/libs/seo";
-import { siteConfig } from "@/src/libs/constants";
+import {
+  buildPageAlternates,
+  buildPageOpenGraph,
+  buildPageTwitter,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 import ContactCTA from "@/src/components/layout/ContactCTA";
 
 export async function generateMetadata({
@@ -15,25 +19,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const alternates = buildPageAlternates(locale, "/");
+  const canonicalUrl = resolveCanonicalUrl(alternates);
   const tMetadata = await getTranslations({ locale, namespace: "Metadata.home" });
+  const title = tMetadata("title");
+  const description = tMetadata("description");
   const metadataKeywords = tMetadata.raw("keywords");
   const keywords = Array.isArray(metadataKeywords)
     ? metadataKeywords.filter((keyword): keyword is string => typeof keyword === "string")
     : [];
 
   return {
-    title: tMetadata("title"),
-    description: tMetadata("description"),
+    title,
+    description,
     keywords,
     alternates,
-    openGraph: {
-      title: tMetadata("title"),
-      description: tMetadata("description"),
-      type: "website",
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
       locale,
-      url: new URL(alternates.canonical as string, siteConfig.url).toString(),
-      siteName: "danidevcol",
-    },
+    }),
+    twitter: buildPageTwitter({ title, description }),
     robots: {
       index: true,
       follow: true,
@@ -89,30 +95,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <h1 className="text-3xl font-bold text-white sm:text-4xl xl:text-5xl xl:leading-tight">{t("hero.title")}</h1>
               <p className="mt-8 text-base font-normal leading-7 text-gray-300 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
 
-              <div className="flex items-center justify-center mt-8 space-x-5 xl:mt-16 lg:justify-start">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center mt-8 gap-3 xl:mt-16 lg:justify-start">
                 <ContactCTA
                   location="home_hero"
                   locale={locale}
                   message={whatsappMessage}
-                  className="
-                            inline-flex
-                            items-center
-                            justify-center
-                            px-3
-                            py-3
-                            text-base
-                            font-bold
-                            leading-7
-                            text-gray-900
-                            transition-all
-                            duration-200
-                            bg-white
-                            border border-transparent
-                            rounded-md
-                            sm:px-6
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white
-                            hover:bg-gray-200
-                        "
+                  className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 text-sm font-bold leading-none text-gray-900 transition-colors duration-200 bg-white border border-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
                   role="button"
                 >
                   {t("hero.cta")}
@@ -121,28 +109,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <Link
                   href="/services"
                   locale={locale}
-                  className="
-                            inline-flex
-                            items-center
-                            justify-center
-                            px-2
-                            py-3
-                            text-base
-                            font-bold
-                            leading-7
-                            text-white
-                            transition-all
-                            duration-200
-                            bg-transparent
-                            border border-transparent
-                            rounded-md
-                            sm:px-4
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-700
-                            hover:bg-gray-700
-                        "
+                  className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 text-sm font-bold leading-none text-white transition-colors duration-200 bg-transparent border border-white/40 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
                   role="button"
                 >
                   {t("hero.ctaSecondary")}
+                </Link>
+
+                <Link
+                  href="/portfolio"
+                  locale={locale}
+                  className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 text-sm font-bold leading-none text-white transition-colors duration-200 bg-transparent border border-white/40 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white"
+                  role="button"
+                >
+                  {t("hero.ctaPortfolio")}
                 </Link>
               </div>
             </div>

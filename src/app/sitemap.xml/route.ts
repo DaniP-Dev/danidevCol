@@ -9,7 +9,7 @@ import {
   serviceObjectiveKeys,
 } from "@/src/libs/services";
 
-const lastMod = "2026-04-02";
+const lastMod = new Date().toISOString().slice(0, 10);
 
 function escapeXml(value: string): string {
   return value

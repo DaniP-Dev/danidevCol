@@ -4,10 +4,11 @@
     "description": "Desarrollo, optimización y diseño de sitios web profesionales para potenciar tu presencia digital.",
     "hero": {
       "location": "Colombia (Atención Global)",
-      "title": "Potencia Tu Presencia Digital",
+      "title": "Desarrollo web en Colombia para potenciar tu presencia digital",
       "subtitle": "Como desarrollador web freelance en Colombia, ofrezco soluciones de clase mundial para empresas que quieren crecer en línea con desarrollo y optimización web especializada.",
       "cta": "Escríbeme por WhatsApp",
-      "ctaSecondary": "Ver Servicios"
+      "ctaSecondary": "Ver Servicios",
+      "ctaPortfolio": "Ver casos reales"
     },
     "features": {
       "location": "Ubicado en Colombia, Soporte Global Multi-idioma",
@@ -79,11 +80,12 @@
       }
     },
     "hero": {
-      "titlePrefix": "Servicios orientados a",
-      "titleHighlight": "resultados de negocio",
+      "titlePrefix": "Desarrollo web orientado a",
+      "titleHighlight": "resultados para empresas",
       "description": "Elige tu objetivo y te muestro dos rutas claras: empezar desde cero o mejorar lo que ya tienes.",
       "primaryButton": "Quiero una propuesta",
-      "secondaryButton": "Ver estructura de servicios"
+      "secondaryButton": "Ver estructura de servicios",
+      "portfolioLink": "Ver casos reales"
     },
     "page": {
       "cardsTitle": "Elige tu objetivo principal",
@@ -106,6 +108,8 @@
       "scenariosTitle": "Selecciona tu situación actual",
       "scenariosSubtitle": "Cada objetivo tiene una ruta para proyectos nuevos y otra para proyectos existentes.",
       "viewService": "Ver servicio detallado",
+      "socialProof": "Resultados similares a proyectos como Servicrep, Somos Criteria y Oasix.",
+      "socialProofLink": "Ver portafolio",
       "bottomTitle": "¿Prefieres hablar primero?",
       "bottomDescription": "Si aún no sabes qué ruta elegir, escríbeme por WhatsApp y te oriento.",
       "whatsappButton": "Escríbeme por WhatsApp",
@@ -164,6 +168,8 @@
         "solution": "Solución",
         "implementation": "Implementación"
       },
+      "socialProof": "Resultados similares a proyectos como Servicrep, Somos Criteria y Oasix.",
+      "socialProofLink": "Ver portafolio",
       "hookTitle": "¿Qué ganas con esta ruta?",
       "cta": {
         "primaryButton": "Escríbeme por WhatsApp",
@@ -338,7 +344,8 @@
   "CurriculumPage": {
     "header": {
       "name": "Daniel Pérez Guzman",
-      "role": "Desarrollador Frontend / Integrador Web",
+      "role": "Desarrollador Full Stack",
+      "headline": "Daniel Pérez Guzman — Desarrollador Full Stack",
       "contacts": {
         "whatsapp": "WhatsApp",
         "linkedin": "linkedin.com/in/danielperez",
@@ -346,6 +353,7 @@
       },
       "degree": "Mantenimiento de Sistemas Informáticos"
     },
+    "portfolioLinkLabel": "Ver en portafolio",
     "finalCta": {
       "title": "¿Buscas un desarrollador para tu equipo?",
       "description": "Escríbeme por WhatsApp o LinkedIn, o déjame tus datos y te respondo.",
@@ -366,23 +374,12 @@
       "text": "Profesional orientado al desarrollo de interfaces web funcionales, responsivas y alineadas con los requerimientos del usuario. Experiencia en la implementación de soluciones front-end aplicando buenas prácticas de desarrollo, mantenimiento de código y optimización de componentes. Enfoque en la construcción de productos digitales claros, eficientes y fáciles de usar."
     },
     "experience": {
-      "servicrep": {
-        "company": "Servicrep",
-        "role": "Fundador y Desarrollador Full Stack",
-        "date": "Ene 2023 – Presente",
-        "location": "Soledad, Atlántico",
-        "bullets": {
-          "b1": "Desarrollé sistema de gestión de inspecciones y certificaciones para estaciones de servicio EDS, optimizando el flujo de trabajo y la trazabilidad de procesos.",
-          "b2": "Implementé validación de certificados mediante códigos QR, agilizando la verificación y fortaleciendo la confianza en los servicios ofrecidos.",
-          "b3": "Integré Google Sheets como base de datos intermedia, facilitando el análisis y seguimiento de reportes para una toma de decisiones más efectiva.",
-          "b4": "Diseñé sistema de plantillas PDF para certificados, asegurando consistencia institucional y mejorando la presentación ante clientes y entes reguladores."
-        }
-      },
       "oasix": {
-        "company": "FullStack",
-        "role": "Oasix",
+        "company": "Oasix",
+        "role": "Desarrollador Web Freelance",
         "date": "2022 a 2024",
         "location": "",
+        "portfolioKey": "womenOasix",
         "bullets": {
           "b1": "Maquetación de interfaces",
           "b2": "Componentes interactivos y animaciones",
@@ -392,16 +389,30 @@
         }
       },
       "freelance": {
-        "company": "FreeLancer",
-        "role": "Independiente",
+        "company": "Freelance",
+        "role": "Desarrollador Web Independiente",
         "date": "2023 a 2025",
         "location": "",
+        "portfolioKey": "somosCriteria",
         "bullets": {
           "b1": "Desarrollo y mantenimiento de sitios web",
           "b2": "Despliegue Proyectos (cPanel y Vercel)",
           "b3": "Integración de dominios",
           "b4": "SEO básico",
           "b5": "Documentación técnica y soporte a clientes en entornos web"
+        }
+      },
+      "servicrep": {
+        "company": "Servicrep",
+        "role": "Fundador y Desarrollador Full Stack",
+        "date": "Ene 2023 – Presente",
+        "location": "Soledad, Atlántico",
+        "portfolioKey": "servicrep",
+        "bullets": {
+          "b1": "Desarrollé sistema de gestión de inspecciones y certificaciones para estaciones de servicio EDS, optimizando el flujo de trabajo y la trazabilidad de procesos.",
+          "b2": "Implementé validación de certificados mediante códigos QR, agilizando la verificación y fortaleciendo la confianza en los servicios ofrecidos.",
+          "b3": "Integré Google Sheets como base de datos intermedia, facilitando el análisis y seguimiento de reportes para una toma de decisiones más efectiva.",
+          "b4": "Diseñé sistema de plantillas PDF para certificados, asegurando consistencia institucional y mejorando la presentación ante clientes y entes reguladores."
         }
       }
     },
@@ -509,11 +520,26 @@
     },
     "curriculum": {
       "title": "Daniel Pérez Guzman - Desarrollador Full Stack | danidevcol",
-      "description": "CV de Daniel Pérez: Desarrollador Full Stack con 3+ años en Next.js, React, TypeScript. Especialista en optimización web, gestión de proyectos y automatización. Colombia."
+      "description": "CV de Daniel Pérez: Desarrollador Full Stack con 3+ años en Next.js, React, TypeScript. Especialista en optimización web, gestión de proyectos y automatización. Colombia.",
+      "keywords": [
+        "curriculum vitae",
+        "CV desarrollador",
+        "Desarrollador Full Stack",
+        "Desarrollador Next.js",
+        "Desarrollador React",
+        "TypeScript",
+        "contratar desarrollador web Colombia"
+      ]
     }
   },
   "PortfolioPage": {
-    "title": "Portafolio de Proyectos",
+    "title": "Casos de desarrollo web con Next.js y React",
+    "intro": "Proyectos reales para empresas como Somos Criteria, Servicrep y Oasix.",
+    "featuredProjects": {
+      "somosCriteria": "Somos Criteria",
+      "servicrep": "Servicrep",
+      "womenOasix": "Oasix"
+    },
     "finalCta": {
       "title": "¿Quieres un resultado parecido para tu negocio?",
       "description": "Cuéntame tu proyecto por WhatsApp o explora los servicios.",

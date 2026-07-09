@@ -1,14 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
-import { buildPageAlternates } from "@/src/libs/seo";
+import {
+  buildPageAlternates,
+  buildPageOpenGraph,
+  buildPageTwitter,
+  resolveCanonicalUrl,
+} from "@/src/libs/seo";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata.services" });
+  const title = t("title");
+  const description = t("description");
+  const alternates = buildPageAlternates(locale, "/services");
+  const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
     keywords: [
       "desarrollo web",
       "Next.js",
@@ -18,7 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       "diseño web",
       "servicio web",
     ],
-    alternates: buildPageAlternates(locale, "/services"),
+    alternates,
+    openGraph: buildPageOpenGraph({
+      title,
+      description,
+      url: canonicalUrl,
+      locale,
+    }),
+    twitter: buildPageTwitter({ title, description }),
   };
 }
 
