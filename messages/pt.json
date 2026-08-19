@@ -6,7 +6,9 @@
       "location": "Colômbia (Atendimento Global)",
       "title": "Desenvolvimento web na Colômbia para potencializar sua presença digital",
       "subtitle": "Como desenvolvedor web freelance na Colômbia, ofereço soluções de primeira classe para empresas prontas para crescer online com desenvolvimento e otimização web especializada.",
-      "cta": "Fale comigo no WhatsApp",
+      "body": "Foco em desenvolvimento web na Colômbia que potencializa sua presença digital: ofertas mais claras, páginas mais rápidas e otimização técnica para que clientes globais encontrem e confiem em você.",
+      "imageAlt": "Desenvolvedor web freelance na Colômbia — espaço de trabalho danidevcol",
+      "cta": "Comece um projeto",
       "ctaSecondary": "Explorar Serviços",
       "ctaPortfolio": "Ver casos reais"
     },
@@ -50,10 +52,51 @@
       "experience": "Anos de Experiência",
       "uptime": "Tempo de Atividade"
     },
+    "process": {
+      "title": "Como eu trabalho",
+      "subtitle": "Um caminho claro do diagnóstico até um site que posiciona, carrega rápido e converte.",
+      "step1": {
+        "title": "Diagnóstico",
+        "description": "Audito seu site atual ou o briefing, definimos o objetivo de negócio e traço o caminho mais rápido para uma presença digital sólida, sem complexidade desnecessária."
+      },
+      "step2": {
+        "title": "Criar ou redesenhar",
+        "description": "Implemento desenvolvimento web na Colômbia com Next.js: arquitetura limpa, interface responsiva e desempenho desde o primeiro commit."
+      },
+      "step3": {
+        "title": "SEO e entrega",
+        "description": "Otimização técnica, medição e um handoff documentado para que sua equipe possa operar, publicar e continuar melhorando após o lançamento."
+      }
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "items": [
+        {
+          "question": "Quanto tempo leva um projeto típico?",
+          "answer": "Um site de presença costuma ficar pronto em duas a quatro semanas. Redesigns, migrações de conteúdo e ecommerce levam mais tempo conforme o escopo, as integrações e os ciclos de revisão."
+        },
+        {
+          "question": "Qual stack tecnológica você usa?",
+          "answer": "Next.js, React, TypeScript e Tailwind são a base por velocidade e SEO. Adiciono CMS, Shopify ou APIs sob medida só quando servem ao objetivo de negócio."
+        },
+        {
+          "question": "Você trabalha em vários idiomas?",
+          "answer": "Sim. Faço desenvolvimento web na Colômbia com sites em espanhol, inglês, português e árabe, com SEO por idioma para que sua presença digital viaje com você."
+        },
+        {
+          "question": "Devo redesenhar meu site ou começar do zero?",
+          "answer": "Se o site atual converte, mas é lento ou difícil de editar, otimizamos. Se a arquitetura bloqueia SEO, desempenho ou crescimento, reconstruir costuma ser mais barato no médio prazo."
+        },
+        {
+          "question": "Você trabalha com clientes fora da Colômbia?",
+          "answer": "Sim. Estou baseado na Colômbia e atendo empresas globais remotamente, com horários compatíveis e comunicação assíncrona clara."
+        }
+      ]
+    },
     "cta": {
       "title": "Pronto para transformar sua presença digital?",
       "subtitle": "Deixe-me ajudá-lo a llevar seu negócio para o próximo nível",
-      "button": "Fale comigo no WhatsApp"
+      "button": "Vamos falar do seu projeto"
     },
     "footer": {
       "about": "danidevcol",
@@ -481,8 +524,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "danidevcol | Desenvolvimento Web na Colômbia e Otimização Global",
-      "description": "Desenvolvedor web freelancer na Colômbia, especializado em desenvolvimento, redesign e otimização web para empresas globais. Soluções profissionais multilíngues para fortalecer sua presença digital.",
+      "title": "Desenvolvedor web na Colômbia | danidevcol",
+      "description": "Desenvolvedor web freelancer na Colômbia. Crio, redesenho e otimizo sites rápidos e multilíngues para empresas globais.",
       "keywords": [
         "danidevcol",
         "desenvolvimento web Colômbia",

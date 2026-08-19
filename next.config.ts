@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  poweredByHeader: false,
   async redirects() {
     return [
       {

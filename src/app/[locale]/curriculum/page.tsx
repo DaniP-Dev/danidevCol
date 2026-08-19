@@ -31,7 +31,7 @@ export async function generateMetadata({
     : [];
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords,
     alternates,

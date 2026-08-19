@@ -3,6 +3,7 @@ import { Link } from "@/src/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import { getObjectiveSlug, serviceCatalog } from "@/src/libs/services";
 import {
   buildPageAlternates,
@@ -11,6 +12,25 @@ import {
   resolveCanonicalUrl,
 } from "@/src/libs/seo";
 import ContactCTA from "@/src/components/layout/ContactCTA";
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+function parseFaqItems(value: unknown): FaqItem[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.filter(
+    (item): item is FaqItem =>
+      typeof item === "object" &&
+      item !== null &&
+      "question" in item &&
+      "answer" in item &&
+      typeof item.question === "string" &&
+      typeof item.answer === "string",
+  );
+}
 
 export async function generateMetadata({
   params,
@@ -29,7 +49,7 @@ export async function generateMetadata({
     : [];
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords,
     alternates,
@@ -68,9 +88,32 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       };
     }),
   );
+  const faqItems = parseFaqItems(t.raw("faq.items"));
+  const processSteps = [1, 2, 3] as const;
+  const processIcons = ["🔍", "🛠️", "🚀"];
 
   return (
     <div className="w-full bg-background overflow-hidden">
+      {faqItems.length > 0 ? (
+        <Script
+          id="json-ld-faq"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      ) : null}
       {/* Hero Section */}
       <section>
 
@@ -80,7 +123,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <Image
               className="object-cover object-bottom-right"
               src="/hero/hero-desktop.webp"
-              alt=""
+              alt={t("hero.imageAlt")}
               fill
               sizes="(min-width: 1024px) 100vw, 0px"
               quality={75}
@@ -95,6 +138,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
               <h1 className="text-3xl font-bold text-white sm:text-4xl xl:text-5xl xl:leading-tight">{t("hero.title")}</h1>
               <p className="mt-8 text-base font-normal leading-7 text-gray-300 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.subtitle")}</p>
+              <p className="mt-4 text-base font-normal leading-7 text-gray-300 lg:max-w-md xl:pr-0 lg:pr-16">{t("hero.body")}</p>
 
               <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center mt-8 gap-3 xl:mt-16 lg:justify-start">
                 <ContactCTA
@@ -132,7 +176,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <Image
               className="object-cover w-full h-auto"
               src="/hero/hero-mobile.webp"
-              alt=""
+              alt={t("hero.imageAlt")}
               width={1200}
               height={807}
               sizes="(max-width: 1023px) 100vw, 0px"
@@ -143,6 +187,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </div>
       </section>
+
       {/* Features Section */}
       <section className="w-full py-20 md:py-32 px-4 md:px-8 bg-teal-50/50 dark:bg-[#0b111a]/50 border-y border-teal-100/50 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
@@ -179,6 +224,40 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
+      {/* Process Section */}
+      <section className="w-full py-20 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
+            {t("process.title")}
+          </h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            {t("process.subtitle")}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {processSteps.map((step, index) => (
+            <div
+              key={step}
+              className="p-8 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10"
+            >
+              <div className="w-14 h-14 rounded-lg bg-linear-to-br from-teal-400 to-emerald-400 flex items-center justify-center text-2xl mb-4">
+                {processIcons[index]}
+              </div>
+              <p className="text-sm font-semibold tracking-wider text-teal-600 dark:text-teal-400 uppercase mb-2">
+                0{step}
+              </p>
+              <h3 className="text-xl font-bold text-teal-800 dark:text-teal-300 mb-3">
+                {t(`process.step${step}.title`)}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {t(`process.step${step}.description`)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="w-full py-20 md:py-32 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
@@ -197,6 +276,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 key={service.key}
                 href={service.href}
                 locale={locale}
+                aria-label={service.title}
                 className="group relative rounded-2xl overflow-hidden bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-teal-100/20 dark:border-white/10 hover:border-teal-300/50 dark:hover:border-teal-400/50 transition-all duration-300 p-8 hover:shadow-xl hover:shadow-teal-500/10"
               >
                 <div className="space-y-4">
@@ -209,7 +289,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-teal-800 dark:text-teal-300 group-hover:gap-2 gap-0 transition-all">
+                  <div className="flex items-center text-teal-800 dark:text-teal-300 group-hover:gap-2 gap-0 transition-all" aria-hidden="true">
                     <span className="font-semibold">{t("footer.seeMore")}</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
@@ -245,6 +325,28 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="text-teal-100">{t("stats.uptime")}</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full py-20 md:py-32 px-4 md:px-8 max-w-3xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-teal-800 dark:text-teal-300">
+            {t("faq.title")}
+          </h2>
+        </div>
+
+        <div className="space-y-8">
+          {faqItems.map((item) => (
+            <article key={item.question}>
+              <h3 className="text-xl font-bold text-teal-800 dark:text-teal-300 mb-3">
+                {item.question}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {item.answer}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 

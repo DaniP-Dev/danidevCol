@@ -38,7 +38,7 @@ export async function generateMetadata({
     !scenarioKey ||
     !isValidObjectiveScenarioCombination(objectiveKey, scenarioKey)
   ) {
-    return { title: t("serviceDetail.metadata.notFoundTitle") };
+    return { title: { absolute: t("serviceDetail.metadata.notFoundTitle") } };
   }
 
   const path = `matrix.${objectiveKey}.${scenarioKey}`;
@@ -52,7 +52,7 @@ export async function generateMetadata({
   const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       t(`objectives.${objectiveKey}.title`),

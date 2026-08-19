@@ -6,7 +6,9 @@
       "location": "Colombia (Atención Global)",
       "title": "Desarrollo web en Colombia para potenciar tu presencia digital",
       "subtitle": "Como desarrollador web freelance en Colombia, ofrezco soluciones de clase mundial para empresas que quieren crecer en línea con desarrollo y optimización web especializada.",
-      "cta": "Escríbeme por WhatsApp",
+      "body": "Me centro en desarrollo web en Colombia que potencia tu presencia digital: ofertas más claras, páginas más rápidas y optimización técnica para que clientes globales te encuentren y confíen en ti.",
+      "imageAlt": "Desarrollador web freelance en Colombia — espacio de trabajo danidevcol",
+      "cta": "Empieza un proyecto",
       "ctaSecondary": "Ver Servicios",
       "ctaPortfolio": "Ver casos reales"
     },
@@ -50,10 +52,51 @@
       "experience": "Años de Experiencia",
       "uptime": "Disponibilidad"
     },
+    "process": {
+      "title": "Cómo trabajo",
+      "subtitle": "Un camino claro desde el diagnóstico hasta un sitio que posiciona, carga rápido y convierte.",
+      "step1": {
+        "title": "Diagnóstico",
+        "description": "Audito tu web actual o el brief, definimos el objetivo de negocio y trazo la ruta más rápida hacia una presencia digital sólida, sin complejidad innecesaria."
+      },
+      "step2": {
+        "title": "Crear o rediseñar",
+        "description": "Implemento desarrollo web en Colombia con Next.js: arquitectura limpia, interfaz responsive y rendimiento desde el primer commit."
+      },
+      "step3": {
+        "title": "SEO y entrega",
+        "description": "Optimización técnica, medición y un handoff documentado para que tu equipo pueda operar, publicar y seguir mejorando después del lanzamiento."
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Cuánto tarda un proyecto típico?",
+          "answer": "Una web de presencia suele estar lista en dos a cuatro semanas. Rediseños, migraciones de contenido y ecommerce tardan más según el alcance, las integraciones y los ciclos de revisión."
+        },
+        {
+          "question": "¿Qué stack tecnológico usas?",
+          "answer": "Next.js, React, TypeScript y Tailwind son la base por velocidad y SEO. Añado CMS, Shopify o APIs a medida solo cuando sirven al objetivo de negocio."
+        },
+        {
+          "question": "¿Trabajas en varios idiomas?",
+          "answer": "Sí. Hago desarrollo web en Colombia con sitios en español, inglés, portugués y árabe, con SEO por idioma para que tu presencia digital viaje contigo."
+        },
+        {
+          "question": "¿Debo rediseñar mi sitio o empezar desde cero?",
+          "answer": "Si la web actual convierte pero es lenta o difícil de editar, la optimizamos. Si la arquitectura bloquea el SEO, el rendimiento o el crecimiento, reconstruir suele ser más barato a medio plazo."
+        },
+        {
+          "question": "¿Trabajas con clientes fuera de Colombia?",
+          "answer": "Sí. Estoy basado en Colombia y atiendo empresas globales en remoto, con horarios compatibles y comunicación asíncrona clara."
+        }
+      ]
+    },
     "cta": {
       "title": "¿Listo para transformar tu presencia digital?",
       "subtitle": "Déjame ayudarte a llevar tu negocio al siguiente nivel",
-      "button": "Escríbeme por WhatsApp"
+      "button": "Hablemos de tu proyecto"
     },
     "footer": {
       "about": "danidevcol",
@@ -481,8 +524,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "danidevcol | Desarrollo Web en Colombia y Optimización Global",
-      "description": "Desarrollador web freelance en Colombia especializado en desarrollo, rediseño y optimización web para empresas globales. Soluciones profesionales multi-idioma para potenciar tu presencia digital.",
+      "title": "Desarrollador web en Colombia | danidevcol",
+      "description": "Desarrollador web freelance en Colombia. Creo, rediseño y optimizo sitios rápidos y multi-idioma para empresas globales.",
       "keywords": [
         "danidevcol",
         "Desarrollo web Colombia",

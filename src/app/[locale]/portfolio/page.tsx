@@ -25,7 +25,7 @@ export async function generateMetadata({
   const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       "portafolio web",

@@ -8,6 +8,7 @@ import ContactCTA from "@/src/components/layout/ContactCTA";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const t = useTranslations("Footer");
+  const tServices = useTranslations("Services");
   const tContact = useTranslations("Contact");
   const locale = useLocale();
   const whatsappMessage = tContact("whatsappMessage.clientGeneric", {
@@ -88,9 +89,30 @@ export default function Footer() {
           <nav aria-label="Navegación de Servicios" className="flex-1 min-w-50">
             <h3 className="font-black mb-4 uppercase text-lg">{t("services.title")}</h3>
             <ul className="space-y-3 text-base font-bold text-chrome-muted">
-              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.webDesign")}</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.seo")}</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">{t("services.customSoftware")}</Link></li>
+              <li>
+                <Link
+                  href={`/services/${tServices("objectives.presenciaImpacto.slug")}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t("services.webDesign")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/services/${tServices("objectives.presenciaImpacto.slug")}/${tServices("scenarios.existingProject.slug")}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t("services.seo")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/services/${tServices("objectives.automatizacionInterna.slug")}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t("services.customSoftware")}
+                </Link>
+              </li>
             </ul>
           </nav>
 

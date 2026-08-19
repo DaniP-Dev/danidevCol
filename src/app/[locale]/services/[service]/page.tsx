@@ -48,7 +48,7 @@ export async function generateMetadata({
       const canonicalUrl = resolveCanonicalUrl(alternates);
 
       return {
-        title,
+        title: { absolute: title },
         description,
         keywords: [
           t(`objectives.${legacy.objective}.title`),
@@ -67,7 +67,7 @@ export async function generateMetadata({
       };
     }
 
-    return { title: t("objectivePage.metadata.notFoundTitle") };
+    return { title: { absolute: t("objectivePage.metadata.notFoundTitle") } };
   }
 
   const title = t("objectivePage.metadata.title", {
@@ -78,7 +78,7 @@ export async function generateMetadata({
   const canonicalUrl = resolveCanonicalUrl(alternates);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       t(`objectives.${objectiveKey}.title`),

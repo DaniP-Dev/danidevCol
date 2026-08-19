@@ -6,7 +6,9 @@
       "location": "Colombia (Global Support)",
       "title": "Web development in Colombia to amplify your digital presence",
       "subtitle": "As a freelance web developer in Colombia, I provide world-class solutions for businesses ready to scale online with specialized web development and optimization.",
-      "cta": "Message me on WhatsApp",
+      "body": "I focus on web development in Colombia that amplifies your digital presence: clearer offers, faster pages, and technical optimization so global customers can find and trust you.",
+      "imageAlt": "Freelance web developer in Colombia — danidevcol workspace",
+      "cta": "Start a project",
       "ctaSecondary": "Explore Services",
       "ctaPortfolio": "See real case studies"
     },
@@ -50,10 +52,51 @@
       "experience": "Years of Experience",
       "uptime": "Uptime"
     },
+    "process": {
+      "title": "How I work",
+      "subtitle": "A clear path from diagnosis to a site that ranks, loads fast, and converts.",
+      "step1": {
+        "title": "Diagnosis",
+        "description": "I audit your current website or brief, define the business goal, and map the fastest path to a stronger digital presence without unnecessary complexity."
+      },
+      "step2": {
+        "title": "Build or redesign",
+        "description": "I implement web development in Colombia with Next.js: clean architecture, responsive UI, and performance baked in from the first commit."
+      },
+      "step3": {
+        "title": "SEO and handoff",
+        "description": "Technical optimization, measurement, and a documented handoff so your team can operate, publish, and keep improving after launch."
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "How long does a typical project take?",
+          "answer": "A presence website often ships in two to four weeks. Redesigns, content migrations, and ecommerce take longer depending on scope, integrations, and review cycles."
+        },
+        {
+          "question": "What technology stack do you use?",
+          "answer": "Next.js, React, TypeScript, and Tailwind are the default for speed and SEO. I add a CMS, Shopify, or custom APIs only when they serve the business goal."
+        },
+        {
+          "question": "Do you work in several languages?",
+          "answer": "Yes. I deliver multilingual web development in Colombia with Spanish, English, Portuguese, and Arabic, including locale-aware SEO so your digital presence travels with you."
+        },
+        {
+          "question": "Should I redesign my site or start from scratch?",
+          "answer": "If the current site converts but is slow or hard to edit, we optimize it. If the architecture blocks SEO, performance, or growth, a rebuild is usually cheaper over time."
+        },
+        {
+          "question": "Do you work with clients outside Colombia?",
+          "answer": "Yes. I am based in Colombia and support global businesses remotely, with overlap-friendly hours and clear async communication."
+        }
+      ]
+    },
     "cta": {
       "title": "Ready to transform your digital presence?",
       "subtitle": "Let me help you take your business to the next level",
-      "button": "Message me on WhatsApp"
+      "button": "Talk about your project"
     },
     "footer": {
       "about": "danidevcol",
@@ -481,8 +524,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "danidevcol | Web Development in Colombia and Global Optimization",
-      "description": "Freelance web developer in Colombia specialized in development, redesign, and web optimization for global businesses. Professional multilingual solutions to strengthen your digital presence.",
+      "title": "Web Developer in Colombia | danidevcol",
+      "description": "Freelance web developer in Colombia. I build, redesign, and optimize fast multilingual sites for global businesses.",
       "keywords": [
         "danidevcol",
         "web development Colombia",

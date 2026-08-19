@@ -37,7 +37,7 @@ export const siteConfig = {
 
 /** Fechas reales de última edición de contenido (YYYY-MM-DD). Actualizar al publicar cambios SEO/copy. */
 export const sitemapLastModified = {
-  home: "2026-07-09",
+  home: "2026-08-18",
   services: "2026-07-09",
   portfolio: "2026-07-09",
   curriculum: "2026-07-09",
