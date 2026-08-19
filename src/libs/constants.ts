@@ -40,7 +40,7 @@ export const sitemapLastModified = {
   home: "2026-08-18",
   services: "2026-07-09",
   portfolio: "2026-07-09",
-  curriculum: "2026-07-09",
+  curriculum: "2026-08-18",
   serviceObjectives: "2026-07-09",
   serviceScenarios: "2026-07-09",
 } as const;

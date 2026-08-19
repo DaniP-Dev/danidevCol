@@ -374,15 +374,8 @@
   },
   "CurriculumPage": {
     "header": {
-      "name": "Daniel Perez Guzman",
-      "role": "Desenvolvedor Full Stack",
-      "headline": "Daniel Perez Guzman — Desenvolvedor Full Stack",
-      "contacts": {
-        "whatsapp": "WhatsApp",
-        "linkedin": "linkedin.com/in/danielperez",
-        "github": "github.com/DaniP-Dev"
-      },
-      "degree": "Manutenção de Sistemas Informáticos"
+      "name": "Daniel Ricardo Pérez Guzmán",
+      "role": "Desenvolvedor Full Stack | Analista Técnico | Desenvolvedor de Software"
     },
     "portfolioLinkLabel": "Ver no portfólio",
     "finalCta": {
@@ -392,133 +385,108 @@
       "linkedin": "Ver LinkedIn"
     },
     "sections": {
-      "profile": "Perfil Profissional",
-      "experience": "Experience",
-      "education": "Formação Acadêmica",
-      "skills": "Habilidades Técnicas",
-      "languages": "Idiomas",
-      "projects": "Projetos em Destaque",
-      "training": "Training",
-      "hobbies": "Hobbies"
+      "profile": "Sobre Mim",
+      "experience": "Experiência Profissional",
+      "education": "Formação Técnica",
+      "skills": "Habilidades Técnicas"
     },
     "profile": {
-      "text": "Profissional voltado ao desenvolvimento de interfaces web funcionais, responsivas e alinhadas aos requisitos do usuário. Experiência na implementação de soluções front-end aplicando boas práticas de desenvolvimento, manutenção de código e otimização de componentes. Foco na construção de produtos digitais claros, eficientes e fáceis de usar."
+      "text": "Analista Técnico e Desenvolvedor Full Stack especializado na arquitetura, desenvolvimento e implantação de aplicações web escaláveis. Tenho experiência orquestrando ecossistemas frontend modernos (Next.js, React) com infraestruturas robustas de backend (PHP, Laravel, bancos de dados). Foco em resolver problemas complexos por meio de código limpo, arquiteturas técnicas sólidas e documentação precisa. Orientado a construir produtos digitais que cumpram rigorosamente os requisitos funcionais, priorizando sempre as boas práticas de engenharia."
     },
     "experience": {
-      "oasix": {
-        "company": "Oasix",
-        "role": "Desenvolvedor Web Freelancer",
-        "date": "Mar 2022 – Dez 2022",
-        "location": "Remoto",
-        "portfolioKey": "womenOasix",
-        "bullets": {
-          "b1": "Construí interfaces responsivas com React e Tailwind CSS, melhorando a interação e a satisfação dos usuários finais.",
-          "b2": "Desenvolvi integrações com APIs REST e otimizei o desempenho de aplicações, contribuindo para a continuidade operacional e escalabilidade dos projetos dos clientes.",
-          "b3": "Diseños para distintos dispositivos",
-          "b4": "Colaboración con el equipo backend",
-          "b5": "Despliegue"
-        }
-      },
-      "freelance": {
-        "company": "Freelance",
-        "role": "Desenvolvedor Web Independente",
-        "date": "2021 – Presente",
-        "location": "Remoto",
-        "portfolioKey": "somosCriteria",
-        "bullets": {
-          "b1": "Desenvolvimento e manutenção de sites e pequenas web apps para clientes diversos.",
-          "b2": "Deploy em produção usando cPanel e Vercel, garantindo disponibilidade e estabilidade dos projetos.",
-          "b3": "Configuração de domínios personalizados para melhorar a presença digital dos clientes.",
-          "b4": "Implementação de SEO básico e otimização de desempenho para aumentar visibilidade e eficiência dos sites.",
-          "b5": "Elaboração de documentação técnica e suporte a clientes em ambientes web, facilitando a gestão e o uso das soluções entregues."
-        }
-      },
       "servicrep": {
         "company": "Servicrep",
-        "role": "Fundador e Desenvolvedor Full Stack",
-        "date": "Jan 2023 – Presente",
-        "location": "Soledad, Atlântico",
+        "role": "Analista de Automação, Qualidade e Desenvolvedor Full Stack",
+        "date": "Agosto 2025 – Presente | Prestação de Serviços | Colômbia",
         "portfolioKey": "servicrep",
         "bullets": {
-          "b1": "Desenvolvi sistema de gestão de inspeções e certificações para postos de combustível EDS, otimizando o fluxo de trabalho e a rastreabilidade dos processos.",
-          "b2": "Implementei validação de certificados por códigos QR, agilizando a verificação e fortalecendo a confiança nos serviços oferecidos.",
-          "b3": "Integrei Google Sheets como banco de dados intermediário, facilitando a análise e o acompanhamento de relatórios para decisões mais efetivas.",
-          "b4": "Desenhei um sistema de templates PDF para certificados, garantindo consistência institucional e melhorando a apresentação para clientes e órgãos reguladores."
+          "b1": "Automação de Processos: Design e implementação de scripts personalizados com Google Apps Script para automatizar a lógica de negócio, reduzindo drasticamente o tempo de processamento manual.",
+          "b2": "Integração e Arquitetura: Orquestração e conexão de bancos de dados com dashboards interativos desenvolvidos em Next.js e Laravel para visualização de métricas em tempo real.",
+          "b3": "Desenvolvimento Interno: Criação de aplicações e formulários digitais com validações rigorosas para garantir a coleta correta de dados e minimizar margens de erro.",
+          "b4": "Conformidade Normativa: Estruturação da arquitetura do sistema de gestão documental online, garantindo o cumprimento estrito das normas ISO 9001 para auditorias e controle de qualidade."
+        }
+      },
+      "paraisoReal": {
+        "company": "Projeto Paraíso Real (Constructora 0312)",
+        "role": "Analista Técnico e Desenvolvedor Full Stack",
+        "date": "2025 – Independente | Colômbia",
+        "portfolioKey": "constructora0312",
+        "bullets": {
+          "b1": "Desenvolvimento Core Sob Medida: Criação de temas e plugins personalizados do zero em PHP para estruturar o catálogo digital imobiliário no WordPress.",
+          "b2": "Arquitetura e Infraestrutura: Configuração, implantação e administração de ambientes de produção em servidores cPanel, garantindo segurança, escalabilidade e manutenção contínua da base de código.",
+          "b3": "Integrações e Otimização: Gestão técnica do escopo do projeto, integração avançada de gateways de pagamento e otimização estrutural orientada a desempenho e mecanismos de busca."
+        }
+      },
+      "hackathon": {
+        "company": "Hackathon Barranqui-IA",
+        "role": "Líder Técnico de Desenvolvimento",
+        "date": "Maio 2026",
+        "bullets": {
+          "b1": "Desenvolvimento integral da aplicação WorkConnect em um ambiente de alta exigência técnica.",
+          "b2": "Organização dos papéis da equipe, preparação dos templates de infraestrutura técnica e estruturação do modelo de dados em tempo recorde."
+        }
+      },
+      "oasix": {
+        "company": "Oasix",
+        "role": "Desenvolvedor Full Stack",
+        "date": "2022 – 2024",
+        "portfolioKey": "womenOasix",
+        "bullets": {
+          "b1": "Construção de interfaces interativas para múltiplos dispositivos, assegurando a funcionalidade do lado do cliente.",
+          "b2": "Integração rigorosa de componentes frontend com a lógica de backend para garantir o fluxo de dados.",
+          "b3": "Execução de processos de implantação e controle de versões."
         }
       }
     },
     "education": {
-      "degree1": {
-        "title": "Manutenção de Sistemas Informáticos",
-        "institution": "Universidade do Atlântico",
-        "date": "2018 – 2022"
+      "diploma": {
+        "title": "Diplomado em Desenvolvimento Web com foco em Inteligência Artificial",
+        "institution": "Fundación Código Abierto",
+        "date": "2024"
       },
-      "degree2": {
-        "title": "Desenvolvimento Web Full Stack",
-        "institution": "Platzi",
-        "date": "2021 – Presente"
+      "degree": {
+        "title": "Tecnólogo em Manutenção de Sistemas Informáticos",
+        "institution": "Universidad de Barranquilla",
+        "date": "2023"
+      },
+      "certifications": {
+        "title": "Certificações Técnicas Especializadas (Platzi)",
+        "items": {
+          "c1": {
+            "label": "Estruturas de Dados e Algoritmos",
+            "detail": "Manipulação de Dados, Estruturas e Funções | Algoritmos e Diagramas de Fluxo"
+          },
+          "c2": {
+            "label": "Infraestrutura e Lógica",
+            "detail": "Introdução ao Terminal e Linha de Comandos | Expressões Regulares"
+          },
+          "c3": {
+            "label": "Linguagens Core",
+            "detail": "Fundamentos de Python | JavaScript"
+          }
+        }
       }
     },
     "skills": {
       "frontend": {
-        "label": "Frontend",
-        "items": "Next.js, React, TypeScript, Tailwind CSS"
+        "label": "Frontend e UI",
+        "items": "Next.js, React.js, Tailwind CSS, Bootstrap, JavaScript"
       },
       "backend": {
-        "label": "Backend",
-        "items": "FastAPI, Laravel, Node.js, REST APIs"
+        "label": "Backend e Bancos de Dados",
+        "items": "PHP, Laravel, MySQL / SQL, NoSQL, CodeIgniter"
       },
-      "databases": {
-        "label": "Bancos de dados",
-        "items": "PostgreSQL, MySQL, Google Sheets"
+      "infrastructure": {
+        "label": "Infraestrutura, SEO Técnico e Plataformas",
+        "items": "Vercel, cPanel, WordPress, Google Search Console (GSC), Sitemaps, Google Business Profile, Ecossistema Google Workspace"
       },
-      "tools": {
-        "label": "Ferramentas",
-        "items": "Git, VS Code, Figma, Vercel"
+      "workflows": {
+        "label": "Ambientes de Desenvolvimento e Fluxos",
+        "items": "Terminal/Linha de Comandos, integração de ferramentas de IA (Ollama, Cursor), Visual Studio Code, Git"
       },
-      "flatItems": {
-        "i1": "ReactJs",
-        "i2": "SQL - NoSql",
-        "i3": "TailWind",
-        "i4": "BootStrap",
-        "i5": "PHP",
-        "i6": "Wordpress",
-        "i7": "Laravel",
-        "i8": "Shopify",
-        "i9": "Servidores Cpanel y Vercel",
-        "i10": "ISO 9001",
-        "i11": "CodeIgniter"
-      }
-    },
-    "languages": {
-      "spanish": {
-        "label": "Espanhol",
-        "level": "Nativo"
-      },
-      "english": {
-        "label": "Inglês",
-        "level": "Intermediário (B1)"
-      }
-    },
-    "projects": {
-      "certificates": {
-        "name": "Sistema de Certificados EDS",
-        "tech": "Next.js · Google Sheets · QR Code",
-        "description": "Plataforma web para emissão, gestão e validação de certificados de inspeção, otimizando processos internos e fortalecendo a reputação da empresa perante clientes e órgãos reguladores. Inclui painel administrativo e portal público de verificação, facilitando acesso e transparência."
-      },
-      "iso": {
-        "name": "Portal de Gestão ISO 17020",
-        "tech": "React · TypeScript · Tailwind CSS",
-        "description": "Sistema de documentação e controle de qualidade para organismos de inspeção, desenhado para melhorar eficiência operacional e conformidade normativa, contribuindo para excelência e diferenciação no setor."
-      }
-    },
-    "training": {
-      "items": {
-        "i1": "Desarrollo web con NextJs",
-        "i2": "Terminal y Línea de Comandos",
-        "i3": "Fundamentos Python",
-        "i4": "Expresiones Regulares",
-        "i5": "Manejo de Datos, Estructuras y Funciones"
+      "analysis": {
+        "label": "Análise e Metodologias",
+        "items": "Google Apps Script, Expressões Regulares, Arquitetura de Sistemas, Estruturação Documental (Norma ISO 9001)"
       }
     }
   },
@@ -550,15 +518,19 @@
       "description": "Casos de sucesso em desenvolvimento web: Somos Criteria, Oasix, CertiXion. Portfólio com 6+ projetos. Resultados mensuráveis em UX, desempenho e conversão."
     },
     "curriculum": {
-      "title": "Daniel Pérez Guzman - Desenvolvedor Full Stack | danidevcol",
-      "description": "CV de Daniel Pérez: Desenvolvedor Full Stack com 3+ anos em Next.js, React, TypeScript. Especialista em otimização web, gestão de projetos e automação. Colômbia.",
+      "title": "Daniel Ricardo Pérez Guzmán - Desenvolvedor Full Stack e Analista Técnico | danidevcol",
+      "description": "CV de Daniel Pérez: Analista técnico e desenvolvedor Full Stack. Next.js, React, Laravel, PHP, automação com Google Apps Script e ISO 9001. Colômbia.",
       "keywords": [
         "currículo",
         "CV desenvolvedor",
         "Desenvolvedor Full Stack",
+        "Analista Técnico",
         "Desenvolvedor Next.js",
         "Desenvolvedor React",
-        "TypeScript",
+        "Laravel",
+        "PHP",
+        "automação",
+        "ISO 9001",
         "contratar desenvolvedor web Colômbia"
       ]
     }
