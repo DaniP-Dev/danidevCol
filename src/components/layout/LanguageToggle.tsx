@@ -1,8 +1,7 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useLocale } from "next-intl";
-import { Dropdown, DropdownHeader, DropdownItem } from "flowbite-react";
 import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
 import {
@@ -14,20 +13,28 @@ const languageData = {
   es: { name: "Español", flag: "🇪🇸" },
   en: { name: "English", flag: "🇺🇸" },
   pt: { name: "Português", flag: "🇧🇷" },
-  ar: { name: "العربية", flag: "🇸🇦" },
 };
+
+type LocaleKey = keyof typeof languageData;
 
 function LanguageTriggerButton({
   flag,
   disabled = false,
+  expanded = false,
+  onClick,
 }: {
   flag: string;
   disabled?: boolean;
+  expanded?: boolean;
+  onClick?: () => void;
 }) {
   return (
     <button
       type="button"
       disabled={disabled}
+      aria-expanded={expanded}
+      aria-haspopup="listbox"
+      onClick={onClick}
       className="flex items-center justify-center p-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100"
       aria-label="Select Language"
     >
@@ -47,11 +54,11 @@ function LanguageTriggerButton({
 }
 
 export default function LanguageToggle() {
-  const currentLocale = useLocale() as keyof typeof languageData;
+  const currentLocale = useLocale() as LocaleKey;
   const router = useRouter();
   const pathname = usePathname();
-  // Flowbite Dropdown generates unstable useId values across SSR/CSR.
-  // Match ThemeToggle: render a stable placeholder until the client has hydrated.
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const isHydrated = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -59,12 +66,37 @@ export default function LanguageToggle() {
   );
 
   const handleLanguageChange = (newLocale: string) => {
+    setIsOpen(false);
     setLocalePreferenceCookie(newLocale);
     clearLocaleSuggestionDismissedCookie();
     router.replace(pathname, { locale: newLocale });
   };
 
   const flag = languageData[currentLocale]?.flag ?? "";
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   if (!isHydrated) {
     return (
@@ -75,34 +107,42 @@ export default function LanguageToggle() {
   }
 
   return (
-    <div className="flex items-center">
-      <Dropdown
-        label=""
-        dismissOnClick={true}
-        renderTrigger={() => <LanguageTriggerButton flag={flag} />}
-      >
-        <DropdownHeader>
-          <span className="block text-sm font-bold text-gray-900 dark:text-gray-100">
+    <div ref={containerRef} className="relative flex items-center">
+      <LanguageTriggerButton
+        flag={flag}
+        expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+      />
+      {isOpen ? (
+        <div
+          role="listbox"
+          aria-label="Select Language"
+          className="absolute right-0 top-full z-[60] mt-2 min-w-44 overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-600 dark:bg-gray-700"
+        >
+          <p className="px-4 py-2 text-sm font-bold text-gray-900 dark:text-gray-100">
             Select Language
-          </span>
-        </DropdownHeader>
-        {routing.locales.map((locale) => (
-          <DropdownItem
-            key={locale}
-            onClick={() => handleLanguageChange(locale)}
-            className={`flex items-center gap-3 px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 ${
-              currentLocale === locale ? "bg-blue-100 dark:bg-gray-600 font-bold" : ""
-            }`}
-          >
-            <span className="text-xl">
-              {languageData[locale as keyof typeof languageData]?.flag}
-            </span>
-            <span className="text-sm dark:text-gray-200">
-              {languageData[locale as keyof typeof languageData]?.name}
-            </span>
-          </DropdownItem>
-        ))}
-      </Dropdown>
+          </p>
+          {routing.locales.map((locale) => (
+            <button
+              key={locale}
+              type="button"
+              role="option"
+              aria-selected={currentLocale === locale}
+              onClick={() => handleLanguageChange(locale)}
+              className={`flex w-full items-center gap-3 px-4 py-2 text-left text-gray-900 hover:bg-blue-50 dark:text-gray-100 dark:hover:bg-gray-600 ${
+                currentLocale === locale ? "bg-blue-100 font-bold dark:bg-gray-600" : ""
+              }`}
+            >
+              <span className="text-xl">
+                {languageData[locale as LocaleKey]?.flag}
+              </span>
+              <span className="text-sm text-gray-800 dark:text-gray-100">
+                {languageData[locale as LocaleKey]?.name}
+              </span>
+            </button>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

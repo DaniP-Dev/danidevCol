@@ -13,7 +13,6 @@ export const localeSuggestionMessages: Record<
       es: "Español",
       en: "Inglés",
       pt: "Portugués",
-      ar: "Árabe",
     },
   },
   en: {
@@ -25,7 +24,6 @@ export const localeSuggestionMessages: Record<
       es: "Spanish",
       en: "English",
       pt: "Portuguese",
-      ar: "Arabic",
     },
   },
   pt: {
@@ -37,19 +35,6 @@ export const localeSuggestionMessages: Record<
       es: "Espanhol",
       en: "Inglês",
       pt: "Português",
-      ar: "Árabe",
-    },
-  },
-  ar: {
-    title: "هل تفضل لغة أخرى؟",
-    description: "هل تريد عرض هذه الصفحة باللغة {language}؟",
-    switchButton: "تبديل",
-    dismissButton: "لا، شكرًا",
-    languageNames: {
-      es: "الإسبانية",
-      en: "الإنجليزية",
-      pt: "البرتغالية",
-      ar: "العربية",
     },
   },
 };

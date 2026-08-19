@@ -41,7 +41,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   - Español: `/es/services/presencia-impacto`
   - Inglés: `/en/services/presence-impact`
   - Portugués: `/pt/services/presenca-impacto`
-  - Árabe: `/ar/services/حضور-وتأثير`
 - El banner de sugerencia de idioma se activa cuando el locale del enlace no coincide con la preferencia del visitante.
 - No hay redirección forzada: los enlaces compartidos mantienen su idioma explícito en la URL.
 - Si el usuario cambia idioma manualmente, su preferencia se guarda en cookie para próximas visitas.

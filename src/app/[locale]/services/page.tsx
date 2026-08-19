@@ -91,7 +91,7 @@ export default async function page({ params }: { params: Promise<{ locale: strin
             "description": t("page.highlight"),
             "url": servicesUrl,
             "areaServed": "Worldwide",
-            "availableLanguage": ["es", "en", "pt", "ar"],
+            "availableLanguage": ["es", "en", "pt"],
             "serviceType": serviceTypes
           })
         }}

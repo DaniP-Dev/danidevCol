@@ -180,7 +180,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       "@type": "ContactPoint",
                       "contactType": "customer service",
                       "email": "danidevcol@gmail.com",
-                      "availableLanguage": ["es", "en", "pt", "ar"]
+                      "availableLanguage": ["es", "en", "pt"]
                     },
                     "areaServed": "Worldwide",
                     "serviceType": [

@@ -72,7 +72,6 @@ export default function LanguageSuggestionModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="locale-suggestion-title"
-        dir={clientLocale === "ar" ? "rtl" : "ltr"}
         className="relative z-10 w-full max-w-md rounded-2xl border border-blue-100/80 bg-white p-6 shadow-2xl dark:border-blue-900/50 dark:bg-gray-900"
         onClick={(event) => event.stopPropagation()}
       >
