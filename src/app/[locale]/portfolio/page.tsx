@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioGrid from "@/src/components/portfolioPage/PortfolioGrid";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Script from "next/script";
 import { Link } from "@/src/i18n/navigation";
 import {
@@ -47,6 +47,7 @@ export async function generateMetadata({
 }
 export default async function page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "PortfolioPage" });
   const tContact = await getTranslations({ locale, namespace: "Contact" });
   const whatsappMessage = tContact("whatsappMessage.clientGeneric", {

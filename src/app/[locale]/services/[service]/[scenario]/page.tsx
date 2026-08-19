@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/src/i18n/navigation";
 import { notFound } from "next/navigation";
 import ContactCTA from "@/src/components/layout/ContactCTA";
 import {
+  generateScenarioStaticParams,
   getObjectiveSlug,
   isValidObjectiveScenarioCombination,
   resolveObjectiveKeyBySlug,
@@ -18,6 +19,10 @@ import {
 
 interface PageProps {
   params: Promise<{ service: string; scenario: string; locale: string }>;
+}
+
+export async function generateStaticParams() {
+  return generateScenarioStaticParams();
 }
 
 export async function generateMetadata({
@@ -68,6 +73,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageProps) {
   const { service, scenario, locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Services" });
   const objectiveKey = await resolveObjectiveKeyBySlug(service);
   const scenarioKey = await resolveScenarioKeyBySlug(scenario);

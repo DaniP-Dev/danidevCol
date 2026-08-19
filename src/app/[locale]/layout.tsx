@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { ViewTransitions } from "next-view-transitions";
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "@/src/components/layout/Footer";
@@ -11,14 +12,7 @@ import Header from "@/src/components/layout/Header";
 import { ThemeProvider } from "@/src/components/providers/ThemeProvider";
 import { siteConfig, socialLinks } from "@/src/libs/constants";
 import Script from "next/script";
-import { cookies, headers } from "next/headers";
 import LanguageSuggestionModal from "@/src/components/layout/LanguageSuggestionModal";
-import {
-  getSuggestedLocale,
-  LOCALE_PREFERENCE_COOKIE,
-  LOCALE_SUGGESTION_DISMISSED_COOKIE,
-  type LocaleSuggestionMessages,
-} from "@/src/i18n/localePreference";
 
 const GTM_ID_REGEX = /^GTM-[A-Z0-9]+$/i;
 
@@ -81,25 +75,17 @@ type Props = {
   }>;
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   const gtmId = getGtmId();
 
   if (!hasLocale(routing.locales, locale)) return notFound();
 
-  const headerStore = await headers();
-  const cookieStore = await cookies();
-  const clientLocale = getSuggestedLocale({
-    currentLocale: locale,
-    acceptLanguageHeader: headerStore.get("accept-language"),
-    preferredLocaleCookie: cookieStore.get(LOCALE_PREFERENCE_COOKIE)?.value,
-    dismissedSuggestionCookie: cookieStore.get(LOCALE_SUGGESTION_DISMISSED_COOKIE)?.value,
-  });
-
-  const suggestionMessages: LocaleSuggestionMessages | null = clientLocale
-    ? (await import(`../../../messages/${clientLocale}.json`)).default
-        .LocaleSuggestion
-    : null;
+  setRequestLocale(locale);
 
   return (
     <ViewTransitions>
@@ -209,10 +195,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               />
               {/* Header siempre visible */}
               <Header />
-              <LanguageSuggestionModal
-                clientLocale={clientLocale}
-                messages={suggestionMessages}
-              />
+              <LanguageSuggestionModal />
 
               {/* Grid container para Desktop */}
               <div className="md:grid md:grid-cols-[250px_1fr] md:h-[calc(100vh-80px)]">

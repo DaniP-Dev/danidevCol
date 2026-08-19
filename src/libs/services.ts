@@ -194,3 +194,38 @@ export function getServiceCombinations(): Array<{
     })),
   );
 }
+
+export async function generateObjectiveStaticParams(): Promise<
+  Array<{ locale: string; service: string }>
+> {
+  const params: Array<{ locale: string; service: string }> = [];
+
+  for (const locale of routing.locales) {
+    for (const objectiveKey of serviceObjectiveKeys) {
+      params.push({
+        locale,
+        service: await getObjectiveSlug(locale, objectiveKey),
+      });
+    }
+  }
+
+  return params;
+}
+
+export async function generateScenarioStaticParams(): Promise<
+  Array<{ locale: string; service: string; scenario: string }>
+> {
+  const params: Array<{ locale: string; service: string; scenario: string }> = [];
+
+  for (const locale of routing.locales) {
+    for (const { objective, scenario } of getServiceCombinations()) {
+      params.push({
+        locale,
+        service: await getObjectiveSlug(locale, objective),
+        scenario: await getScenarioSlug(locale, scenario),
+      });
+    }
+  }
+
+  return params;
+}

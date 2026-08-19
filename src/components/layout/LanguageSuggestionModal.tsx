@@ -1,33 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/src/i18n/navigation";
+import { localeSuggestionMessages } from "@/src/i18n/localeSuggestionMessages";
 import {
   clearLocaleSuggestionDismissedCookie,
   formatLocaleSuggestionDescription,
+  getSuggestedLocale,
+  LOCALE_PREFERENCE_COOKIE,
+  LOCALE_SUGGESTION_DISMISSED_COOKIE,
+  readClientCookie,
   setLocalePreferenceCookie,
   setLocaleSuggestionDismissedCookie,
-  type LocaleSuggestionMessages,
-  type SupportedLocale,
 } from "@/src/i18n/localePreference";
 
-type LanguageSuggestionModalProps = {
-  clientLocale: SupportedLocale | null;
-  messages: LocaleSuggestionMessages | null;
-};
-
-export default function LanguageSuggestionModal({
-  clientLocale,
-  messages,
-}: LanguageSuggestionModalProps) {
+export default function LanguageSuggestionModal() {
+  const currentLocale = useLocale();
   const [isHidden, setIsHidden] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const isHydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  if (!clientLocale || !messages || isHidden) {
+  if (!isHydrated || isHidden) {
     return null;
   }
 
+  const clientLocale = getSuggestedLocale({
+    currentLocale,
+    navigatorLanguages: navigator.languages,
+    preferredLocaleCookie: readClientCookie(LOCALE_PREFERENCE_COOKIE),
+    dismissedSuggestionCookie: readClientCookie(LOCALE_SUGGESTION_DISMISSED_COOKIE),
+  });
+
+  if (!clientLocale) {
+    return null;
+  }
+
+  const messages = localeSuggestionMessages[clientLocale];
   const languageLabel = messages.languageNames[clientLocale];
   const description = formatLocaleSuggestionDescription(
     messages.description,

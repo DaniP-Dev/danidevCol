@@ -1,6 +1,6 @@
 
 import { Link } from "@/src/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getObjectiveSlug, serviceCatalog } from "@/src/libs/services";
@@ -49,6 +49,7 @@ export async function generateMetadata({
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("HomePage");
   const tServices = await getTranslations("Services");
   const tContact = await getTranslations("Contact");
